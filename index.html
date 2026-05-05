@@ -41,95 +41,114 @@
 
     <section id="projects">
         <h2 class="fade-in">My Projects</h2>
-        <div class="project-grid">
-            
-            <div class="project-card fade-in">
-                <div class="image-placeholder"><span>[Image / Code Screenshot]</span></div>
-                <span class="project-year">Year 3 | Semester 2</span>
-                <h3 class="project-title">Miniature Smart House</h3>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur vel egestas lacus, id tempor velit.</p>
-                <div class="tech-stack">Arduino | ESP32 | VC-02 Module</div>
+        
+        <!-- Year Selector Tabs -->
+        <div class="year-selector fade-in">
+            <button class="year-btn" data-year="3">Third Year</button>
+            <button class="year-btn" data-year="2">Second Year</button>
+            <button class="year-btn" data-year="1">First Year</button>
+        </div>
+        
+        <!-- Year 3 Projects -->
+        <div class="year-projects" data-year="3" style="display: none;">
+            <div class="project-grid">
+                <div class="project-card fade-in">
+                    <div class="image-placeholder"><span>[Image / Code Screenshot]</span></div>
+                    <span class="project-year">Year 3 | Semester 2</span>
+                    <h3 class="project-title">Miniature Smart House</h3>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur vel egestas lacus, id tempor velit.</p>
+                    <div class="tech-stack">Arduino | ESP32 | VC-02 Module</div>
+                </div>
+                <div class="project-card fade-in">
+                    <div class="image-placeholder"><span>[Image / Code Screenshot]</span></div>
+                    <span class="project-year">Year 3 | Semester 2</span>
+                    <h3 class="project-title">AI-Powered Workout Pose Correction System</h3>
+                    <p>Developed a computer vision application using Python and OpenCV to provide real-time feedback on exercise form and posture.</p>
+                    <div class="tech-stack">Python | OpenCV | Pose Estimation</div>
+                </div>
+                <div class="project-card fade-in">
+                    <div class="image-placeholder"><span>[Image / Code Screenshot]</span></div>
+                    <span class="project-year">Year 3 | Semester 2</span>
+                    <h3 class="project-title">Raspberry Pi-Based Automated Classroom Attendance System</h3>
+                    <p>Engineered an IoT solution using Raspberry Pi and RFID/biometric sensors to automate attendance logging and sync data with a dashboard.</p>
+                    <div class="tech-stack">Raspberry Pi | RFID/Biometrics | Database</div>
+                </div>
+                <div class="project-card fade-in">
+                    <div class="image-placeholder"><span>[Image / Code Screenshot]</span></div>
+                    <span class="project-year">Year 3 | Semester 1</span>
+                    <h3 class="project-title">Save&Share (FarVent) | Full-Stack Tech Startup</h3>
+                    <p>Architecting a food surplus redistribution platform using Flutter and Dart to connect donors and beneficiaries through a scalable mobile app.</p>
+                    <div class="tech-stack">Flutter | Dart | Mobile App</div>
+                </div>
             </div>
-            <div class="project-card fade-in">
-                <div class="image-placeholder"><span>[Image / Code Screenshot]</span></div>
-                <span class="project-year">Year 3 | Semester 2</span>
-                <h3 class="project-title">JRU Chatbot Robot</h3>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur vel egestas lacus, id tempor velit.</p>
-                <div class="tech-stack">Python | APIs | Microcontrollers</div>
-            </div>
-            <div class="project-card fade-in">
-                <div class="image-placeholder"><span>[Image / Code Screenshot]</span></div>
-                <span class="project-year">Year 3 | Semester 1</span>
-                <h3 class="project-title">Line-Following Robot</h3>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur vel egestas lacus, id tempor velit.</p>
-                <div class="tech-stack">C++ | IR Sensors | Motor Drivers</div>
-            </div>
-            <div class="project-card fade-in">
-                <div class="image-placeholder"><span>[Image / Code Screenshot]</span></div>
-                <span class="project-year">Year 3 | Semester 1</span>
-                <h3 class="project-title">Stafit Application</h3>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur vel egestas lacus, id tempor velit.</p>
-                <div class="tech-stack">Flutter | Dart | Backend Integration</div>
-            </div>
-
-            <div class="project-card fade-in">
-                <div class="image-placeholder"><span>[Image / Code Screenshot]</span></div>
-                <span class="project-year">Year 2 | Semester 2</span>
-                <h3 class="project-title">[Software Project 2.2]</h3>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore.</p>
-                <div class="tech-stack">Python | Pandas | Matplotlib</div>
-            </div>
-            <div class="project-card fade-in">
-                <div class="image-placeholder"><span>[Image / Code Screenshot]</span></div>
-                <span class="project-year">Year 2 | Semester 2</span>
-                <h3 class="project-title">[Hardware Project 2.2]</h3>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore.</p>
+        </div>
+        
+        <!-- Year 2 Projects -->
+        <div class="year-projects" data-year="2" style="display: none;">
+            <div class="project-grid">
+                <div class="project-card fade-in">
+                    <div class="image-placeholder"><span>[Image / Code Screenshot]</span></div>
+                    <span class="project-year">Year 2 | Semester 2</span>
+                    <h3 class="project-title">[Software Project 2.2]</h3>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore.</p>
+                    <div class="tech-stack">Python | Pandas | Matplotlib</div>
+                </div>
+                <div class="project-card fade-in">
+                    <div class="image-placeholder"><span>[Image / Code Screenshot]</span></div>
+                    <span class="project-year">Year 2 | Semester 2</span>
+                    <h3 class="project-title">[Hardware Project 2.2]</h3>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore.</p>
+                    <div class="tech-stack">Tech | Stack | Here</div>
+                </div>
+                <div class="project-card fade-in">
+                    <div class="image-placeholder"><span>[Image / Code Screenshot]</span></div>
+                    <span class="project-year">Year 2 | Semester 1</span>
+                    <h3 class="project-title">[Software Project 2.1]</h3>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore.</p>
+                    <div class="tech-stack">Tech | Stack | Here</div>
+                </div>
+                <div class="project-card fade-in">
+                    <div class="image-placeholder"><span>[Image / Code Screenshot]</span></div>
+                    <span class="project-year">Year 2 | Semester 1</span>
+                    <h3 class="project-title">[Hardware Project 2.1]</h3>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore.</p>
                 <div class="tech-stack">Tech | Stack | Here</div>
+                </div>
             </div>
-            <div class="project-card fade-in">
-                <div class="image-placeholder"><span>[Image / Code Screenshot]</span></div>
-                <span class="project-year">Year 2 | Semester 1</span>
-                <h3 class="project-title">[Software Project 2.1]</h3>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore.</p>
-                <div class="tech-stack">Tech | Stack | Here</div>
+        </div>
+        
+        <!-- Year 1 Projects -->
+        <div class="year-projects" data-year="1" style="display: none;">
+            <div class="project-grid">
+                <div class="project-card fade-in">
+                    <div class="image-placeholder"><span>[Image / Code Screenshot]</span></div>
+                    <span class="project-year">Year 1 | Semester 2</span>
+                    <h3 class="project-title">[Software Project 1.2]</h3>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut enim ad minim veniam, quis nostrud exercitation.</p>
+                    <div class="tech-stack">Tech | Stack | Here</div>
+                </div>
+                <div class="project-card fade-in">
+                    <div class="image-placeholder"><span>[Image / Code Screenshot]</span></div>
+                    <span class="project-year">Year 1 | Semester 2</span>
+                    <h3 class="project-title">[Hardware Project 1.2]</h3>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut enim ad minim veniam, quis nostrud exercitation.</p>
+                    <div class="tech-stack">Tech | Stack | Here</div>
+                </div>
+                <div class="project-card fade-in">
+                    <div class="image-placeholder"><span>[Image / Code Screenshot]</span></div>
+                    <span class="project-year">Year 1 | Semester 1</span>
+                    <h3 class="project-title">[Software Project 1.1]</h3>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut enim ad minim veniam, quis nostrud exercitation.</p>
+                    <div class="tech-stack">Tech | Stack | Here</div>
+                </div>
+                <div class="project-card fade-in">
+                    <div class="image-placeholder"><span>[Image / Code Screenshot]</span></div>
+                    <span class="project-year">Year 1 | Semester 1</span>
+                    <h3 class="project-title">[Hardware Project 1.1]</h3>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut enim ad minim veniam, quis nostrud exercitation.</p>
+                    <div class="tech-stack">Tech | Stack | Here</div>
+                </div>
             </div>
-            <div class="project-card fade-in">
-                <div class="image-placeholder"><span>[Image / Code Screenshot]</span></div>
-                <span class="project-year">Year 2 | Semester 1</span>
-                <h3 class="project-title">[Hardware Project 2.1]</h3>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore.</p>
-                <div class="tech-stack">Tech | Stack | Here</div>
-            </div>
-
-            <div class="project-card fade-in">
-                <div class="image-placeholder"><span>[Image / Code Screenshot]</span></div>
-                <span class="project-year">Year 1 | Semester 2</span>
-                <h3 class="project-title">[Software Project 1.2]</h3>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut enim ad minim veniam, quis nostrud exercitation.</p>
-                <div class="tech-stack">Tech | Stack | Here</div>
-            </div>
-            <div class="project-card fade-in">
-                <div class="image-placeholder"><span>[Image / Code Screenshot]</span></div>
-                <span class="project-year">Year 1 | Semester 2</span>
-                <h3 class="project-title">[Hardware Project 1.2]</h3>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut enim ad minim veniam, quis nostrud exercitation.</p>
-                <div class="tech-stack">Tech | Stack | Here</div>
-            </div>
-            <div class="project-card fade-in">
-                <div class="image-placeholder"><span>[Image / Code Screenshot]</span></div>
-                <span class="project-year">Year 1 | Semester 1</span>
-                <h3 class="project-title">[Software Project 1.1]</h3>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut enim ad minim veniam, quis nostrud exercitation.</p>
-                <div class="tech-stack">Tech | Stack | Here</div>
-            </div>
-            <div class="project-card fade-in">
-                <div class="image-placeholder"><span>[Image / Code Screenshot]</span></div>
-                <span class="project-year">Year 1 | Semester 1</span>
-                <h3 class="project-title">[Hardware Project 1.1]</h3>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut enim ad minim veniam, quis nostrud exercitation.</p>
-                <div class="tech-stack">Tech | Stack | Here</div>
-            </div>
-
         </div>
     </section>
 
@@ -194,7 +213,7 @@
                 <a href="mailto:mohammadrayangubat25@gmail.com">mohammadrayangubat25@gmail.com</a>
             </div>
             <div class="contact-item">
-                <strong>LinkedIn:</strong> <br>
+                <strong>Linked In:</strong> <br>
                 <a href="https://www.linkedin.com/in/mohammad-rayan-b-gubat/" target="_blank">Mohammad Rayan B. Gubat</a>
             </div>
             <div class="contact-item">
@@ -203,7 +222,7 @@
             </div>
             <div class="contact-item">
                 <strong>Resume:</strong> <br>
-                <a href="#" target="_blank" class="resume-link">Download PDF</a>
+                <a href="https://drive.google.com/file/d/1Uaw2FII08Z_PJ1tykyrdUth6LuTcXI0w/view?usp=sharing" target="_blank" class="resume-link">Download PDF</a>
             </div>
         </div>
         <p class="copyright">&copy; 2026 Rayan Gubat. All rights reserved.</p>

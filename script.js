@@ -37,7 +37,40 @@ document.addEventListener("DOMContentLoaded", function() {
         appearOnScroll.observe(element);
     });
 
-    // 3. Modal Logic
+    // 3. Year Selection for Projects
+    const yearBtns = document.querySelectorAll('.year-btn');
+    const yearProjects = document.querySelectorAll('.year-projects');
+
+    // Set first year (Year 3) as active by default
+    if (yearBtns.length > 0) {
+        yearBtns[0].classList.add('active');
+        yearProjects.forEach(yearDiv => {
+            yearDiv.style.display = 'none';
+        });
+        document.querySelector('.year-projects[data-year="3"]').style.display = 'block';
+    }
+
+    yearBtns.forEach(btn => {
+        btn.addEventListener('click', function() {
+            const selectedYear = this.getAttribute('data-year');
+            
+            // Remove active class from all buttons
+            yearBtns.forEach(b => b.classList.remove('active'));
+            
+            // Add active class to clicked button
+            this.classList.add('active');
+            
+            // Hide all year projects
+            yearProjects.forEach(yearDiv => {
+                yearDiv.style.display = 'none';
+            });
+            
+            // Show selected year projects
+            document.querySelector(`.year-projects[data-year="${selectedYear}"]`).style.display = 'block';
+        });
+    });
+
+    // 4. Modal Logic
     const modal = document.getElementById("project-modal");
     const closeBtn = document.querySelector(".close-btn");
     const projectCards = document.querySelectorAll("#projects .project-card");
