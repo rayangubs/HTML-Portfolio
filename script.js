@@ -348,15 +348,15 @@ document.addEventListener("DOMContentLoaded", function() {
         "aws-ml": {
             title: "AWS Academy Machine Learning Graduate",
             description: "Certified as an AWS Academy Machine Learning Graduate, demonstrating comprehensive knowledge and practical skills in machine learning concepts, AWS cloud services, and data science methodologies. This certification validates expertise in building and deploying ML solutions on AWS infrastructure.",
-            image: { src: "", placeholder: "[AWS ML Certificate Full Image]" },
-            date: "2025",
+            image: { src: "images/aws cert.png", placeholder: "" },
+            date: "2026",
             issuer: "Amazon Web Services (AWS)"
         },
         "huawei-ai": {
             title: "Huawei ICT Academy - Overview of AI",
             description: "Certificate of Completion for the Overview of Artificial Intelligence course from Huawei ICT Academy. This certification covers fundamental AI concepts, machine learning principles, neural networks, and Huawei's AI technologies and solutions. Demonstrates foundational knowledge in artificial intelligence and its practical applications.",
-            image: { src: "", placeholder: "[Huawei AI Certificate Full Image]" },
-            date: "2025",
+            image: { src: "images/huawei cert.png", placeholder: "" },
+            date: "2026",
             issuer: "Huawei ICT Academy"
         }
     };
