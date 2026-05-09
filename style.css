@@ -118,15 +118,24 @@ p { margin-bottom: 1.5rem; max-width: 800px; color: var(--text-secondary); font-
 .projects-carousel {
     width: 100%;
     padding: 1rem 0;
-    position: relative;
+}
+
+.carousel-track {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    width: 100%;
 }
 
 .carousel-container {
     display: flex;
     gap: 2rem;
-    width: 100%;
+    flex: 1;
     overflow-x: auto;
-    padding-bottom: 1rem;
+    /* Padding gives the box-shadow room to render without being clipped */
+    padding: 16px 4px 20px 4px;
+    /* Negative margin pulls the visual edges back so cards stay aligned */
+    margin: -16px -4px -20px -4px;
     scroll-snap-type: x mandatory;
     scroll-behavior: smooth;
     -ms-overflow-style: none;
@@ -138,13 +147,11 @@ p { margin-bottom: 1.5rem; max-width: 800px; color: var(--text-secondary); font-
 }
 
 .carousel-control {
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
+    flex-shrink: 0;
     width: 42px;
     height: 42px;
     border-radius: 50%;
-    border: 1px solid rgba(237, 236, 237, 0.15);
+    border: 1px solid rgba(212, 196, 168, 0.3);
     background-color: rgba(18, 18, 18, 0.85);
     color: var(--text-primary);
     display: flex;
@@ -155,6 +162,8 @@ p { margin-bottom: 1.5rem; max-width: 800px; color: var(--text-secondary); font-
     transition: opacity 0.25s ease, transform 0.25s ease, background-color 0.25s ease;
     z-index: 10;
     cursor: pointer;
+    font-size: 1.5rem;
+    line-height: 1;
 }
 
 .projects-carousel:hover .carousel-control {
@@ -163,16 +172,9 @@ p { margin-bottom: 1.5rem; max-width: 800px; color: var(--text-secondary); font-
 }
 
 .carousel-control:hover {
-    transform: translateY(-50%) scale(1.05);
+    transform: scale(1.08);
     background-color: rgba(37, 37, 37, 0.95);
-}
-
-.carousel-control.left {
-    left: 0.75rem;
-}
-
-.carousel-control.right {
-    right: 0.75rem;
+    border-color: var(--accent);
 }
 
 .modal-buttons {
@@ -237,16 +239,17 @@ p { margin-bottom: 1.5rem; max-width: 800px; color: var(--text-secondary); font-
     background-color: var(--card-bg);
     padding: 2rem;
     border-radius: 8px;
-    box-shadow: 0 4px 6px rgba(0,0,0,0.03);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    transition: transform 0.35s ease, box-shadow 0.35s ease, border-color 0.35s ease;
     display: flex;
     flex-direction: column;
-    border: 1px solid rgba(0,0,0,0.05);
+    border: 1px solid rgba(212, 196, 168, 0.08);
 }
 
 .project-card:hover {
     transform: translateY(-8px);
-    box-shadow: 0 12px 24px rgba(0,0,0,0.08);
+    box-shadow: 0 10px 30px rgba(212, 196, 168, 0.28), 0 0 0 1px rgba(212, 196, 168, 0.15);
+    border-color: rgba(212, 196, 168, 0.45);
 }
 
 /* Grid for Projects */
@@ -255,7 +258,6 @@ p { margin-bottom: 1.5rem; max-width: 800px; color: var(--text-secondary); font-
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     gap: 2rem;
     width: 100%;
-    justify-items: center;
 }
 
 @media (max-width: 768px) {
@@ -280,6 +282,14 @@ p { margin-bottom: 1.5rem; max-width: 800px; color: var(--text-secondary); font-
     font-size: 0.9rem;
     text-transform: uppercase;
     letter-spacing: 1px;
+    overflow: hidden;
+}
+
+.image-placeholder img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 4px;
 }
 
 /* To use real images later, replace the .image-placeholder div in HTML with: 
@@ -402,6 +412,8 @@ footer h2 { color: var(--text-primary); }
 .fade-in.visible {
     opacity: 1;
     transform: translateY(0);
+    /* Hand transform control back to the element's own hover rules */
+    transition: opacity 0.8s ease-out, transform 0.35s ease, box-shadow 0.35s ease, border-color 0.35s ease;
 }
 
 /* Modal (Pop-up) Styles */
@@ -690,8 +702,8 @@ footer h2 { color: var(--text-primary); }
 /* Optional: Slight effect when hovering over the card */
 #certifications .project-card:hover .project-img {
     border-color: #EDEDED; /* Lighten the border slightly on hover */
-    transform: scale(1.02); /* Very subtle zoom of the image */
 }
+
 
 /* --- New Two-Column Hero Styles --- */
 
@@ -838,5 +850,150 @@ footer h2 { color: var(--text-primary); }
 
     .certification-badges {
         margin-top: 2rem;
+    }
+}
+
+/* =============================================
+   Skills & Technologies Section
+   ============================================= */
+
+#skills {
+    min-height: auto;
+    padding-bottom: 100px;
+}
+
+.skills-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 3rem;
+    width: 100%;
+}
+
+/* Each column */
+.skills-column {
+    background-color: var(--card-bg);
+    border: 1px solid rgba(212, 196, 168, 0.08);
+    border-radius: 8px;
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.skills-column-title {
+    font-size: 1.rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: var(--accent);
+    padding-bottom: 1rem;
+    border-bottom: 1px solid rgba(212, 196, 168, 0.2);
+    margin: 0;
+}
+
+/* The list of skill items inside a column */
+.skills-list {
+    display: flex;
+    flex-direction: column;
+    gap: 0.6rem;
+}
+
+/* Base skill item */
+.skill-item {
+    display: flex;
+    align-items: center;
+    gap: 0.9rem;
+    padding: 0.55rem 0.75rem;
+    border-radius: 6px;
+    border: 1px solid transparent;
+    transition: background-color 0.25s ease, border-color 0.25s ease, transform 0.25s ease;
+    cursor: default;
+}
+
+.skill-item:hover {
+    background-color: rgba(212, 196, 168, 0.06);
+    border-color: rgba(212, 196, 168, 0.2);
+    transform: translateX(4px);
+}
+
+/* Icon wrapper — standard size */
+.skill-icon-wrap {
+    width: 32px;
+    height: 32px;
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 6px;
+    background-color: rgba(212, 196, 168, 0.07);
+    border: 1px dashed rgba(212, 196, 168, 0.3);
+    transition: background-color 0.25s ease, border-color 0.25s ease;
+}
+
+.skill-item:hover .skill-icon-wrap {
+    background-color: rgba(212, 196, 168, 0.12);
+    border-color: rgba(212, 196, 168, 0.5);
+    border-style: solid;
+}
+
+.skill-icon-placeholder {
+    font-size: 0.6rem;
+    color: var(--text-secondary);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    user-select: none;
+}
+
+/* Skill name — standard */
+.skill-name {
+    font-size: 0.95rem;
+    color: var(--text-secondary);
+    font-weight: 500;
+    transition: color 0.25s ease;
+}
+
+.skill-item:hover .skill-name {
+    color: var(--text-primary);
+}
+
+/* ---- Prominent skill (Python, MySQL, Flutter, Firebase) ---- */
+.skill-item.skill-prominent {
+    padding: 0.75rem 0.9rem;
+}
+
+.skill-item.skill-prominent .skill-icon-wrap {
+    width: 44px;
+    height: 44px;
+    border-radius: 8px;
+    background-color: rgba(212, 196, 168, 0.1);
+    border-color: rgba(212, 196, 168, 0.4);
+    border-style: solid;
+}
+
+.skill-item.skill-prominent .skill-icon-placeholder {
+    font-size: 0.55rem;
+}
+
+.skill-item.skill-prominent .skill-name {
+    font-size: 1.05rem;
+    font-weight: 700;
+    color: var(--text-primary);
+}
+
+.skill-item.skill-prominent:hover {
+    background-color: rgba(212, 196, 168, 0.09);
+    border-color: rgba(212, 196, 168, 0.35);
+}
+
+.skill-item.skill-prominent:hover .skill-icon-wrap {
+    background-color: rgba(212, 196, 168, 0.18);
+    border-color: var(--accent);
+}
+
+/* Responsive: stack to single column on smaller screens */
+@media (max-width: 900px) {
+    .skills-grid {
+        grid-template-columns: 1fr;
+        gap: 2rem;
     }
 }

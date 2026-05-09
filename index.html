@@ -14,6 +14,7 @@
             <li><a href="#home">Home</a></li>
             <li><a href="#about">About</a></li>
             <li><a href="#projects">Projects</a></li>
+            <li><a href="#skills">Skills</a></li>
             <li><a href="#experience">Experience</a></li>
             <li><a href="#certifications">Certifications</a></li>
             <li><a href="#contact">Contact</a></li>
@@ -34,9 +35,9 @@
                 <div class="certification-badges">
                     <h3>Certifications & Badges</h3>
                     <div class="badges-container">
-                        <img src="images/comptia cert.png" alt="CompTIA Tech+ Certificate" class="badge-img fade-in">
-                        <img src="images/java cert.png" alt="IT Specialist - Java Certificate" class="badge-img fade-in">
-                        <img src="images/huawei cert.png" alt="Huawei Certificate" class="badge-img fade-in">
+                        <img src="images/comptia icon.png" alt="CompTIA Tech+ Certificate" class="badge-img fade-in">
+                        <img src="images/aws ml badge.png" alt="AWS Machine Learning Specialty Certificate" class="badge-img fade-in">
+                        <img src="images/it java.png" alt="IT Specialist - Java Certificate" class="badge-img fade-in">
                     </div>
                 </div>
             </div>
@@ -55,10 +56,11 @@
         
         <!-- Project Carousel -->
         <div class="projects-carousel fade-in">
-            <button class="carousel-control left" aria-label="Scroll left">&#8249;</button>
-            <div class="carousel-container">
-                <div class="project-card" data-project="pose-estimation">
-                    <div class="image-placeholder"><span>[Image]</span></div>
+            <div class="carousel-track">
+                <button class="carousel-control left" aria-label="Scroll left">&#8249;</button>
+                <div class="carousel-container">
+                    <div class="project-card" data-project="pose-estimation">
+                    <div class="image-placeholder"><img src="images/ai cover.png" alt="CPE C313 Project Cover"></div>
                     <p class="project-course">CPE C313 | Artificial Intelligence</p>
                     <h3 class="project-title">Web-Based Human Pose Estimation</h3>
                     <p>Real-Time Squat Form Correction using Teachable Machine</p>
@@ -99,8 +101,109 @@
                     <p>Filler project description</p>
                     <div class="tech-stack">Tech | Stack | Here</div>
                 </div>
+                </div><!-- end .carousel-container -->
+                <button class="carousel-control right" aria-label="Scroll right">&#8250;</button>
+            </div><!-- end .carousel-track -->
+        </div><!-- end .projects-carousel -->
+    </section>
+
+    <section id="skills">
+        <h2 class="fade-in">Skills & Technologies</h2>
+        <div class="skills-grid">
+
+            <!-- Column 1: Web & Mobile Development -->
+            <div class="skills-column fade-in">
+                <h3 class="skills-column-title">Web & Mobile Development</h3>
+                <div class="skills-list">
+                    <div class="skill-item skill-prominent">
+                        <div class="skill-icon-wrap"><span class="skill-icon-placeholder">[icon]</span></div>
+                        <span class="skill-name">Flutter</span>
+                    </div>
+                    <div class="skill-item skill-prominent">
+                        <div class="skill-icon-wrap"><span class="skill-icon-placeholder">[icon]</span></div>
+                        <span class="skill-name">Dart</span>
+                    </div>
+                    <div class="skill-item">
+                        <div class="skill-icon-wrap"><span class="skill-icon-placeholder">[icon]</span></div>
+                        <span class="skill-name">JavaScript</span>
+                    </div>
+                    <div class="skill-item">
+                        <div class="skill-icon-wrap"><span class="skill-icon-placeholder">[icon]</span></div>
+                        <span class="skill-name">HTML</span>
+                    </div>
+                    <div class="skill-item">
+                        <div class="skill-icon-wrap"><span class="skill-icon-placeholder">[icon]</span></div>
+                        <span class="skill-name">CSS</span>
+                    </div>
+                </div>
             </div>
-            <button class="carousel-control right" aria-label="Scroll right">&#8250;</button>
+
+            <!-- Column 2: Systems & Data Engineering -->
+            <div class="skills-column fade-in">
+                <h3 class="skills-column-title">Systems & Data Engineering</h3>
+                <div class="skills-list">
+                    <div class="skill-item skill-prominent">
+                        <div class="skill-icon-wrap"><span class="skill-icon-placeholder">[icon]</span></div>
+                        <span class="skill-name">Python</span>
+                    </div>
+                    <div class="skill-item skill-prominent">
+                        <div class="skill-icon-wrap"><span class="skill-icon-placeholder">[icon]</span></div>
+                        <span class="skill-name">MySQL</span>
+                    </div>
+                    <div class="skill-item skill-prominent">
+                        <div class="skill-icon-wrap"><span class="skill-icon-placeholder">[icon]</span></div>
+                        <span class="skill-name">Firebase</span>
+                    </div>
+                    <div class="skill-item">
+                        <div class="skill-icon-wrap"><span class="skill-icon-placeholder">[icon]</span></div>
+                        <span class="skill-name">Java</span>
+                    </div>
+                    <div class="skill-item">
+                        <div class="skill-icon-wrap"><span class="skill-icon-placeholder">[icon]</span></div>
+                        <span class="skill-name">C++</span>
+                    </div>
+                    <div class="skill-item">
+                        <div class="skill-icon-wrap"><span class="skill-icon-placeholder">[icon]</span></div>
+                        <span class="skill-name">Oracle SQL</span>
+                    </div>
+                    <div class="skill-item">
+                        <div class="skill-icon-wrap"><span class="skill-icon-placeholder">[icon]</span></div>
+                        <span class="skill-name">Postman API</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Column 3: Design & Content Tools -->
+            <div class="skills-column fade-in">
+                <h3 class="skills-column-title">Design & Content Tools</h3>
+                <div class="skills-list">
+                    <div class="skill-item">
+                        <div class="skill-icon-wrap"><span class="skill-icon-placeholder">[icon]</span></div>
+                        <span class="skill-name">Photoshop</span>
+                    </div>
+                    <div class="skill-item">
+                        <div class="skill-icon-wrap"><span class="skill-icon-placeholder">[icon]</span></div>
+                        <span class="skill-name">DaVinci Resolve</span>
+                    </div>
+                    <div class="skill-item">
+                        <div class="skill-icon-wrap"><span class="skill-icon-placeholder">[icon]</span></div>
+                        <span class="skill-name">Canva</span>
+                    </div>
+                    <div class="skill-item">
+                        <div class="skill-icon-wrap"><span class="skill-icon-placeholder">[icon]</span></div>
+                        <span class="skill-name">OpenAI</span>
+                    </div>
+                    <div class="skill-item">
+                        <div class="skill-icon-wrap"><span class="skill-icon-placeholder">[icon]</span></div>
+                        <span class="skill-name">Microsoft Office</span>
+                    </div>
+                    <div class="skill-item">
+                        <div class="skill-icon-wrap"><span class="skill-icon-placeholder">[icon]</span></div>
+                        <span class="skill-name">Google Workspace</span>
+                    </div>
+                </div>
+            </div>
+
         </div>
     </section>
 

@@ -42,22 +42,23 @@ document.addEventListener("DOMContentLoaded", function() {
         "pose-estimation": {
             course: "CPE C313 | Artificial Intelligence",
             title: "Web-Based Human Pose Estimation System for Real-Time Squat Form Correction using Teachable Machine",
-            description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris.",
+            description: "This AI-powered \"Squat Coach\" mitigates the biomechanical risks of unsupervised home fitness by providing real-time form correction. Utilizing a Python script with OpenCV and the MediaPipe Pose Landmarker, the system tracks 33 skeletal keypoints to evaluate postural alignment. Built on a PoseNet architecture via Google Teachable Machine , the model achieved a 93.48% overall accuracy and perfect 1.00 specificity. This ensures high sensitivity to improper form, delivering a robust, low-latency feedback loop for user safety.",
+            contributions: "Building this \"Squat Coach\" was much more than just a standard academic requirement—it was an opportunity to apply engineering principles to a very real, localized public health issue right here in the Philippines (Outcome H). Defining the hidden risks of unsupervised home workouts challenged me to formulate a practical, automated solution from the ground up (Outcome E). Getting hands-on with frameworks like OpenCV and MediaPipe (Outcome K), while rigorously validating our model's reliability through confusion matrices (Outcome B), bridged the gap between classroom theory and actionable data science. \nSpearheading this project with the FarVent team deeply reinforced my core drive toward tech-driven social entrepreneurship. My goal isn't just to build models that stay on a laptop, but to engineer solutions that genuinely empower communities. Taking this research to the next level by migrating it into an offline, cross-platform Flutter app using TFLite represents exactly the kind of developer I am striving to become—someone who translates complex AI into accessible, everyday tools that make a tangible difference.",
             sections: [
                 {
                     title: "Resources",
                     type: "buttons",
                     items: [
-                        { label: "Lab Activities & PTs", url: "https://drive.google.com/file/d/1example/view?usp=sharing" },
-                        { label: "Journal Article", url: "https://drive.google.com/file/d/1example/view?usp=sharing" },
-                        { label: "Source Codes", url: "https://drive.google.com/drive/folders/1example" }
+                        { label: "Lab Activities & PTs", url: "https://drive.google.com/file/d/1M78s1P0ibNNj8WQrPBewZG5W9FLQOtd0/view?usp=sharing" },
+                        { label: "Journal Article", url: "https://drive.google.com/file/d/1InTvSTjd5x210TqIQhGAZAW96OGwUp4K/view?usp=sharing" },
+                        { label: "Source Codes", url: "https://drive.google.com/file/d/1w2DYkX1uSCf43FIlWJ0vSNzvzOdcG9w5/view?usp=sharing" }
                     ]
                 },
                 {
                     title: "Demonstration",
                     type: "media",
-                    description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
-                    videoUrl: "videos/pose-estimation-demo.mp4",
+                    description: "This project demonstrates the real-time capabilities of the AI-powered squat form correction system.",
+                    videoUrl: "videos/AI demo.mkv",
                     websiteUrl: "https://example.com"
                 }
             ],
@@ -73,6 +74,7 @@ document.addEventListener("DOMContentLoaded", function() {
             course: "EGR C204 | Technopreneurship",
             title: "Save&Share (FarVent) | Full-Stack Tech Startup",
             description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris.",
+            contributions: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
             sections: [
                 {
                     title: "Milestones",
@@ -472,6 +474,16 @@ document.addEventListener("DOMContentLoaded", function() {
             </div>
         `;
 
+        // Add Contributions section if it exists
+        if (project.contributions) {
+            html += `
+            <div class="modal-section">
+                <h3>Contributions</h3>
+                <p class="modal-description">${project.contributions}</p>
+            </div>
+        `;
+        }
+
         // Render sections
         project.sections.forEach(section => {
             html += `<div class="modal-section">`;
@@ -506,9 +518,6 @@ document.addEventListener("DOMContentLoaded", function() {
                             Your browser does not support the video tag.
                         </video>
                     </div>`;
-                }
-                if (section.websiteUrl && section.websiteUrl.trim() !== "") {
-                    html += `<a href="${section.websiteUrl}" target="_blank" rel="noopener noreferrer" class="modal-btn">Visit Website</a>`;
                 }
             }
             else if (section.type === "description") {
