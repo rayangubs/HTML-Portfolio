@@ -259,47 +259,53 @@ document.addEventListener("DOMContentLoaded", function() {
     const projectCards = document.querySelectorAll(".carousel-container .project-card");
     const experienceCards = document.querySelectorAll("#experience .project-card[data-experience]");
     const certificationCards = document.querySelectorAll("#certifications .project-card[data-certification]");
-    const projectCarousel = document.querySelector(".carousel-container");
-    const carouselLeft = document.querySelector(".carousel-control.left");
-    const carouselRight = document.querySelector(".carousel-control.right");
-    const carouselWrapper = document.querySelector(".projects-carousel");
 
-    let carouselScrollInterval = null;
+    // Handle multiple carousels (projects and certifications)
+    const carousels = document.querySelectorAll(".projects-carousel");
 
-    function startCarouselScroll(direction) {
-        if (!projectCarousel) return;
-        stopCarouselScroll();
-        carouselScrollInterval = setInterval(() => {
-            projectCarousel.scrollBy({ left: direction, behavior: "smooth" });
-        }, 20);
-    }
+    carousels.forEach(carousel => {
+        const carouselContainer = carousel.querySelector(".carousel-container");
+        const carouselLeft = carousel.querySelector(".carousel-control.left");
+        const carouselRight = carousel.querySelector(".carousel-control.right");
+        const carouselWrapper = carousel;
 
-    function stopCarouselScroll() {
-        if (carouselScrollInterval) {
-            clearInterval(carouselScrollInterval);
-            carouselScrollInterval = null;
+        let carouselScrollInterval = null;
+
+        function startCarouselScroll(direction) {
+            if (!carouselContainer) return;
+            stopCarouselScroll();
+            carouselScrollInterval = setInterval(() => {
+                carouselContainer.scrollBy({ left: direction, behavior: "smooth" });
+            }, 20);
         }
-    }
 
-    if (carouselLeft) {
-        carouselLeft.addEventListener("mouseenter", () => startCarouselScroll(-8));
-        carouselLeft.addEventListener("mouseleave", stopCarouselScroll);
-        carouselLeft.addEventListener("click", () => {
-            if (projectCarousel) projectCarousel.scrollBy({ left: -320, behavior: "smooth" });
-        });
-    }
+        function stopCarouselScroll() {
+            if (carouselScrollInterval) {
+                clearInterval(carouselScrollInterval);
+                carouselScrollInterval = null;
+            }
+        }
 
-    if (carouselRight) {
-        carouselRight.addEventListener("mouseenter", () => startCarouselScroll(8));
-        carouselRight.addEventListener("mouseleave", stopCarouselScroll);
-        carouselRight.addEventListener("click", () => {
-            if (projectCarousel) projectCarousel.scrollBy({ left: 320, behavior: "smooth" });
-        });
-    }
+        if (carouselLeft) {
+            carouselLeft.addEventListener("mouseenter", () => startCarouselScroll(-8));
+            carouselLeft.addEventListener("mouseleave", stopCarouselScroll);
+            carouselLeft.addEventListener("click", () => {
+                if (carouselContainer) carouselContainer.scrollBy({ left: -320, behavior: "smooth" });
+            });
+        }
 
-    if (carouselWrapper) {
-        carouselWrapper.addEventListener("mouseleave", stopCarouselScroll);
-    }
+        if (carouselRight) {
+            carouselRight.addEventListener("mouseenter", () => startCarouselScroll(8));
+            carouselRight.addEventListener("mouseleave", stopCarouselScroll);
+            carouselRight.addEventListener("click", () => {
+                if (carouselContainer) carouselContainer.scrollBy({ left: 320, behavior: "smooth" });
+            });
+        }
+
+        if (carouselWrapper) {
+            carouselWrapper.addEventListener("mouseleave", stopCarouselScroll);
+        }
+    });
 
     // Function to pause all videos in modal
     function pauseAllVideos() {
@@ -345,6 +351,13 @@ document.addEventListener("DOMContentLoaded", function() {
             image: { src: "", placeholder: "[AWS ML Certificate Full Image]" },
             date: "2025",
             issuer: "Amazon Web Services (AWS)"
+        },
+        "huawei-ai": {
+            title: "Huawei ICT Academy - Overview of AI",
+            description: "Certificate of Completion for the Overview of Artificial Intelligence course from Huawei ICT Academy. This certification covers fundamental AI concepts, machine learning principles, neural networks, and Huawei's AI technologies and solutions. Demonstrates foundational knowledge in artificial intelligence and its practical applications.",
+            image: { src: "", placeholder: "[Huawei AI Certificate Full Image]" },
+            date: "2025",
+            issuer: "Huawei ICT Academy"
         }
     };
 
@@ -410,7 +423,7 @@ document.addEventListener("DOMContentLoaded", function() {
             ]
         },
         "solar-energy": {
-            title: "Solar Energy Outreach Leader",
+            title: "Lorem Ipsum Dolor Sit Amet",
             description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.",
             images: [
                 { src: "", placeholder: "[Outreach Photo 1]" },
