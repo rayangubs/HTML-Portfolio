@@ -43,7 +43,7 @@ document.addEventListener("DOMContentLoaded", function() {
             course: "CPE C313 | Artificial Intelligence",
             title: "Web-Based Human Pose Estimation System for Real-Time Squat Form Correction using Teachable Machine",
             description: "This AI-powered \"Squat Coach\" mitigates the biomechanical risks of unsupervised home fitness by providing real-time form correction. Utilizing a Python script with OpenCV and the MediaPipe Pose Landmarker, the system tracks 33 skeletal keypoints to evaluate postural alignment. Built on a PoseNet architecture via Google Teachable Machine , the model achieved a 93.48% overall accuracy and perfect 1.00 specificity. This ensures high sensitivity to improper form, delivering a robust, low-latency feedback loop for user safety.",
-            contributions: "Building this \"Squat Coach\" was much more than just a standard academic requirement—it was an opportunity to apply engineering principles to a very real, localized public health issue right here in the Philippines (Outcome H). Defining the hidden risks of unsupervised home workouts challenged me to formulate a practical, automated solution from the ground up (Outcome E). Getting hands-on with frameworks like OpenCV and MediaPipe (Outcome K), while rigorously validating our model's reliability through confusion matrices (Outcome B), bridged the gap between classroom theory and actionable data science. \nSpearheading this project with the FarVent team deeply reinforced my core drive toward tech-driven social entrepreneurship. My goal isn't just to build models that stay on a laptop, but to engineer solutions that genuinely empower communities. Taking this research to the next level by migrating it into an offline, cross-platform Flutter app using TFLite represents exactly the kind of developer I am striving to become—someone who translates complex AI into accessible, everyday tools that make a tangible difference.",
+            contributions: "Building this \"Squat Coach\" allowed me to tackle the localized health crisis of physical inactivity (Outcome H) by formulating an automated solution for unsupervised home workouts (Outcome E). Getting hands-on with OpenCV and MediaPipe (Outcome K) and validating our model via confusion matrices (Outcome B) perfectly bridged classroom theory with actionable data science. \nPersonally, spearheading this FarVent initiative reinforces my drive toward tech-driven social entrepreneurship. Migrating this AI into an accessible, cross-platform Flutter app using TFLite captures exactly the developer I strive to be—translating complex technology into impactful everyday tools that genuinely empower communities.",
             sections: [
                 {
                     title: "Resources",
@@ -73,37 +73,37 @@ document.addEventListener("DOMContentLoaded", function() {
         "save-share": {
             course: "EGR C204 | Technopreneurship",
             title: "Save&Share (FarVent) | Full-Stack Tech Startup",
-            description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris.",
-            contributions: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+            description: "The Save&Share mobile app by FarVent is a hyper-localized surplus marketplace combating urban food waste. Independent eateries lose up to 15% of daily revenue to unsold surplus, while the food service sector drives 10% of global waste. Save&Share lets merchants instantly list end-of-day prepared meals and near-expiry ingredients at discounted prices for nearby consumers. Built with Flutter, Firebase, Google Maps API, and local payment integration, the platform automates unsold item redistribution to NGOs and enforces PD 856 liability waivers to ensure a secure, zero-waste ecosystem.",
+            contributions: "Academically, designing this platform within the economic constraints of local MSMEs satisfies Outcome C. Implementing real-time geolocation mapping demonstrates complex engineering problem-solving (Outcome E), while enforcing PD 856 public health waivers highlights professional and ethical responsibility (Outcome F). Furthermore, addressing landfill emissions and urban food insecurity directly tackles the societal impact of engineering solutions (Outcome H). Personally, leading FarVent as Project Manager through the Wadhwani Foundation assessments reinforces my drive to engineer lean, self-sustaining startups that empower communities through accessible technology.",
             sections: [
                 {
                     title: "Milestones",
                     type: "buttons",
                     items: [
-                        { label: "Wadhwani Milestone 1", url: "https://drive.google.com/file/d/1example/view?usp=sharing" },
-                        { label: "Wadhwani Milestone 2", url: "https://drive.google.com/file/d/1example/view?usp=sharing" },
-                        { label: "Wadhwani Milestone 3", url: "https://drive.google.com/file/d/1example/view?usp=sharing" }
+                        { label: "Wadhwani Milestone 1", url: "https://drive.google.com/file/d/15OOEpy46Fd-OpwJ6900lUefhlcSIKhn2/view?usp=sharing" },
+                        { label: "Wadhwani Milestone 2", url: "https://drive.google.com/file/d/1rgQZ7rwExLELMrRAgSytQQnRtFDjImC8/view?usp=sharing" },
+                        { label: "Wadhwani Milestone 3", url: "https://drive.google.com/file/d/1GpvXP05SyYlsb4hMnGHRwReniWoMgNdU/view?usp=sharing" }
                     ]
                 },
                 {
                     title: "Pitch & Final Documentation",
                     type: "buttons",
                     items: [
-                        { label: "Final Pitch Deck", url: "https://drive.google.com/file/d/1example/view?usp=sharing" }
+                        { label: "Final Pitch Deck", url: "https://drive.google.com/file/d/1Vqm308B0Zu-hUhcXxfj-eNbRVWfQ52BM/view?usp=sharing" }
                     ]
                 },
                 {
                     title: "Software Demonstration",
                     type: "media",
-                    description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
-                    videoUrl: "videos/save-share-demo.mp4",
+                    description: "Welcome to the interactive prototype demonstration for Save&Share. This walkthrough highlights our platform's streamlined user experience, specifically engineered to eliminate liquidation friction for non-technical eatery owners.",
+                    videoUrl: "videos/techno demo.mp4",
                     websiteUrl: "https://example.com"
                 },
                 {
                     title: "Pitch Video",
                     type: "media",
-                    description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
-                    videoUrl: "videos/save-share-pitch.mp4",
+                    description: "Every night across high-density urban centers, independent eateries throw away perfectly good, edible surplus, losing up to 15% of their daily revenue while neighboring communities struggle with rising food costs. We are FarVent, and our mission is to turn that unavoidable food surplus into recovered operating capital through our mobile marketplace app, Save&Share.",
+                    videoUrl: "videos/farvent pitch video.mp4",
                     websiteUrl: ""
                 }
             ],
@@ -512,8 +512,9 @@ document.addEventListener("DOMContentLoaded", function() {
                     html += `<p class="modal-description">${section.description}</p>`;
                 }
                 if (section.videoUrl) {
+                    const isCompactVideo = projectId === "save-share" && section.title === "Software Demonstration";
                     html += `<div class="modal-video">
-                        <video controls class="project-video">
+                        <video controls class="project-video${isCompactVideo ? ' compact' : ''}">
                             <source src="${section.videoUrl}" type="video/mp4">
                             Your browser does not support the video tag.
                         </video>
