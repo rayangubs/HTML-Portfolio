@@ -117,16 +117,96 @@ p { margin-bottom: 1.5rem; max-width: 800px; color: var(--text-secondary); font-
 /* Projects Carousel */
 .projects-carousel {
     width: 100%;
-    overflow-x: auto;
     padding: 1rem 0;
+    position: relative;
 }
 
 .carousel-container {
     display: flex;
     gap: 2rem;
     width: 100%;
+    overflow-x: auto;
     padding-bottom: 1rem;
     scroll-snap-type: x mandatory;
+    scroll-behavior: smooth;
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+}
+
+.carousel-container::-webkit-scrollbar {
+    display: none;
+}
+
+.carousel-control {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 42px;
+    height: 42px;
+    border-radius: 50%;
+    border: 1px solid rgba(237, 236, 237, 0.15);
+    background-color: rgba(18, 18, 18, 0.85);
+    color: var(--text-primary);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.25s ease, transform 0.25s ease, background-color 0.25s ease;
+    z-index: 10;
+    cursor: pointer;
+}
+
+.projects-carousel:hover .carousel-control {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+.carousel-control:hover {
+    transform: translateY(-50%) scale(1.05);
+    background-color: rgba(37, 37, 37, 0.95);
+}
+
+.carousel-control.left {
+    left: 0.75rem;
+}
+
+.carousel-control.right {
+    right: 0.75rem;
+}
+
+.modal-buttons {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    margin: 1.5rem 0;
+    overflow-x: auto;
+    scrollbar-width: thin;
+    scrollbar-color: rgba(212, 196, 168, 0.45) transparent;
+    padding-bottom: 0.5rem;
+}
+
+.modal-buttons::-webkit-scrollbar {
+    height: 8px;
+}
+
+.modal-buttons::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+.modal-buttons::-webkit-scrollbar-thumb {
+    background: rgba(212, 196, 168, 0.35);
+    border-radius: 999px;
+    border: 2px solid transparent;
+    background-clip: content-box;
+}
+
+.modal-buttons::-webkit-scrollbar-thumb:hover {
+    background: rgba(212, 196, 168, 0.55);
+}
+
+.modal-buttons::-webkit-scrollbar-corner {
+    background: transparent;
 }
 
 .carousel-container .project-card {
@@ -222,10 +302,31 @@ p { margin-bottom: 1.5rem; max-width: 800px; color: var(--text-secondary); font-
     font-weight: 600;
 }
 
+.project-course {
+    margin: 0 0 0.5rem;
+    font-size: 0.95rem;
+    color: var(--text-secondary);
+    font-weight: 600;
+    line-height: 1.4;
+    min-height: 3rem;
+    display: block;
+}
+
 .project-title {
     font-size: 1.3rem;
-    margin-bottom: 1rem;
+    margin: 0 0 0.75rem;
     color: var(--text-primary);
+    line-height: 1.2;
+}
+
+.project-card p:not(.project-course) {
+    margin-bottom: 1rem;
+    color: var(--text-secondary);
+    line-height: 1.5;
+}
+
+.carousel-container .project-card {
+    min-height: 380px;
 }
 
 .tech-stack {

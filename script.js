@@ -257,6 +257,47 @@ document.addEventListener("DOMContentLoaded", function() {
     const projectCards = document.querySelectorAll(".carousel-container .project-card");
     const experienceCards = document.querySelectorAll("#experience .project-card[data-experience]");
     const certificationCards = document.querySelectorAll("#certifications .project-card[data-certification]");
+    const projectCarousel = document.querySelector(".carousel-container");
+    const carouselLeft = document.querySelector(".carousel-control.left");
+    const carouselRight = document.querySelector(".carousel-control.right");
+    const carouselWrapper = document.querySelector(".projects-carousel");
+
+    let carouselScrollInterval = null;
+
+    function startCarouselScroll(direction) {
+        if (!projectCarousel) return;
+        stopCarouselScroll();
+        carouselScrollInterval = setInterval(() => {
+            projectCarousel.scrollBy({ left: direction, behavior: "smooth" });
+        }, 20);
+    }
+
+    function stopCarouselScroll() {
+        if (carouselScrollInterval) {
+            clearInterval(carouselScrollInterval);
+            carouselScrollInterval = null;
+        }
+    }
+
+    if (carouselLeft) {
+        carouselLeft.addEventListener("mouseenter", () => startCarouselScroll(-8));
+        carouselLeft.addEventListener("mouseleave", stopCarouselScroll);
+        carouselLeft.addEventListener("click", () => {
+            if (projectCarousel) projectCarousel.scrollBy({ left: -320, behavior: "smooth" });
+        });
+    }
+
+    if (carouselRight) {
+        carouselRight.addEventListener("mouseenter", () => startCarouselScroll(8));
+        carouselRight.addEventListener("mouseleave", stopCarouselScroll);
+        carouselRight.addEventListener("click", () => {
+            if (projectCarousel) projectCarousel.scrollBy({ left: 320, behavior: "smooth" });
+        });
+    }
+
+    if (carouselWrapper) {
+        carouselWrapper.addEventListener("mouseleave", stopCarouselScroll);
+    }
 
     // Function to pause all videos in modal
     function pauseAllVideos() {
