@@ -114,60 +114,43 @@ p { margin-bottom: 1.5rem; max-width: 800px; color: var(--text-secondary); font-
     transform: translateY(-2px);
 }
 
-/* Year Selector Tabs */
-.year-selector {
-    display: flex;
-    gap: 1.5rem;
-    margin-bottom: 3rem;
-    flex-wrap: wrap;
-}
-
-.year-btn {
-    padding: 0.75rem 2rem;
-    background-color: var(--card-bg);
-    border: 2px solid var(--accent);
-    color: var(--text-secondary);
-    font-size: 1rem;
-    font-weight: 600;
-    letter-spacing: 1px;
-    border-radius: 4px;
-    cursor: pointer;
-    transition: all 0.3s ease;
-    text-transform: uppercase;
-}
-
-.year-btn:hover {
-    background-color: var(--accent);
-    color: var(--bg-primary);
-    transform: translateY(-2px);
-}
-
-.year-btn.active {
-    background-color: var(--accent);
-    color: var(--bg-primary);
-    box-shadow: 0 4px 12px rgba(212, 196, 168, 0.3);
-}
-
-/* Year Projects Container */
-.year-projects {
-    animation: fadeIn 0.4s ease-in;
-}
-
-@keyframes fadeIn {
-    from {
-        opacity: 0;
-    }
-    to {
-        opacity: 1;
-    }
-}
-
-/* Grid for Projects */
-.project-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-    gap: 2.5rem;
+/* Projects Carousel */
+.projects-carousel {
     width: 100%;
+    overflow-x: auto;
+    padding: 1rem 0;
+}
+
+.carousel-container {
+    display: flex;
+    gap: 2rem;
+    width: 100%;
+    padding-bottom: 1rem;
+    scroll-snap-type: x mandatory;
+}
+
+.carousel-container .project-card {
+    flex: 0 0 calc(25% - 1.5rem);
+    scroll-snap-align: start;
+    min-width: 300px;
+}
+
+@media (max-width: 1200px) {
+    .carousel-container .project-card {
+        flex: 0 0 calc(33.33% - 1.5rem);
+    }
+}
+
+@media (max-width: 768px) {
+    .carousel-container .project-card {
+        flex: 0 0 calc(50% - 1rem);
+    }
+}
+
+@media (max-width: 480px) {
+    .carousel-container .project-card {
+        flex: 0 0 85vw;
+    }
 }
 
 .project-card {
@@ -184,6 +167,22 @@ p { margin-bottom: 1.5rem; max-width: 800px; color: var(--text-secondary); font-
 .project-card:hover {
     transform: translateY(-8px);
     box-shadow: 0 12px 24px rgba(0,0,0,0.08);
+}
+
+/* Grid for Projects */
+.project-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    width: 100%;
+    justify-items: center;
+}
+
+@media (max-width: 768px) {
+    .project-grid {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
 }
 
 /* Image Placeholder Style */
@@ -330,6 +329,13 @@ footer h2 { color: var(--text-primary); }
     animation: modalFadeIn 0.3s ease-out;
 }
 
+.modal-content.modal-expanded {
+    max-width: 1000px;
+    margin: 2% auto;
+    max-height: 90vh;
+    overflow-y: auto;
+}
+
 @keyframes modalFadeIn {
     from { opacity: 0; transform: translateY(-20px); }
     to { opacity: 1; transform: translateY(0); }
@@ -368,7 +374,205 @@ footer h2 { color: var(--text-primary); }
     cursor: pointer;
 }
 
-/* Styling for real images placed inside project/cert cards */
+/* Make Experience Cards Clickable */
+#experience .project-card {
+    cursor: pointer;
+}
+
+/* Make Certification Cards Clickable */
+#certifications .project-card {
+    cursor: pointer;
+}
+
+/* Modal Content Sections */
+#modal-body {
+    width: 100%;
+}
+
+.modal-header {
+    margin-bottom: 2rem;
+    border-bottom: 2px solid var(--accent);
+    padding-bottom: 1.5rem;
+}
+
+.modal-header h2 {
+    font-size: 1.8rem;
+    margin-bottom: 0.5rem;
+}
+
+.modal-course {
+    font-size: 0.95rem;
+    color: var(--accent);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-weight: 600;
+}
+
+.modal-section {
+    margin: 2rem 0;
+}
+
+.modal-section h3 {
+    font-size: 1.2rem;
+    color: var(--accent);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 1rem;
+    font-weight: 600;
+}
+
+.modal-description {
+    color: var(--text-secondary);
+    line-height: 1.8;
+    margin-bottom: 1rem;
+}
+
+.modal-buttons {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    margin: 1.5rem 0;
+}
+
+.modal-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.75rem 1.5rem;
+    background-color: var(--card-bg);
+    border: 1px solid var(--accent);
+    color: var(--accent);
+    text-decoration: none;
+    border-radius: 4px;
+    font-size: 0.9rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.modal-btn:hover {
+    background-color: var(--accent);
+    color: var(--bg-primary);
+    transform: translateY(-2px);
+}
+
+.modal-gallery-section {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1rem;
+    margin: 1.5rem 0;
+}
+
+.modal-gallery-item {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 4px;
+    border: 1px solid rgba(212, 196, 168, 0.2);
+}
+
+.modal-video {
+    width: 100%;
+    margin: 1.5rem 0;
+}
+
+.modal-video iframe {
+    width: 100%;
+    height: 400px;
+    border-radius: 4px;
+    border: 1px solid rgba(212, 196, 168, 0.2);
+}
+
+.project-video {
+    width: 100%;
+    max-width: 800px;
+    height: auto;
+    border-radius: 8px;
+    border: 1px solid rgba(212, 196, 168, 0.2);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+.modal-footer {
+    margin-top: 3rem;
+    padding-top: 2rem;
+    border-top: 1px solid rgba(212, 196, 168, 0.3);
+}
+
+.sdg-section {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+    flex-wrap: wrap;
+}
+
+.sdg-info h4 {
+    font-size: 1rem;
+    color: var(--text-primary);
+    margin-bottom: 0.5rem;
+}
+
+.sdg-info p {
+    font-size: 0.9rem;
+    color: var(--text-secondary);
+}
+
+.sdg-logo {
+    width: 100px;
+    height: auto;
+    border-radius: 4px;
+}
+
+.tech-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin: 1rem 0;
+}
+
+.tech-tag {
+    background-color: var(--card-bg);
+    border: 1px solid var(--accent);
+    color: var(--accent);
+    padding: 0.4rem 1rem;
+    border-radius: 4px;
+    font-size: 0.85rem;
+    font-weight: 500;
+}
+
+/* Certificate Modal Styles */
+.cert-details {
+    background-color: var(--card-bg);
+    padding: 1.5rem;
+    border-radius: 4px;
+    border: 1px solid rgba(212, 196, 168, 0.2);
+}
+
+.cert-details p {
+    margin: 0.5rem 0;
+    color: var(--text-secondary);
+}
+
+.cert-details strong {
+    color: var(--accent);
+}
+
+.certificate-full-image {
+    display: flex;
+    justify-content: center;
+    margin: 2rem 0;
+}
+
+.certificate-img {
+    max-width: 100%;
+    max-height: 600px;
+    object-fit: contain;
+    border-radius: 4px;
+    border: 1px solid rgba(212, 196, 168, 0.2);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
 #certifications .project-img {
     /* Subtle glow (shadow) to soften the white edge against the dark card */
     box-shadow: 0 0 10px rgba(255, 255, 255, 0.1); 
@@ -440,9 +644,53 @@ footer h2 { color: var(--text-primary); }
     transition: transform 0.4s ease, box-shadow 0.4s ease;
 }
 
+.hero-photo-link {
+    display: inline-block;
+    cursor: pointer;
+    text-decoration: none;
+}
+
 .hero-photo:hover {
     transform: scale(1.05) translateY(-5px); /* Professional hover lift */
     box-shadow: 0 10px 30px rgba(212, 196, 168, 0.3); /* Stronger glow on hover */
+}
+
+/* Certification Badges Section */
+.certification-badges {
+    margin-top: 3rem;
+    padding-top: 2rem;
+    border-top: 1px solid rgba(212, 196, 168, 0.3);
+}
+
+.certification-badges h3 {
+    font-size: 1.1rem;
+    color: var(--accent);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 1.5rem;
+    font-weight: 600;
+}
+
+.badges-container {
+    display: flex;
+    gap: 1.5rem;
+    flex-wrap: wrap;
+}
+
+.badge-img {
+    height: 100px;
+    width: auto;
+    object-fit: contain;
+    border: 1px solid var(--accent);
+    border-radius: 4px;
+    padding: 0.5rem;
+    background-color: rgba(212, 196, 168, 0.05);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.badge-img:hover {
+    transform: scale(1.1);
+    box-shadow: 0 4px 12px rgba(212, 196, 168, 0.2);
 }
 
 /* Button Grouping */
@@ -481,5 +729,13 @@ footer h2 { color: var(--text-primary); }
     
     .hero-photo {
         max-width: 250px;
+    }
+
+    .badges-container {
+        justify-content: center;
+    }
+
+    .certification-badges {
+        margin-top: 2rem;
     }
 }

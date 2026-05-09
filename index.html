@@ -30,10 +30,21 @@
                     <a href="#projects" class="btn">View My Work</a>
                     <a href="#contact" class="btn secondary-btn">Contact Me</a>
                 </div>
+
+                <div class="certification-badges">
+                    <h3>Certifications & Badges</h3>
+                    <div class="badges-container">
+                        <img src="images/comptia cert.png" alt="CompTIA Tech+ Certificate" class="badge-img fade-in">
+                        <img src="images/java cert.png" alt="IT Specialist - Java Certificate" class="badge-img fade-in">
+                        <img src="images/huawei cert.png" alt="Huawei Certificate" class="badge-img fade-in">
+                    </div>
+                </div>
             </div>
             
             <div class="hero-image-wrapper">
-                <img src="images/formal(attempt).png" alt="Rayan Gubat - Computer Engineering Student" class="hero-photo fade-in">
+                <a href="https://www.linkedin.com/in/mohammad-rayan-b-gubat/" target="_blank" class="hero-photo-link">
+                    <img src="images/formal(attempt).png" alt="Rayan Gubat - Computer Engineering Student" class="hero-photo fade-in">
+                </a>
             </div>
 
         </div>
@@ -42,110 +53,43 @@
     <section id="projects">
         <h2 class="fade-in">My Projects</h2>
         
-        <!-- Year Selector Tabs -->
-        <div class="year-selector fade-in">
-            <button class="year-btn" data-year="3">Third Year</button>
-            <button class="year-btn" data-year="2">Second Year</button>
-            <button class="year-btn" data-year="1">First Year</button>
-        </div>
-        
-        <!-- Year 3 Projects -->
-        <div class="year-projects" data-year="3" style="display: none;">
-            <div class="project-grid">
-                <div class="project-card fade-in">
-                    <div class="image-placeholder"><span>[Image / Code Screenshot]</span></div>
-                    <span class="project-year">Year 3 | Semester 2</span>
+        <!-- Project Carousel -->
+        <div class="projects-carousel fade-in">
+            <div class="carousel-container">
+                <div class="project-card" data-project="pose-estimation">
+                    <div class="image-placeholder"><span>[Image]</span></div>
+                    <h3 class="project-title">Web-Based Human Pose Estimation</h3>
+                    <p>Real-Time Squat Form Correction using Teachable Machine</p>
+                    <div class="tech-stack">Python | Teachable Machine | Web</div>
+                </div>
+                <div class="project-card" data-project="save-share">
+                    <div class="image-placeholder"><span>[Image]</span></div>
+                    <h3 class="project-title">Save&Share (FarVent)</h3>
+                    <p>Full-Stack Tech Startup Platform</p>
+                    <div class="tech-stack">Flutter | Dart | Firebase</div>
+                </div>
+                <div class="project-card" data-project="face-recognition">
+                    <div class="image-placeholder"><span>[Image]</span></div>
+                    <h3 class="project-title">Raspberry Pi Face Recognition</h3>
+                    <p>Classroom Attendance System</p>
+                    <div class="tech-stack">Raspberry Pi | Python | OpenCV</div>
+                </div>
+                <div class="project-card" data-project="smart-house">
+                    <div class="image-placeholder"><span>[Image]</span></div>
                     <h3 class="project-title">Miniature Smart House</h3>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur vel egestas lacus, id tempor velit.</p>
-                    <div class="tech-stack">Arduino | ESP32 | VC-02 Module</div>
+                    <p>IoT-Enabled Home Automation</p>
+                    <div class="tech-stack">Arduino | ESP32 | IoT</div>
                 </div>
-                <div class="project-card fade-in">
-                    <div class="image-placeholder"><span>[Image / Code Screenshot]</span></div>
-                    <span class="project-year">Year 3 | Semester 2</span>
-                    <h3 class="project-title">AI-Powered Workout Pose Correction System</h3>
-                    <p>Developed a computer vision application using Python and OpenCV to provide real-time feedback on exercise form and posture.</p>
-                    <div class="tech-stack">Python | OpenCV | Pose Estimation</div>
-                </div>
-                <div class="project-card fade-in">
-                    <div class="image-placeholder"><span>[Image / Code Screenshot]</span></div>
-                    <span class="project-year">Year 3 | Semester 2</span>
-                    <h3 class="project-title">Raspberry Pi-Based Automated Classroom Attendance System</h3>
-                    <p>Engineered an IoT solution using Raspberry Pi and RFID/biometric sensors to automate attendance logging and sync data with a dashboard.</p>
-                    <div class="tech-stack">Raspberry Pi | RFID/Biometrics | Database</div>
-                </div>
-                <div class="project-card fade-in">
-                    <div class="image-placeholder"><span>[Image / Code Screenshot]</span></div>
-                    <span class="project-year">Year 3 | Semester 1</span>
-                    <h3 class="project-title">Save&Share (FarVent) | Full-Stack Tech Startup</h3>
-                    <p>Architecting a food surplus redistribution platform using Flutter and Dart to connect donors and beneficiaries through a scalable mobile app.</p>
-                    <div class="tech-stack">Flutter | Dart | Mobile App</div>
-                </div>
-            </div>
-        </div>
-        
-        <!-- Year 2 Projects -->
-        <div class="year-projects" data-year="2" style="display: none;">
-            <div class="project-grid">
-                <div class="project-card fade-in">
-                    <div class="image-placeholder"><span>[Image / Code Screenshot]</span></div>
-                    <span class="project-year">Year 2 | Semester 2</span>
-                    <h3 class="project-title">[Software Project 2.2]</h3>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore.</p>
-                    <div class="tech-stack">Python | Pandas | Matplotlib</div>
-                </div>
-                <div class="project-card fade-in">
-                    <div class="image-placeholder"><span>[Image / Code Screenshot]</span></div>
-                    <span class="project-year">Year 2 | Semester 2</span>
-                    <h3 class="project-title">[Hardware Project 2.2]</h3>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore.</p>
+                <div class="project-card" data-project="project-5">
+                    <div class="image-placeholder"><span>[Image]</span></div>
+                    <h3 class="project-title">Project 5</h3>
+                    <p>Filler project description</p>
                     <div class="tech-stack">Tech | Stack | Here</div>
                 </div>
-                <div class="project-card fade-in">
-                    <div class="image-placeholder"><span>[Image / Code Screenshot]</span></div>
-                    <span class="project-year">Year 2 | Semester 1</span>
-                    <h3 class="project-title">[Software Project 2.1]</h3>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore.</p>
-                    <div class="tech-stack">Tech | Stack | Here</div>
-                </div>
-                <div class="project-card fade-in">
-                    <div class="image-placeholder"><span>[Image / Code Screenshot]</span></div>
-                    <span class="project-year">Year 2 | Semester 1</span>
-                    <h3 class="project-title">[Hardware Project 2.1]</h3>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore.</p>
-                <div class="tech-stack">Tech | Stack | Here</div>
-                </div>
-            </div>
-        </div>
-        
-        <!-- Year 1 Projects -->
-        <div class="year-projects" data-year="1" style="display: none;">
-            <div class="project-grid">
-                <div class="project-card fade-in">
-                    <div class="image-placeholder"><span>[Image / Code Screenshot]</span></div>
-                    <span class="project-year">Year 1 | Semester 2</span>
-                    <h3 class="project-title">[Software Project 1.2]</h3>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut enim ad minim veniam, quis nostrud exercitation.</p>
-                    <div class="tech-stack">Tech | Stack | Here</div>
-                </div>
-                <div class="project-card fade-in">
-                    <div class="image-placeholder"><span>[Image / Code Screenshot]</span></div>
-                    <span class="project-year">Year 1 | Semester 2</span>
-                    <h3 class="project-title">[Hardware Project 1.2]</h3>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut enim ad minim veniam, quis nostrud exercitation.</p>
-                    <div class="tech-stack">Tech | Stack | Here</div>
-                </div>
-                <div class="project-card fade-in">
-                    <div class="image-placeholder"><span>[Image / Code Screenshot]</span></div>
-                    <span class="project-year">Year 1 | Semester 1</span>
-                    <h3 class="project-title">[Software Project 1.1]</h3>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut enim ad minim veniam, quis nostrud exercitation.</p>
-                    <div class="tech-stack">Tech | Stack | Here</div>
-                </div>
-                <div class="project-card fade-in">
-                    <div class="image-placeholder"><span>[Image / Code Screenshot]</span></div>
-                    <span class="project-year">Year 1 | Semester 1</span>
-                    <h3 class="project-title">[Hardware Project 1.1]</h3>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut enim ad minim veniam, quis nostrud exercitation.</p>
+                <div class="project-card" data-project="project-6">
+                    <div class="image-placeholder"><span>[Image]</span></div>
+                    <h3 class="project-title">Project 6</h3>
+                    <p>Filler project description</p>
                     <div class="tech-stack">Tech | Stack | Here</div>
                 </div>
             </div>
@@ -155,20 +99,20 @@
     <section id="experience">
         <h2 class="fade-in">Experience & Leadership</h2>
         <div class="project-grid">
-            <div class="project-card fade-in">
+            <div class="project-card fade-in" data-experience="icpep">
                 <div class="image-placeholder"><span>[Exhibit / Org Photo]</span></div>
                 <h3 class="project-title">President | ICpEP.SE - JRU Chapter</h3>
                 <p>Leading the student organization (2025-Current) and previously served as Secretary. Managed official chapter correspondence and maintained meticulous administrative documentation.</p>
             </div>
-            <div class="project-card fade-in">
+            <div class="project-card fade-in" data-experience="awslc">
                 <div class="image-placeholder"><span>[AWSLC / Finance Photo]</span></div>
                 <h3 class="project-title">Finance Officer | AWSLC - JRU Chapter</h3>
                 <p>Responsible for managing and tracking the chapter's financial records utilizing Google Sheets and Excel for accurate record maintenance and budget oversight.</p>
             </div>
-            <div class="project-card fade-in">
+            <div class="project-card fade-in" data-experience="solar-energy">
                 <div class="image-placeholder"><span>[Outreach Photo]</span></div>
                 <h3 class="project-title">Solar Energy Outreach Leader</h3>
-                <p>Spearheaded a community outreach program in November 2025 focused on educating and implementing solar energy solutions for local communities.</p>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
             </div>
         </div>
     </section>
@@ -177,28 +121,36 @@
         <h2 class="fade-in">Certifications & Academic Achievements</h2>
         <div class="project-grid">
             
-            <div class="project-card fade-in">
+            <div class="project-card fade-in" data-certification="toeic">
                 <div class="image-placeholder"><span>[TOEIC Certificate Image]</span></div>
                 <h3 class="project-title">TOEIC Perfect Score</h3>
                 <p>Achieved a 990/990 on the Test of English for International Communication (ETS).</p>
                 <div class="tech-stack">November 2023</div>
             </div>
             
-            <div class="project-card fade-in">
+            <div class="project-card fade-in" data-certification="comptia">
                 <img src="images/comptia cert.png" class="project-img" alt="CompTIA Tech+ Certificate">
                 <h3 class="project-title">CompTIA Tech+</h3>
                 <p>Foundational IT certification validating skills in basic technology concepts and hardware.</p>
                 <div class="tech-stack">September 2025</div>
             </div>
             
-            <div class="project-card fade-in">
+            <div class="project-card fade-in" data-certification="java">
                 <img src="images/java cert.png" class="project-img" alt="IT Specialist - Java Certificate">
                 <h3 class="project-title">IT Specialist - Java</h3>
                 <p>Certified by Certiport (A Pearson VUE Business) in Java programming fundamentals.</p>
                 <div class="tech-stack">May 2024</div>
             </div>
+
+            <div class="project-card fade-in" data-certification="aws-ml">
+                <div class="image-placeholder"><span>[AWS Certificate Image]</span></div>
+                <h3 class="project-title">AWS Academy Machine Learning Graduate</h3>
+                <p>Certified as an AWS Academy Machine Learning Graduate, demonstrating proficiency in machine learning concepts and AWS technologies.</p>
+                <div class="tech-stack">2025</div>
+            </div>
             
         </div>
+
     </section>
 
     <footer id="contact" class="fade-in">
@@ -229,13 +181,11 @@
     </footer>
 
     <div id="project-modal" class="modal">
-        <div class="modal-content">
+        <div class="modal-content modal-expanded">
             <span class="close-btn">&times;</span>
-            <h2 id="modal-title">Project Title</h2>
-            <div class="modal-gallery" id="modal-gallery">
-                </div>
-            <p id="modal-desc">Detailed project description goes here...</p>
-            <div class="tech-stack" id="modal-tech">Tech Stack</div>
+            <div id="modal-body">
+                <!-- Dynamic content will be inserted here -->
+            </div>
         </div>
     </div>
 
