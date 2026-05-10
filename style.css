@@ -952,6 +952,16 @@ footer h2 { color: var(--text-primary); }
     background-color: rgba(212, 196, 168, 0.07);
     border: 1px dashed rgba(212, 196, 168, 0.3);
     transition: background-color 0.25s ease, border-color 0.25s ease;
+    overflow: hidden;
+    padding: 5px; /* breathing room between icon and border */
+}
+
+/* Any img placed inside the wrapper fills it cleanly */
+.skill-icon-wrap img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    display: block;
 }
 
 .skill-item:hover .skill-icon-wrap {
@@ -971,7 +981,7 @@ footer h2 { color: var(--text-primary); }
 /* Skill name — standard */
 .skill-name {
     font-size: 0.95rem;
-    color: var(--text-secondary);
+    color: var(--text-primary);
     font-weight: 500;
     transition: color 0.25s ease;
 }
@@ -992,6 +1002,8 @@ footer h2 { color: var(--text-primary); }
     background-color: rgba(212, 196, 168, 0.1);
     border-color: rgba(212, 196, 168, 0.4);
     border-style: solid;
+    overflow: hidden;
+    padding: 7px; /* slightly more room for the larger prominent box */
 }
 
 .skill-item.skill-prominent .skill-icon-placeholder {
