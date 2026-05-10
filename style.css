@@ -761,57 +761,182 @@ footer h2 { color: var(--text-primary); }
 }
 
 .hero-image-wrapper {
-    flex: 1; /* Image takes remaining 1/3 space */
+    flex: 1;
     display: flex;
     justify-content: center;
-    align-items: center;
+    align-items: stretch; /* stretch to full hero height */
+}
+
+/* =============================================
+   Hero Flip Card
+   ============================================= */
+
+.flip-card {
+    width: 100%;
+    max-width: 460px;
+    aspect-ratio: 3 / 4;
+    perspective: 1200px;
+    cursor: pointer;
+    /* Lift + glow live here so they work on both faces */
+    transition: transform 0.35s ease, box-shadow 0.35s ease;
+    border-radius: 8px;
+    box-shadow: 0 0 20px rgba(212, 196, 168, 0.15), 0 4px 12px rgba(0,0,0,0.2);
+}
+
+.flip-card:hover {
+    transform: translateY(-8px) scale(1.02);
+    box-shadow:
+        0 10px 30px rgba(212, 196, 168, 0.28),
+        0 0 0 1px rgba(212, 196, 168, 0.15);
+}
+
+.flip-card-front,
+.flip-card-back {
+    position: absolute;
+    inset: 0;
+    border-radius: 8px;
+    backface-visibility: hidden;
+    -webkit-backface-visibility: hidden;
+    transition: transform 0.7s cubic-bezier(0.4, 0.2, 0.2, 1);
+    overflow: hidden;
+}
+
+/* Needed so front/back stack on top of each other */
+.flip-card {
+    position: relative;
+}
+
+/* Front */
+.flip-card-front {
+    transform: rotateY(0deg);
+    border: 2px solid var(--accent);
 }
 
 .hero-photo {
     width: 100%;
-    max-width: 400px; /* Standard size */
-    height: auto;
+    height: 100%;
     object-fit: cover;
-    
-    /* Adds the same professional border/glow as your certificates */
+    display: block;
+    border-radius: 6px;
+}
+
+/* Back — starts rotated away */
+.flip-card-back {
+    transform: rotateY(180deg);
+    background-color: var(--card-bg);
     border: 2px solid var(--accent);
-    border-radius: 8px; /* Slightly more rounded than cards */
-    box-shadow: 0 0 20px rgba(212, 196, 168, 0.2); /* Accent color glow */
-    
-    transition: transform 0.4s ease, box-shadow 0.4s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
-.hero-photo-link {
-    display: inline-block;
-    cursor: pointer;
+/* Flipped state */
+.flip-card.flipped .flip-card-front {
+    transform: rotateY(-180deg);
+}
+
+.flip-card.flipped .flip-card-back {
+    transform: rotateY(0deg);
+}
+
+/* Back content */
+.flip-card-back-inner {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 1.25rem;
+    padding: 2rem;
+    width: 100%;
+    text-align: center;
+}
+
+.flip-name {
+    font-size: 1.05rem;
+    font-weight: 700;
+    color: var(--text-primary);
+    letter-spacing: 0.5px;
+    line-height: 1.3;
+    margin: 0;
+    max-width: 100%;
+}
+
+.flip-divider {
+    width: 40px;
+    height: 1px;
+    background-color: var(--accent);
+    opacity: 0.6;
+}
+
+.flip-links {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+    width: 100%;
+}
+
+.flip-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.6rem;
+    padding: 0.7rem 1.25rem;
+    border-radius: 4px;
+    border: 1px solid rgba(212, 196, 168, 0.3);
+    background-color: rgba(212, 196, 168, 0.05);
+    color: var(--text-secondary);
     text-decoration: none;
+    font-size: 0.88rem;
+    font-weight: 500;
+    letter-spacing: 0.5px;
+    transition: background-color 0.25s ease, border-color 0.25s ease, color 0.25s ease, transform 0.2s ease;
 }
 
-.hero-photo:hover {
-    transform: scale(1.05) translateY(-5px); /* Professional hover lift */
-    box-shadow: 0 10px 30px rgba(212, 196, 168, 0.3); /* Stronger glow on hover */
+.flip-btn:hover {
+    background-color: var(--accent);
+    border-color: var(--accent);
+    color: var(--bg-primary);
+    transform: translateY(-2px);
+}
+
+.flip-hint {
+    font-size: 0.72rem;
+    color: var(--text-secondary);
+    opacity: 0.5;
+    margin: 0;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+/* Bottom row: badges + education side by side */
+.hero-bottom-row {
+    display: flex;
+    gap: 3rem;
+    margin-top: 3rem;
+    padding-top: 2rem;
+    border-top: 1px solid rgba(212, 196, 168, 0.3);
+    align-items: flex-start;
 }
 
 /* Certification Badges Section */
 .certification-badges {
-    margin-top: 3rem;
-    padding-top: 2rem;
-    border-top: 1px solid rgba(212, 196, 168, 0.3);
+    flex-shrink: 0;
 }
 
-.certification-badges h3 {
-    font-size: 1.1rem;
+.certification-badges h3,
+.hero-education h3 {
+    font-size: 0.8rem;
+    font-weight: 700;
     color: var(--accent);
     text-transform: uppercase;
-    letter-spacing: 1px;
-    margin-bottom: 1.5rem;
-    font-weight: 600;
+    letter-spacing: 2px;
+    margin-bottom: 1rem;
 }
 
 .badges-container {
-    display: flex;
-    gap: 1.5rem;
-    flex-wrap: wrap;
+    display: grid;
+    grid-template-columns: repeat(2, 100px);
+    gap: 0.75rem;
 }
 
 .badge-img {
@@ -826,8 +951,119 @@ footer h2 { color: var(--text-primary); }
 }
 
 .badge-img:hover {
-    transform: scale(1.1);
+    transform: scale(1.08);
     box-shadow: 0 4px 12px rgba(212, 196, 168, 0.2);
+}
+
+/* Education */
+.hero-education {
+    flex: 1;
+}
+
+.education-list {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+    position: relative;
+    /* left padding makes room for the dot + line */
+    padding-left: 1.25rem;
+}
+
+/* The vertical line */
+.education-list::before {
+    content: '';
+    position: absolute;
+    left: 3px;
+    top: 8px;
+    bottom: 8px;
+    width: 1px;
+    background: linear-gradient(
+        to bottom,
+        rgba(212, 196, 168, 0.15),
+        rgba(212, 196, 168, 0.4),
+        rgba(212, 196, 168, 0.15)
+    );
+}
+
+.education-item {
+    display: flex;
+    flex-direction: column;
+    gap: 0.2rem;
+    position: relative;
+    padding-bottom: 1.25rem;
+}
+
+.education-item:last-child {
+    padding-bottom: 0;
+}
+
+/* Dot — positioned over the line */
+.education-item::before {
+    content: '';
+    position: absolute;
+    left: -1.25rem;
+    top: 0.35rem;
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background-color: rgba(212, 196, 168, 0.35);
+    z-index: 1;
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Active (current) entry — glowing dot */
+.education-item.education-active::before {
+    background-color: var(--accent);
+    box-shadow:
+        0 0 6px rgba(212, 196, 168, 0.9),
+        0 0 14px rgba(212, 196, 168, 0.5),
+        0 0 24px rgba(212, 196, 168, 0.25);
+}
+
+.education-item.education-active .education-year {
+    color: var(--accent);
+}
+
+.education-item.education-active .education-details strong {
+    color: var(--text-primary);
+}
+
+.education-year {
+    font-size: 0.75rem;
+    font-weight: 700;
+    color: var(--accent);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    white-space: nowrap;
+    padding-top: 0.1rem;
+    min-width: 90px;
+}
+
+.education-details {
+    display: flex;
+    flex-direction: column;
+    gap: 0.2rem;
+}
+
+.education-details strong {
+    font-size: 0.9rem;
+    color: var(--text-primary);
+    font-weight: 600;
+    line-height: 1.3;
+}
+
+.education-details span {
+    font-size: 0.8rem;
+    color: var(--text-secondary);
+}
+
+.certification-badges h3 {
+    font-size: 0.8rem;
+    color: var(--accent);
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin-bottom: 1rem;
+    font-weight: 700;
 }
 
 /* Button Grouping */
@@ -851,29 +1087,43 @@ footer h2 { color: var(--text-primary); }
 /* Mobile Responsiveness for Hero */
 @media (max-width: 900px) {
     .hero-container {
-        flex-direction: column-reverse; /* Stacks image on top of text */
+        flex-direction: column-reverse;
         gap: 3rem;
         text-align: center;
     }
-    
+
     .hero-text-content {
         text-align: center;
     }
-    
+
     .hero-btns {
         justify-content: center;
     }
-    
+
     .hero-photo {
-        max-width: 250px;
+        max-width: 280px;
+    }
+
+    .flip-card {
+        max-width: 280px;
+    }
+
+    .hero-bottom-row {
+        flex-direction: column;
+        gap: 2rem;
     }
 
     .badges-container {
-        justify-content: center;
+        justify-items: center;
+        grid-template-columns: repeat(2, 100px);
     }
 
     .certification-badges {
-        margin-top: 2rem;
+        margin-top: 0;
+    }
+
+    .education-year {
+        min-width: 80px;
     }
 }
 

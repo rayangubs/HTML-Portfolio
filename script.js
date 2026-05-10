@@ -608,7 +608,17 @@ document.addEventListener("DOMContentLoaded", function() {
         }
     });
 
-    // 5. Badge Lightbox
+    // 5. Hero Flip Card
+    const heroFlipCard = document.getElementById('heroFlipCard');
+    if (heroFlipCard) {
+        heroFlipCard.addEventListener('click', function(e) {
+            // Don't flip if clicking a link on the back face
+            if (e.target.closest('.flip-btn')) return;
+            heroFlipCard.classList.toggle('flipped');
+        });
+    }
+
+    // 6. Badge Lightbox
     const badgeLightbox    = document.getElementById('badge-lightbox');
     const badgeLightboxImg = document.getElementById('badge-lightbox-img');
     const badgeLightboxClose = document.querySelector('.badge-lightbox-close');
