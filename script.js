@@ -12,6 +12,25 @@ document.addEventListener("DOMContentLoaded", function() {
         });
     }
 
+    // 1b. Hamburger menu toggle
+    const navToggle = document.getElementById('navToggle');
+    const navMenu   = document.getElementById('navMenu');
+    if (navToggle && navMenu) {
+        navToggle.addEventListener('click', () => {
+            const isOpen = navMenu.classList.toggle('open');
+            navToggle.classList.toggle('open', isOpen);
+            navToggle.setAttribute('aria-expanded', isOpen);
+        });
+        // Close menu when a link is tapped
+        navMenu.querySelectorAll('a').forEach(link => {
+            link.addEventListener('click', () => {
+                navMenu.classList.remove('open');
+                navToggle.classList.remove('open');
+                navToggle.setAttribute('aria-expanded', false);
+            });
+        });
+    }
+
     // 2. Intersection Observer for Fade-In Animations
     const fadeElements = document.querySelectorAll('.fade-in');
 
