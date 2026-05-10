@@ -67,7 +67,7 @@ document.addEventListener("DOMContentLoaded", function() {
                 number: 4,
                 title: "Quality Education",
                 description: "This project aligns with SDG 4 by providing innovative tools for improved education quality.",
-                imagePlaceholder: "[SDG 4 Logo]"
+                imgSrc: "images/sdg/4.jpg" // e.g. "images/sdg-4.png"
             }
         },
         "save-share": {
@@ -112,7 +112,7 @@ document.addEventListener("DOMContentLoaded", function() {
                 number: 12,
                 title: "Responsible Consumption & Production",
                 description: "FarVent addresses food waste and promotes sustainable consumption patterns.",
-                imagePlaceholder: "[SDG 12 Logo]"
+                imgSrc: "images/sdg/12.jpg" // e.g. "images/sdg-12.png"
             }
         },
         "face-recognition": {
@@ -124,14 +124,14 @@ document.addEventListener("DOMContentLoaded", function() {
                     title: "Documentation",
                     type: "buttons",
                     items: [
-                        { label: "Journal Article", url: "https://drive.google.com/file/d/1example/view?usp=sharing" }
+                        { label: "Documentation", url: "https://drive.google.com/file/d/1_3eCuGzC6T9t8dYM917FDV4GxwMflvsp/view?usp=sharing" }
                     ]
                 },
                 {
                     title: "Software Demonstration",
                     type: "media",
                     description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
-                    videoUrl: "videos/face-recognition-demo.mp4",
+                    videoUrl: "videos/attendance demo.mp4",
                     websiteUrl: "https://example.com"
                 }
             ],
@@ -140,7 +140,7 @@ document.addEventListener("DOMContentLoaded", function() {
                 number: 4,
                 title: "Quality Education",
                 description: "This project enhances educational efficiency through automated attendance management.",
-                imagePlaceholder: "[SDG 4 Logo]"
+                imgSrc: "images/sdg/4.jpg" // e.g. "images/sdg-4.png"
             }
         },
         "smart-house": {
@@ -152,17 +152,17 @@ document.addEventListener("DOMContentLoaded", function() {
                     title: "Project Images",
                     type: "gallery",
                     images: [
-                        { src: "", placeholder: "[Smart House Image 1]" },
-                        { src: "", placeholder: "[Smart House Image 2]" },
-                        { src: "", placeholder: "[Smart House Image 3]" }
+                        { src: "" }, // e.g. "images/smart-house-1.jpg"
+                        { src: "" }, // e.g. "images/smart-house-2.jpg"
+                        { src: "" }  // e.g. "images/smart-house-3.jpg"
                     ]
                 },
                 {
                     title: "Code Snapshots",
                     type: "gallery",
                     images: [
-                        { src: "", placeholder: "[Code Snapshot 1]" },
-                        { src: "", placeholder: "[Code Snapshot 2]" }
+                        { src: "" }, // e.g. "images/smart-house-code-1.jpg"
+                        { src: "" }  // e.g. "images/smart-house-code-2.jpg"
                     ]
                 },
                 {
@@ -176,7 +176,7 @@ document.addEventListener("DOMContentLoaded", function() {
                 number: 7,
                 title: "Affordable & Clean Energy",
                 description: "The smart house optimizes energy consumption through automation and control.",
-                imagePlaceholder: "[SDG 7 Logo]"
+                imgSrc: "images/sdg/7.jpg" // e.g. "images/sdg-7.png"
             }
         },
         "project-5": {
@@ -188,17 +188,17 @@ document.addEventListener("DOMContentLoaded", function() {
                     title: "Project Images",
                     type: "gallery",
                     images: [
-                        { src: "", placeholder: "[Image 1]" },
-                        { src: "", placeholder: "[Image 2]" },
-                        { src: "", placeholder: "[Image 3]" }
+                        { src: "" }, // e.g. "images/project5-1.jpg"
+                        { src: "" }, // e.g. "images/project5-2.jpg"
+                        { src: "" }  // e.g. "images/project5-3.jpg"
                     ]
                 },
                 {
                     title: "Code Snapshots",
                     type: "gallery",
                     images: [
-                        { src: "", placeholder: "[Code Snapshot 1]" },
-                        { src: "", placeholder: "[Code Snapshot 2]" }
+                        { src: "" }, // e.g. "images/project5-code-1.jpg"
+                        { src: "" }  // e.g. "images/project5-code-2.jpg"
                     ]
                 },
                 {
@@ -212,7 +212,7 @@ document.addEventListener("DOMContentLoaded", function() {
                 number: 0,
                 title: "To Be Determined",
                 description: "Filler description for SDG alignment.",
-                imagePlaceholder: "[SDG Logo]"
+                imgSrc: "" // e.g. "images/sdg-X.png"
             }
         },
         "project-6": {
@@ -224,17 +224,17 @@ document.addEventListener("DOMContentLoaded", function() {
                     title: "Project Images",
                     type: "gallery",
                     images: [
-                        { src: "", placeholder: "[Image 1]" },
-                        { src: "", placeholder: "[Image 2]" },
-                        { src: "", placeholder: "[Image 3]" }
+                        { src: "" }, // e.g. "images/project6-1.jpg"
+                        { src: "" }, // e.g. "images/project6-2.jpg"
+                        { src: "" }  // e.g. "images/project6-3.jpg"
                     ]
                 },
                 {
                     title: "Code Snapshots",
                     type: "gallery",
                     images: [
-                        { src: "", placeholder: "[Code Snapshot 1]" },
-                        { src: "", placeholder: "[Code Snapshot 2]" }
+                        { src: "" }, // e.g. "images/project6-code-1.jpg"
+                        { src: "" }  // e.g. "images/project6-code-2.jpg"
                     ]
                 },
                 {
@@ -248,7 +248,7 @@ document.addEventListener("DOMContentLoaded", function() {
                 number: 0,
                 title: "To Be Determined",
                 description: "Filler description for SDG alignment.",
-                imagePlaceholder: "[SDG Logo]"
+                imgSrc: "" // e.g. "images/sdg-X.png"
             }
         }
     };
@@ -327,35 +327,35 @@ document.addEventListener("DOMContentLoaded", function() {
         "toeic": {
             title: "TOEIC Perfect Score",
             description: "Achieved a perfect score of 990/990 on the Test of English for International Communication (TOEIC) examination administered by ETS. This certification demonstrates exceptional proficiency in English language skills for international business and academic communication.",
-            image: { src: "", placeholder: "[TOEIC Certificate Full Image]" },
+            image: { src: "" }, // e.g. "images/toeic-cert.jpg"
             date: "November 2023",
             issuer: "ETS (Educational Testing Service)"
         },
         "comptia": {
             title: "CompTIA Tech+",
             description: "CompTIA Technology+ certification validates foundational IT skills and knowledge in areas such as hardware, software, networking, and security. This certification demonstrates competence in the fundamental concepts and practices of modern information technology.",
-            image: { src: "images/comptia cert.png", placeholder: "" },
+            image: { src: "images/comptia cert.png" },
             date: "September 2025",
             issuer: "CompTIA"
         },
         "java": {
             title: "IT Specialist - Java",
             description: "Certified by Certiport as an IT Specialist in Java programming fundamentals. This certification validates proficiency in Java programming concepts, object-oriented programming principles, and practical application development skills.",
-            image: { src: "images/java cert.png", placeholder: "" },
+            image: { src: "images/java cert.png" },
             date: "May 2024",
             issuer: "Certiport (A Pearson VUE Business)"
         },
         "aws-ml": {
             title: "AWS Academy Machine Learning Graduate",
             description: "Certified as an AWS Academy Machine Learning Graduate, demonstrating comprehensive knowledge and practical skills in machine learning concepts, AWS cloud services, and data science methodologies. This certification validates expertise in building and deploying ML solutions on AWS infrastructure.",
-            image: { src: "images/aws cert.png", placeholder: "" },
+            image: { src: "images/aws cert.png" },
             date: "2026",
             issuer: "Amazon Web Services (AWS)"
         },
         "huawei-ai": {
             title: "Huawei ICT Academy - Overview of AI",
             description: "Certificate of Completion for the Overview of Artificial Intelligence course from Huawei ICT Academy. This certification covers fundamental AI concepts, machine learning principles, neural networks, and Huawei's AI technologies and solutions. Demonstrates foundational knowledge in artificial intelligence and its practical applications.",
-            image: { src: "images/huawei cert.png", placeholder: "" },
+            image: { src: "images/huawei cert.png" },
             date: "2026",
             issuer: "Huawei ICT Academy"
         }
@@ -394,7 +394,7 @@ document.addEventListener("DOMContentLoaded", function() {
         if (cert.image.src) {
             html += `<img src="${cert.image.src}" alt="${cert.title} Certificate" class="certificate-img">`;
         } else {
-            html += `<div class="certificate-img" style="display: flex; align-items: center; justify-content: center; background-color: var(--card-bg); border: 2px dashed var(--accent); min-height: 400px; max-height: 80vh; font-size: 1.2rem;">${cert.image.placeholder}</div>`;
+            html += `<img src="" alt="${cert.title} Certificate" class="certificate-img img-empty">`;
         }
 
         html += `</div></div>`;
@@ -408,27 +408,27 @@ document.addEventListener("DOMContentLoaded", function() {
             title: "President | ICpEP.SE - JRU Chapter",
             description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.",
             images: [
-                { src: "", placeholder: "[ICpEP Exhibit / Org Photo 1]" },
-                { src: "", placeholder: "[ICpEP Exhibit / Org Photo 2]" },
-                { src: "", placeholder: "[ICpEP Exhibit / Org Photo 3]" }
+                { src: "" }, // e.g. "images/icpep-1.jpg"
+                { src: "" }, // e.g. "images/icpep-2.jpg"
+                { src: "" }  // e.g. "images/icpep-3.jpg"
             ]
         },
         "awslc": {
             title: "Finance Officer | AWSLC - JRU Chapter",
             description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.",
             images: [
-                { src: "", placeholder: "[AWSLC Finance Photo 1]" },
-                { src: "", placeholder: "[AWSLC Finance Photo 2]" },
-                { src: "", placeholder: "[AWSLC Finance Photo 3]" }
+                { src: "" }, // e.g. "images/awslc-1.jpg"
+                { src: "" }, // e.g. "images/awslc-2.jpg"
+                { src: "" }  // e.g. "images/awslc-3.jpg"
             ]
         },
         "solar-energy": {
             title: "Lorem Ipsum Dolor Sit Amet",
             description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.",
             images: [
-                { src: "", placeholder: "[Outreach Photo 1]" },
-                { src: "", placeholder: "[Outreach Photo 2]" },
-                { src: "", placeholder: "[Outreach Photo 3]" }
+                { src: "" }, // e.g. "images/solar-1.jpg"
+                { src: "" }, // e.g. "images/solar-2.jpg"
+                { src: "" }  // e.g. "images/solar-3.jpg"
             ]
         }
     };
@@ -459,7 +459,7 @@ document.addEventListener("DOMContentLoaded", function() {
             if (img.src) {
                 html += `<img src="${img.src}" alt="Experience Image" class="modal-gallery-item">`;
             } else {
-                html += `<div class="modal-gallery-item" style="display: flex; align-items: center; justify-content: center; background-color: var(--card-bg); border: 2px dashed var(--accent);">${img.placeholder}</div>`;
+                html += `<img src="" alt="Experience Image" class="modal-gallery-item img-empty">`;
             }
         });
 
@@ -515,7 +515,7 @@ document.addEventListener("DOMContentLoaded", function() {
                     if (img.src) {
                         html += `<img src="${img.src}" alt="Gallery Image" class="modal-gallery-item">`;
                     } else {
-                        html += `<div class="modal-gallery-item" style="display: flex; align-items: center; justify-content: center; background-color: var(--card-bg); border: 2px dashed var(--accent);">${img.placeholder}</div>`;
+                        html += `<img src="" alt="Gallery Image" class="modal-gallery-item img-empty">`;
                     }
                 });
                 html += `</div>`;
@@ -558,7 +558,7 @@ document.addEventListener("DOMContentLoaded", function() {
                     <h3>SDG Alignment</h3>
                     <div class="sdg-section">
                         <div style="flex: 1;">
-                            <div style="width: 100px; height: 100px; border: 2px dashed var(--accent); display: flex; align-items: center; justify-content: center; border-radius: 4px; color: var(--text-secondary);">${project.sdg.imagePlaceholder}</div>
+                            <img src="${project.sdg.imgSrc}" alt="SDG ${project.sdg.number}" class="sdg-logo${project.sdg.imgSrc ? '' : ' img-empty'}">
                         </div>
                         <div class="sdg-info" style="flex: 2;">
                             <h4>SDG ${project.sdg.number}: ${project.sdg.title}</h4>
@@ -607,4 +607,48 @@ document.addEventListener("DOMContentLoaded", function() {
             closeModal();
         }
     });
+
+    // 5. Badge Lightbox
+    const badgeLightbox    = document.getElementById('badge-lightbox');
+    const badgeLightboxImg = document.getElementById('badge-lightbox-img');
+    const badgeLightboxClose = document.querySelector('.badge-lightbox-close');
+
+    function openBadgeLightbox(src, alt) {
+        if (!badgeLightbox || !badgeLightboxImg) return;
+        badgeLightboxImg.src = src;
+        badgeLightboxImg.alt = alt;
+        badgeLightbox.classList.add('open');
+        document.body.style.overflow = 'hidden';
+    }
+
+    function closeBadgeLightbox() {
+        if (!badgeLightbox) return;
+        badgeLightbox.classList.remove('open');
+        document.body.style.overflow = 'auto';
+    }
+
+    // Click any badge image to open lightbox
+    document.querySelectorAll('.badge-img').forEach(img => {
+        img.addEventListener('click', () => openBadgeLightbox(img.src, img.alt));
+    });
+
+    // Close on backdrop click
+    if (badgeLightbox) {
+        badgeLightbox.addEventListener('click', (e) => {
+            if (e.target === badgeLightbox) closeBadgeLightbox();
+        });
+    }
+
+    // Close on X button
+    if (badgeLightboxClose) {
+        badgeLightboxClose.addEventListener('click', closeBadgeLightbox);
+    }
+
+    // Close on Escape key
+    document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape' && badgeLightbox && badgeLightbox.classList.contains('open')) {
+            closeBadgeLightbox();
+        }
+    });
+
 });
