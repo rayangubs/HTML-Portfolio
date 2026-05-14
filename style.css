@@ -1621,6 +1621,17 @@ img.img-empty::before {
     }
 }
 
+/* ---- Very small screens: single-column gallery ---- */
+@media (max-width: 480px) {
+    .modal-gallery-section {
+        grid-template-columns: 1fr;
+    }
+
+    .modal-gallery-item {
+        height: 180px;
+    }
+}
+
 /* ---- Flip card back content ---- */
 @media (max-width: 768px) {
     .flip-card-back-inner {

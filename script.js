@@ -137,7 +137,7 @@ document.addEventListener("DOMContentLoaded", function() {
         "face-recognition": {
             course: "CPE C305, CPE C306 | Digital Signal Processing & Microcontroller",
             title: "Raspberry Pi-Based Face Recognition Classroom Attendance",
-            description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris.",
+            description: "The AI-Based Face Recognition Attendance System is a biometric solution designed to eliminate proxy attendance and manual logging errors by verifying students through unique facial features. Powered by a Raspberry Pi 4B, the system utilizes OpenCV and the LBPH algorithm to process live camera feeds for real-time identification and automated logging. It features a guided 3D enrollment module and integrates with Firebase to maintain a secure, cloud-synchronized attendance database accessible across devices.",
             sections: [
                 {
                     title: "Documentation",
@@ -149,9 +149,19 @@ document.addEventListener("DOMContentLoaded", function() {
                 {
                     title: "Software Demonstration",
                     type: "media",
-                    description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+                    description: "This demonstration highlights the system's real-time facial inference and instant cloud-synchronization for automated, error-free attendance logging.",
                     videoUrl: "videos/attendance demo.mp4",
                     websiteUrl: "https://example.com"
+                },
+                {
+                    title: "Software Screenshots",
+                    type: "gallery",
+                    images: [
+                        { src: "images/rpi 1.png", alt: "Screenshot 1" }, // e.g. "images/attendance-ss-1.png"
+                        { src: "images/rpi 2.png", alt: "Screenshot 2" }, // e.g. "images/attendance-ss-2.png"
+                        { src: "images/rpi 3.png", alt: "Screenshot 3" }, // e.g. "images/attendance-ss-3.png"
+                        { src: "images/rpi 4.png", alt: "Screenshot 4" }  // e.g. "images/attendance-ss-4.png"
+                    ]
                 }
             ],
             technologies: ["Raspberry Pi", "Python", "OpenCV", "Face Recognition"],
@@ -171,7 +181,7 @@ document.addEventListener("DOMContentLoaded", function() {
                     title: "Project Images",
                     type: "gallery",
                     images: [
-                        { src: "" }, // e.g. "images/smart-house-1.jpg"
+                        { src: "images/smart-1.png" }, // e.g. "images/smart-house-1.jpg"
                         { src: "" }, // e.g. "images/smart-house-2.jpg"
                         { src: "" }  // e.g. "images/smart-house-3.jpg"
                     ]
@@ -531,10 +541,11 @@ document.addEventListener("DOMContentLoaded", function() {
             else if (section.type === "gallery") {
                 html += `<div class="modal-gallery-section">`;
                 section.images.forEach(img => {
+                    const altText = img.alt || "Gallery Image";
                     if (img.src) {
-                        html += `<img src="${img.src}" alt="Gallery Image" class="modal-gallery-item">`;
+                        html += `<img src="${img.src}" alt="${altText}" class="modal-gallery-item">`;
                     } else {
-                        html += `<img src="" alt="Gallery Image" class="modal-gallery-item img-empty">`;
+                        html += `<img src="" alt="${altText}" class="modal-gallery-item img-empty">`;
                     }
                 });
                 html += `</div>`;
