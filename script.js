@@ -54,10 +54,62 @@ document.addEventListener("DOMContentLoaded", function() {
         appearOnScroll.observe(element);
     });
 
-    // 3. Project Details Database    // VIDEO SETUP: Place your video files in the 'videos/' directory
-    // Supported formats: MP4, WebM, OGV
-    // Update the videoUrl paths below to match your video filenames    
+    // 3. Project Details Database
     const projectDetails = {
+        "field-service-nlp": {
+            course: "BS Computer Engineering | Natural Language Processing & OCR",
+            title: "AUTOMATED STRUCTURING OF FIELD SERVICE REPORTS FOR RECORD ENTRY USING INFORMATION EXTRACTION AND TEXT CLASSIFICATION",
+            description: "An end-to-end NLP and document processing pipeline designed to digitize and extract critical structured records from handwritten and scanned field service reports for CRM and ERP entry. Utilizing TrOCR for optical character recognition, Conditional Random Fields (CRF) for named entity recognition, and fine-tuned Transformer models (RoBERTa / BERT) for document classification, the system transforms noisy handwritten physical forms into human-in-the-loop review-and-confirm CRM records, robustly mitigating OCR degradation.",
+            contributions: "Addresses the critical enterprise bottleneck of handwritten paperwork digitization by formulating an automated Information Extraction and Text Classification architecture. Evaluating model degradation across varying OCR noise levels bridges computer vision with state-of-the-art transformer NLP.",
+            sections: [
+                {
+                    title: "Architecture & Methodology",
+                    type: "description",
+                    text: "The pipeline consists of a TrOCR vision-encoder-decoder for optical character recognition on handwritten forms, a Conditional Random Field (CRF) layer for token-level sequence labeling, and a fine-tuned RoBERTa classification backbone for intent and document categorization. Evaluated using entity F1 and macro-F1 metrics."
+                },
+                {
+                    title: "Key Deliverables",
+                    type: "buttons",
+                    items: [
+                        { label: "Research Overview", url: "https://drive.google.com/file/d/1Uaw2FII08Z_PJ1tykyrdUth6LuTcXI0w/view?usp=sharing" }
+                    ]
+                }
+            ],
+            technologies: ["Python", "RoBERTa / BERT", "TrOCR", "CRF", "spaCy", "Transformers", "NLP"],
+            sdg: {
+                number: 9,
+                title: "Industry, Innovation and Infrastructure",
+                description: "Modernizes enterprise data processing by replacing manual paper workflows with automated intelligent document extraction.",
+                imgSrc: "images/sdg/9.jpg"
+            }
+        },
+        "student-stress-ml": {
+            course: "BS Computer Engineering | Machine Learning & Statistical Modeling",
+            title: "PREDICTING STUDENT STRESS FROM SLEEP, STUDY, AND CAFFEINE HABITS: A COMPARATIVE STUDY OF LINEAR, LOGISTIC, AND K-NEAREST NEIGHBORS CLASSIFIERS",
+            description: "A comparative machine learning research study investigating the predictive relationship between student lifestyle habits (sleep hours, study workload, caffeine intake, screen time) and physiological stress levels. Implemented, benchmarked, and cross-validated Linear Regression, Logistic Regression, and K-Nearest Neighbors (K-NN) classifiers evaluated with accuracy, precision, recall, and macro-F1.",
+            contributions: "Analyzed multi-dimensional student lifestyle data, executed exploratory data analysis (EDA), and conducted rigorous model evaluation to understand feature importance and predict high vs. low stress patterns.",
+            sections: [
+                {
+                    title: "Experimental Methodology",
+                    type: "description",
+                    text: "Evaluated supervised learning classifiers (Linear Regression, Logistic Regression, K-NN) with 10-fold cross validation. Analyzed confusion matrices, ROC-AUC, and feature coefficients to determine the strongest behavioral predictors of academic stress."
+                },
+                {
+                    title: "Study Documentation",
+                    type: "buttons",
+                    items: [
+                        { label: "Comparative Report", url: "https://drive.google.com/file/d/1Uaw2FII08Z_PJ1tykyrdUth6LuTcXI0w/view?usp=sharing" }
+                    ]
+                }
+            ],
+            technologies: ["Python", "scikit-learn", "Logistic Regression", "K-NN", "pandas", "NumPy", "Matplotlib", "Seaborn"],
+            sdg: {
+                number: 3,
+                title: "Good Health and Well-Being",
+                description: "Utilizes predictive behavioral data modeling to identify lifestyle risk factors and promote preventative student mental wellness.",
+                imgSrc: "images/sdg/3.jpg"
+            }
+        },
         "pose-estimation": {
             course: "CPE C313 | Artificial Intelligence",
             title: "Web-Based Human Pose Estimation System for Real-Time Squat Form Correction using Teachable Machine",
@@ -77,7 +129,7 @@ document.addEventListener("DOMContentLoaded", function() {
                     title: "Demonstration",
                     type: "media",
                     description: "This project demonstrates the real-time capabilities of the AI-powered squat form correction system.",
-                    videoUrl: "videos/AI demo.mkv",
+                    videoUrl: "videos/AI demo.mp4",
                     websiteUrl: "https://example.com"
                 }
             ],
@@ -86,6 +138,44 @@ document.addEventListener("DOMContentLoaded", function() {
                 number: 4,
                 title: "Quality Education",
                 description: "This project aligns with SDG 4 by providing innovative tools for improved education quality.",
+                imgSrc: "images/sdg/4.jpg" // e.g. "images/sdg-4.png"
+            }
+        },
+        "face-recognition": {
+            course: "CPE C305, CPE C306 | Digital Signal Processing & Microcontroller",
+            title: "Raspberry Pi-Based Face Recognition Classroom Attendance",
+            description: "The AI-Based Face Recognition Attendance System is a biometric solution designed to eliminate proxy attendance and manual logging errors by verifying students through unique facial features. Powered by a Raspberry Pi 4B, the system utilizes OpenCV and the LBPH algorithm to process live camera feeds for real-time identification and automated logging. It features a guided 3D enrollment module and integrates with Firebase to maintain a secure, cloud-synchronized attendance database accessible across devices.",
+            sections: [
+                {
+                    title: "Documentation",
+                    type: "buttons",
+                    items: [
+                        { label: "Documentation", url: "https://drive.google.com/file/d/1_3eCuGzC6T9t8dYM917FDV4GxwMflvsp/view?usp=sharing" }
+                    ]
+                },
+                {
+                    title: "Software Demonstration",
+                    type: "media",
+                    description: "This demonstration highlights the system's real-time facial inference and instant cloud-synchronization for automated, error-free attendance logging.",
+                    videoUrl: "videos/attendance demo.mp4",
+                    websiteUrl: "https://example.com"
+                },
+                {
+                    title: "Software Screenshots",
+                    type: "gallery",
+                    images: [
+                        { src: "images/rpi 1.png", alt: "Screenshot 1" }, // e.g. "images/attendance-ss-1.png"
+                        { src: "images/rpi 2.png", alt: "Screenshot 2" }, // e.g. "images/attendance-ss-2.png"
+                        { src: "images/rpi 3.png", alt: "Screenshot 3" }, // e.g. "images/attendance-ss-3.png"
+                        { src: "images/rpi 4.png", alt: "Screenshot 4" }  // e.g. "images/attendance-ss-4.png"
+                    ]
+                }
+            ],
+            technologies: ["Raspberry Pi", "Python", "OpenCV", "Face Recognition"],
+            sdg: {
+                number: 4,
+                title: "Quality Education",
+                description: "This project enhances educational efficiency through automated attendance management.",
                 imgSrc: "images/sdg/4.jpg" // e.g. "images/sdg-4.png"
             }
         },
@@ -133,208 +223,12 @@ document.addEventListener("DOMContentLoaded", function() {
                 description: "FarVent addresses food waste and promotes sustainable consumption patterns.",
                 imgSrc: "images/sdg/12.jpg" // e.g. "images/sdg-12.png"
             }
-        },
-        "face-recognition": {
-            course: "CPE C305, CPE C306 | Digital Signal Processing & Microcontroller",
-            title: "Raspberry Pi-Based Face Recognition Classroom Attendance",
-            description: "The AI-Based Face Recognition Attendance System is a biometric solution designed to eliminate proxy attendance and manual logging errors by verifying students through unique facial features. Powered by a Raspberry Pi 4B, the system utilizes OpenCV and the LBPH algorithm to process live camera feeds for real-time identification and automated logging. It features a guided 3D enrollment module and integrates with Firebase to maintain a secure, cloud-synchronized attendance database accessible across devices.",
-            sections: [
-                {
-                    title: "Documentation",
-                    type: "buttons",
-                    items: [
-                        { label: "Documentation", url: "https://drive.google.com/file/d/1_3eCuGzC6T9t8dYM917FDV4GxwMflvsp/view?usp=sharing" }
-                    ]
-                },
-                {
-                    title: "Software Demonstration",
-                    type: "media",
-                    description: "This demonstration highlights the system's real-time facial inference and instant cloud-synchronization for automated, error-free attendance logging.",
-                    videoUrl: "videos/attendance demo.mp4",
-                    websiteUrl: "https://example.com"
-                },
-                {
-                    title: "Software Screenshots",
-                    type: "gallery",
-                    images: [
-                        { src: "images/rpi 1.png", alt: "Screenshot 1" }, // e.g. "images/attendance-ss-1.png"
-                        { src: "images/rpi 2.png", alt: "Screenshot 2" }, // e.g. "images/attendance-ss-2.png"
-                        { src: "images/rpi 3.png", alt: "Screenshot 3" }, // e.g. "images/attendance-ss-3.png"
-                        { src: "images/rpi 4.png", alt: "Screenshot 4" }  // e.g. "images/attendance-ss-4.png"
-                    ]
-                }
-            ],
-            technologies: ["Raspberry Pi", "Python", "OpenCV", "Face Recognition"],
-            sdg: {
-                number: 4,
-                title: "Quality Education",
-                description: "This project enhances educational efficiency through automated attendance management.",
-                imgSrc: "images/sdg/4.jpg" // e.g. "images/sdg-4.png"
-            }
-        },
-        "smart-house": {
-            course: "CPE C306 | Microcontroller",
-            title: "Miniature Smart House",
-            description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris.",
-            sections: [
-                {
-                    title: "Project Images",
-                    type: "gallery",
-                    images: [
-                        { src: "images/smart-1.png" }, // e.g. "images/smart-house-1.jpg"
-                        { src: "" }, // e.g. "images/smart-house-2.jpg"
-                        { src: "" }  // e.g. "images/smart-house-3.jpg"
-                    ]
-                },
-                {
-                    title: "Code Snapshots",
-                    type: "gallery",
-                    images: [
-                        { src: "" }, // e.g. "images/smart-house-code-1.jpg"
-                        { src: "" }  // e.g. "images/smart-house-code-2.jpg"
-                    ]
-                },
-                {
-                    title: "Details",
-                    type: "description",
-                    text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
-                }
-            ],
-            technologies: ["Arduino", "ESP32", "C++", "IoT"],
-            sdg: {
-                number: 7,
-                title: "Affordable & Clean Energy",
-                description: "The smart house optimizes energy consumption through automation and control.",
-                imgSrc: "images/sdg/7.jpg" // e.g. "images/sdg-7.png"
-            }
-        },
-        "project-5": {
-            course: "Filler Course",
-            title: "Project 5",
-            description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-            sections: [
-                {
-                    title: "Project Images",
-                    type: "gallery",
-                    images: [
-                        { src: "" }, // e.g. "images/project5-1.jpg"
-                        { src: "" }, // e.g. "images/project5-2.jpg"
-                        { src: "" }  // e.g. "images/project5-3.jpg"
-                    ]
-                },
-                {
-                    title: "Code Snapshots",
-                    type: "gallery",
-                    images: [
-                        { src: "" }, // e.g. "images/project5-code-1.jpg"
-                        { src: "" }  // e.g. "images/project5-code-2.jpg"
-                    ]
-                },
-                {
-                    title: "Details",
-                    type: "description",
-                    text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
-                }
-            ],
-            technologies: ["Tech", "Stack", "Here"],
-            sdg: {
-                number: 0,
-                title: "To Be Determined",
-                description: "Filler description for SDG alignment.",
-                imgSrc: "" // e.g. "images/sdg-X.png"
-            }
-        },
-        "project-6": {
-            course: "Filler Course",
-            title: "Project 6",
-            description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-            sections: [
-                {
-                    title: "Project Images",
-                    type: "gallery",
-                    images: [
-                        { src: "" }, // e.g. "images/project6-1.jpg"
-                        { src: "" }, // e.g. "images/project6-2.jpg"
-                        { src: "" }  // e.g. "images/project6-3.jpg"
-                    ]
-                },
-                {
-                    title: "Code Snapshots",
-                    type: "gallery",
-                    images: [
-                        { src: "" }, // e.g. "images/project6-code-1.jpg"
-                        { src: "" }  // e.g. "images/project6-code-2.jpg"
-                    ]
-                },
-                {
-                    title: "Details",
-                    type: "description",
-                    text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
-                }
-            ],
-            technologies: ["Tech", "Stack", "Here"],
-            sdg: {
-                number: 0,
-                title: "To Be Determined",
-                description: "Filler description for SDG alignment.",
-                imgSrc: "" // e.g. "images/sdg-X.png"
-            }
         }
     };
 
     // 4. Modal Logic
     const modal = document.getElementById("project-modal");
     const closeBtn = document.querySelector(".close-btn");
-    const projectCards = document.querySelectorAll(".carousel-container .project-card");
-    const experienceCards = document.querySelectorAll("#experience .project-card[data-experience]");
-    const certificationCards = document.querySelectorAll("#certifications .project-card[data-certification]");
-
-    // Handle multiple carousels (projects and certifications)
-    const carousels = document.querySelectorAll(".projects-carousel");
-
-    carousels.forEach(carousel => {
-        const carouselContainer = carousel.querySelector(".carousel-container");
-        const carouselLeft = carousel.querySelector(".carousel-control.left");
-        const carouselRight = carousel.querySelector(".carousel-control.right");
-        const carouselWrapper = carousel;
-
-        let carouselScrollInterval = null;
-
-        function startCarouselScroll(direction) {
-            if (!carouselContainer) return;
-            stopCarouselScroll();
-            carouselScrollInterval = setInterval(() => {
-                carouselContainer.scrollBy({ left: direction, behavior: "smooth" });
-            }, 20);
-        }
-
-        function stopCarouselScroll() {
-            if (carouselScrollInterval) {
-                clearInterval(carouselScrollInterval);
-                carouselScrollInterval = null;
-            }
-        }
-
-        if (carouselLeft) {
-            carouselLeft.addEventListener("mouseenter", () => startCarouselScroll(-8));
-            carouselLeft.addEventListener("mouseleave", stopCarouselScroll);
-            carouselLeft.addEventListener("click", () => {
-                if (carouselContainer) carouselContainer.scrollBy({ left: -320, behavior: "smooth" });
-            });
-        }
-
-        if (carouselRight) {
-            carouselRight.addEventListener("mouseenter", () => startCarouselScroll(8));
-            carouselRight.addEventListener("mouseleave", stopCarouselScroll);
-            carouselRight.addEventListener("click", () => {
-                if (carouselContainer) carouselContainer.scrollBy({ left: 320, behavior: "smooth" });
-            });
-        }
-
-        if (carouselWrapper) {
-            carouselWrapper.addEventListener("mouseleave", stopCarouselScroll);
-        }
-    });
 
     // Function to pause all videos in modal
     function pauseAllVideos() {
@@ -351,42 +245,175 @@ document.addEventListener("DOMContentLoaded", function() {
         }
     }
 
+    // ─────────────────────────────────────────────
+    // Badge Lightbox (hoisted — used by pane renderers)
+    // ─────────────────────────────────────────────
+    const badgeLightbox    = document.getElementById('badge-lightbox');
+    const badgeLightboxImg = document.getElementById('badge-lightbox-img');
+    const badgeLightboxClose = document.querySelector('.badge-lightbox-close');
+
+    function openBadgeLightbox(src, alt) {
+        if (!badgeLightbox || !badgeLightboxImg) return;
+        badgeLightboxImg.src = src;
+        badgeLightboxImg.alt = alt;
+        badgeLightbox.classList.add('open');
+        document.body.style.overflow = 'hidden';
+    }
+
+    function closeBadgeLightbox() {
+        if (!badgeLightbox) return;
+        badgeLightbox.classList.remove('open');
+        document.body.style.overflow = 'auto';
+    }
+
+    // Click any hero badge image to open lightbox
+    document.querySelectorAll('.badge-img').forEach(img => {
+        img.addEventListener('click', () => openBadgeLightbox(img.src, img.alt));
+    });
+
+    // Close on backdrop click
+    if (badgeLightbox) {
+        badgeLightbox.addEventListener('click', (e) => {
+            if (e.target === badgeLightbox) closeBadgeLightbox();
+        });
+    }
+
+    // Close on X button
+    if (badgeLightboxClose) {
+        badgeLightboxClose.addEventListener('click', closeBadgeLightbox);
+    }
+
     // Certification Details Database
     const certificationDetails = {
-        "toeic": {
-            title: "TOEIC Perfect Score",
-            description: "Achieved a perfect score of 990/990 on the Test of English for International Communication (TOEIC) examination administered by ETS. This certification demonstrates exceptional proficiency in English language skills for international business and academic communication.",
-            image: { src: "" }, // e.g. "images/toeic-cert.jpg"
-            date: "November 2023",
-            issuer: "ETS (Educational Testing Service)"
+        "aws-cloud-practitioner": {
+            title: "AWS Certified Cloud Practitioner",
+            description: "Validates foundational, high-level understanding of AWS Cloud services, architectural best practices, security, compliance, billing, and core cloud infrastructure operations. This industry certification demonstrates validated proficiency in cloud economics, security models, and core service categories including compute, storage, networking, and databases on AWS.",
+            image: { src: "images/aws-cloud-practitioner-badge.png" },
+            date: "November 2026",
+            issuer: "Amazon Web Services (AWS)",
+            bullets: [
+                "Cloud computing concepts, models, and global infrastructure",
+                "AWS core services: EC2, S3, RDS, Lambda, VPC",
+                "Security, compliance, identity management (IAM)",
+                "Cloud economics: pricing, billing, cost optimization"
+            ]
         },
-        "comptia": {
-            title: "CompTIA Tech+",
-            description: "CompTIA Technology+ certification validates foundational IT skills and knowledge in areas such as hardware, software, networking, and security. This certification demonstrates competence in the fundamental concepts and practices of modern information technology.",
-            image: { src: "images/comptia cert.png" },
-            date: "September 2025",
-            issuer: "CompTIA"
+        "aws-ml-nlp": {
+            title: "AWS Academy Graduate — Machine Learning for NLP",
+            description: "Specialized accreditation in Natural Language Processing on AWS, mastering transformer architectures (BERT, RoBERTa), text tokenization, sentiment analysis, entity extraction, and deploying scalable NLP models using Amazon SageMaker and AWS AI services.",
+            image: { src: "images/aws-ml-nlp-badge.png" },
+            date: "2026",
+            issuer: "AWS Academy (Amazon Web Services)",
+            bullets: [
+                "Transformer NLP architectures: BERT, RoBERTa, tokenization",
+                "Sentiment analysis, entity extraction, text classification",
+                "Amazon SageMaker model hosting and endpoint deployment",
+                "AWS AI services: Comprehend, Textract, Translate"
+            ]
         },
-        "java": {
-            title: "IT Specialist - Java",
-            description: "Certified by Certiport as an IT Specialist in Java programming fundamentals. This certification validates proficiency in Java programming concepts, object-oriented programming principles, and practical application development skills.",
-            image: { src: "images/java cert.png" },
-            date: "May 2024",
-            issuer: "Certiport (A Pearson VUE Business)"
+        "aws-cloud-foundations": {
+            title: "AWS Academy Graduate — Cloud Foundations",
+            description: "Academic graduate badge validating comprehensive understanding of AWS cloud infrastructure, security, identity management, and core computing services. Provides foundational knowledge aligned with AWS Certified Cloud Practitioner objectives.",
+            image: { src: "images/aws-cloud-foundations-badge.png" },
+            date: "2026",
+            issuer: "AWS Academy (Amazon Web Services)",
+            bullets: [
+                "Cloud computing concepts and AWS global infrastructure",
+                "Core AWS services: compute, storage, database, networking",
+                "AWS security fundamentals and shared responsibility model",
+                "Introduction to cloud economics and billing"
+            ]
         },
         "aws-ml": {
             title: "AWS Academy Machine Learning Graduate",
             description: "Certified as an AWS Academy Machine Learning Graduate, demonstrating comprehensive knowledge and practical skills in machine learning concepts, AWS cloud services, and data science methodologies. This certification validates expertise in building and deploying ML solutions on AWS infrastructure.",
             image: { src: "images/aws cert.png" },
             date: "2026",
-            issuer: "Amazon Web Services (AWS)"
+            issuer: "Amazon Web Services (AWS)",
+            bullets: [
+                "Machine learning pipeline design and feature engineering",
+                "Supervised and unsupervised learning on AWS SageMaker",
+                "Model training, evaluation, and deployment workflows",
+                "Data preprocessing, bias detection, and model explainability"
+            ]
         },
         "huawei-ai": {
-            title: "Huawei ICT Academy - Overview of AI",
-            description: "Certificate of Completion for the Overview of Artificial Intelligence course from Huawei ICT Academy. This certification covers fundamental AI concepts, machine learning principles, neural networks, and Huawei's AI technologies and solutions. Demonstrates foundational knowledge in artificial intelligence and its practical applications.",
+            title: "Huawei ICT Academy — Overview of AI",
+            description: "Certificate of Completion for the Overview of Artificial Intelligence course from Huawei ICT Academy. This certification covers fundamental AI concepts, machine learning principles, neural networks, and Huawei's AI technologies and solutions.",
             image: { src: "images/huawei cert.png" },
             date: "2026",
-            issuer: "Huawei ICT Academy"
+            issuer: "Huawei ICT Academy",
+            bullets: [
+                "Foundational AI theory: machine learning, deep learning, neural networks",
+                "Computer vision and natural language processing fundamentals",
+                "Huawei AI platforms and cloud-based AI tools",
+                "Applied AI use cases across industry verticals"
+            ]
+        },
+        "wadhwani": {
+            title: "Wadhwani Foundation — Ignite Entrepreneurship",
+            description: "Comprehensive startup incubation program validating venture creation, product-market fit, customer discovery, financial viability, and pitch execution for tech startups.",
+            image: { src: "images/sns cover.png" },
+            date: "April 2026",
+            issuer: "Wadhwani Entrepreneurship",
+            bullets: [
+                "Customer discovery, problem-solution fit, and MVP validation",
+                "Business model canvas and lean startup methodology",
+                "Financial projections, unit economics, and go-to-market strategy",
+                "Live pitch assessment by Wadhwani Foundation evaluators"
+            ]
+        },
+        "comptia": {
+            title: "CompTIA Tech+",
+            description: "CompTIA Technology+ certification validates foundational IT skills and knowledge in areas such as hardware, software, networking, and security. This certification demonstrates competence in the fundamental concepts and practices of modern information technology.",
+            image: { src: "images/comptia cert.png" },
+            date: "September 2025",
+            issuer: "CompTIA",
+            bullets: [
+                "Computing hardware, components, and system assembly",
+                "Operating systems installation, configuration, and troubleshooting",
+                "Networking fundamentals: TCP/IP, DNS, DHCP, Wi-Fi",
+                "Security concepts, threats, and basic threat mitigation"
+            ]
+        },
+        "tesda-css": {
+            title: "TESDA BSRS: Computer Systems Servicing NC II",
+            description: "National Certification II credential demonstrating hands-on technical proficiency in installing, configuring, and testing computer systems, local area networks (LAN), and enterprise server environments.",
+            image: { src: "" },
+            date: "September 2025",
+            issuer: "Technical Education and Skills Development Authority (TESDA)",
+            bullets: [
+                "Computer hardware assembly, disassembly, and configuration",
+                "LAN installation: structured cabling, switches, and routers",
+                "Server setup, OS installation, and network service configuration",
+                "Hardware troubleshooting and preventive maintenance"
+            ]
+        },
+        "java": {
+            title: "IT Specialist — Java",
+            description: "Certified by Certiport as an IT Specialist in Java programming fundamentals. This certification validates proficiency in Java programming concepts, object-oriented programming principles, and practical application development skills.",
+            image: { src: "images/java cert.png" },
+            date: "May 2024",
+            issuer: "Certiport (A Pearson VUE Business)",
+            bullets: [
+                "Java fundamentals: variables, data types, control flow",
+                "Object-oriented programming: classes, inheritance, polymorphism",
+                "Exception handling, file I/O, and collections framework",
+                "Algorithm logic and Java application development"
+            ]
+        },
+        "toeic": {
+            title: "TOEIC Perfect Score",
+            description: "Achieved a perfect score of 990/990 on the Test of English for International Communication (TOEIC) examination administered by ETS. This certification demonstrates exceptional proficiency in English language skills for international business and academic communication.",
+            image: { src: "" },
+            date: "November 2023",
+            issuer: "ETS (Educational Testing Service)",
+            bullets: [
+                "Perfect 990/990 score — highest attainable TOEIC score",
+                "Listening comprehension: multi-speaker conversations, announcements",
+                "Reading comprehension: business correspondence, analytical texts",
+                "Professional English for international technical communication"
+            ]
         }
     };
 
@@ -435,173 +462,310 @@ document.addEventListener("DOMContentLoaded", function() {
     const experienceDetails = {
         "icpep": {
             title: "President | ICpEP.SE - JRU Chapter",
-            description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.",
+            period: "2025 – Present",
+            org: "Institute of Computer Engineers of the Philippines, Student Edition — JRU",
+            description: "Elected chapter president after serving as Secretary. Directing organizational strategy, managing 8+ technical events and workshops, and representing the chapter in national ICpEP conventions and inter-chapter initiatives.",
             images: [
-                { src: "" }, // e.g. "images/icpep-1.jpg"
-                { src: "" }, // e.g. "images/icpep-2.jpg"
-                { src: "" }  // e.g. "images/icpep-3.jpg"
+                { src: "images/President.jpg", alt: "ICpEP Presidency Photo" }
+            ],
+            bullets: [
+                "Spearheaded 8+ technical seminars, workshops, and general assemblies for 100+ student members",
+                "Represented JRU chapter at national ICpEP conventions and inter-chapter exhibits",
+                "Managed official chapter correspondence and administrative documentation as prior Secretary",
+                "Coordinated 3D printing exhibits and AI/embedded systems demonstrations",
+                "Led chapter accreditation compliance and university-level student organization reporting"
             ]
         },
         "awslc": {
             title: "Finance Officer | AWSLC - JRU Chapter",
-            description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.",
+            period: "2024 – 2025",
+            org: "AWS Learning Community — Jose Rizal University Chapter",
+            description: "Responsible for managing and tracking the chapter's financial records, disbursement reconciliation, and budget oversight for cloud-related workshops and AWS-sponsored events.",
             images: [
-                { src: "" }, // e.g. "images/awslc-1.jpg"
-                { src: "" }, // e.g. "images/awslc-2.jpg"
-                { src: "" }  // e.g. "images/awslc-3.jpg"
+                { src: "", alt: "AWSLC Finance Officer" }
+            ],
+            bullets: [
+                "Maintained accurate financial ledgers using Google Sheets and Excel",
+                "Processed and reconciled workshop budget disbursements and petty cash",
+                "Coordinated with AWS Education sponsors for event funding allocations",
+                "Prepared financial reports for chapter audits and university submission",
+                "Supported cloud learning event logistics and member registration tracking"
             ]
         },
         "solar-energy": {
-            title: "Lorem Ipsum Dolor Sit Amet",
-            description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.",
+            title: "Solar Energy Outreach Leader",
+            period: "November 2025",
+            org: "ICpEP.SE JRU Chapter — Community Outreach Program",
+            description: "Spearheaded a community outreach program focused on educating local residents on solar energy principles and implementing off-grid clean energy solutions for underserved households.",
             images: [
-                { src: "" }, // e.g. "images/solar-1.jpg"
-                { src: "" }, // e.g. "images/solar-2.jpg"
-                { src: "" }  // e.g. "images/solar-3.jpg"
+                { src: "", alt: "Solar Energy Outreach" }
+            ],
+            bullets: [
+                "Planned and executed a solar energy education seminar for community residents",
+                "Conducted basic technical audits on household electricity consumption and needs",
+                "Demonstrated solar panel assembly, charge controller wiring, and load calculations",
+                "Coordinated volunteer team logistics, materials procurement, and site setup",
+                "Produced post-event documentation and impact report for university submission"
+            ]
+        },
+        "up-eeei": {
+            title: "Research Assistant | UP EEEI",
+            period: "2016",
+            org: "University of the Philippines — Electrical & Electronics Engineering Institute",
+            description: "Facilitated data acquisition and engineering technical documentation for academic research projects at the University of the Philippines EEEI laboratory, gaining early exposure to research methodology and scientific documentation standards.",
+            images: [
+                { src: "", alt: "UP EEEI Research" }
+            ],
+            bullets: [
+                "Collected and organized experimental measurement data for research faculty",
+                "Maintained technical documentation logs and laboratory notebooks",
+                "Assisted in preparing charts, tables, and summaries for academic papers",
+                "Performed equipment calibration checks and recorded instrument readings",
+                "Supported laboratory operations, inventory, and research filing systems"
             ]
         }
     };
 
     function renderExperienceModal(experienceId) {
-        const exp = experienceDetails[experienceId];
-        if (!exp) return;
-
-        const modalBody = document.getElementById("modal-body");
-        if (!modalBody) return;
-
-        let html = `
-            <div class="modal-header">
-                <h2>${exp.title}</h2>
-            </div>
-
-            <div class="modal-section">
-                <h3>Overview</h3>
-                <p class="modal-description">${exp.description}</p>
-            </div>
-
-            <div class="modal-section">
-                <h3>Gallery</h3>
-                <div class="modal-gallery-section">
-        `;
-
-        exp.images.forEach(img => {
-            if (img.src) {
-                html += `<img src="${img.src}" alt="Experience Image" class="modal-gallery-item">`;
-            } else {
-                html += `<img src="" alt="Experience Image" class="modal-gallery-item img-empty">`;
-            }
-        });
-
-        html += `</div></div>`;
-
-        document.getElementById("modal-body").innerHTML = html;
+        // kept for backward compat — not used by showcase
     }
 
     function renderModalContent(projectId) {
-        const project = projectDetails[projectId];
-        if (!project) return;
+        // kept for backward compat — not used by showcase
+    }
 
-        const modalBody = document.getElementById("modal-body");
-        if (!modalBody) return;
+    // ─────────────────────────────────────────────
+    // 5. SPLIT-PANE SHOWCASE ENGINE
+    // ─────────────────────────────────────────────
 
-        let html = `
-            <div class="modal-header">
-                <div class="modal-course">${project.course}</div>
-                <h2>${project.title}</h2>
-            </div>
+    function setContent(wrapperId, html) {
+        const wrapper = document.getElementById(wrapperId);
+        if (!wrapper) return;
+        wrapper.innerHTML = html;
+        wrapper.style.animation = 'none';
+        wrapper.offsetHeight; // reflow
+        wrapper.style.animation = '';
+    }
 
-            <div class="modal-section">
-                <h3>Overview</h3>
-                <p class="modal-description">${project.description}</p>
-            </div>
-        `;
+    // ── Project Pane ──────────────────────────────
+    function renderProjectPane(projectId) {
+        const p = projectDetails[projectId];
+        if (!p) return;
 
-        // Add Contributions section if it exists
-        if (project.contributions) {
-            html += `
-            <div class="modal-section">
-                <h3>Contributions</h3>
-                <p class="modal-description">${project.contributions}</p>
-            </div>
-        `;
-        }
+        let sectionsHtml = '';
 
-        // Render sections
-        project.sections.forEach(section => {
-            html += `<div class="modal-section">`;
-            html += `<h3>${section.title}</h3>`;
+        p.sections.forEach(sec => {
+            sectionsHtml += `<div class="pane-section">`;
+            sectionsHtml += `<div class="pane-section-title">${sec.title}</div>`;
 
-            if (section.type === "buttons") {
-                html += `<div class="modal-buttons">`;
-                section.items.forEach(item => {
-                    html += `<a href="${item.url}" target="_blank" rel="noopener noreferrer" class="modal-btn">${item.label}</a>`;
+            if (sec.type === 'description') {
+                sectionsHtml += `<p class="pane-text">${sec.text}</p>`;
+            }
+            else if (sec.type === 'buttons') {
+                sectionsHtml += `<div class="pane-buttons">`;
+                sec.items.forEach(item => {
+                    sectionsHtml += `<a href="${item.url}" target="_blank" rel="noopener noreferrer" class="pane-btn">↗ ${item.label}</a>`;
                 });
-                html += `</div>`;
-            } 
-            else if (section.type === "gallery") {
-                html += `<div class="modal-gallery-section">`;
-                section.images.forEach(img => {
-                    const altText = img.alt || "Gallery Image";
+                sectionsHtml += `</div>`;
+            }
+            else if (sec.type === 'media') {
+                if (sec.description) {
+                    sectionsHtml += `<p class="pane-text">${sec.description}</p>`;
+                }
+                if (sec.videoUrl) {
+                    sectionsHtml += `
+                        <div class="pane-media-video">
+                            <video controls class="pane-video" preload="metadata">
+                                <source src="${sec.videoUrl}" type="video/mp4">
+                                Your browser does not support the video tag.
+                            </video>
+                        </div>`;
+                }
+            }
+            else if (sec.type === 'gallery') {
+                sectionsHtml += `<div class="pane-gallery">`;
+                sec.images.forEach(img => {
                     if (img.src) {
-                        html += `<img src="${img.src}" alt="${altText}" class="modal-gallery-item">`;
-                    } else {
-                        html += `<img src="" alt="${altText}" class="modal-gallery-item img-empty">`;
+                        sectionsHtml += `<img src="${img.src}" alt="${img.alt || 'Gallery'}" class="pane-gallery-img" data-lightbox-src="${img.src}">`;
                     }
                 });
-                html += `</div>`;
-            }
-            else if (section.type === "media") {
-                if (section.description) {
-                    html += `<p class="modal-description">${section.description}</p>`;
-                }
-                if (section.videoUrl) {
-                    const isCompactVideo = projectId === "save-share" && section.title === "Software Demonstration";
-                    html += `<div class="modal-video">
-                        <video controls class="project-video${isCompactVideo ? ' compact' : ''}">
-                            <source src="${section.videoUrl}" type="video/mp4">
-                            Your browser does not support the video tag.
-                        </video>
-                    </div>`;
-                }
-            }
-            else if (section.type === "description") {
-                html += `<p class="modal-description">${section.text}</p>`;
+                sectionsHtml += `</div>`;
             }
 
-            html += `</div>`;
+            sectionsHtml += `</div>`;
         });
 
-        // Footer with technologies and SDG
-        html += `
-            <div class="modal-footer">
-                <div class="modal-section">
-                    <h3>Technologies Used</h3>
-                    <div class="tech-list">
-                        ${project.technologies.map(tech => `<span class="tech-tag">${tech}</span>`).join('')}
-                    </div>
-                </div>`;
+        const techTags = p.technologies.map(t => `<span class="pane-tech-tag">${t}</span>`).join('');
 
-        // Only show SDG section if SDG number is valid (1-17)
-        if (project.sdg.number > 0 && project.sdg.number <= 17) {
-            html += `
-                <div class="modal-section">
-                    <h3>SDG Alignment</h3>
-                    <div class="sdg-section">
-                        <div style="flex: 1;">
-                            <img src="${project.sdg.imgSrc}" alt="SDG ${project.sdg.number}" class="sdg-logo${project.sdg.imgSrc ? '' : ' img-empty'}">
-                        </div>
-                        <div class="sdg-info" style="flex: 2;">
-                            <h4>SDG ${project.sdg.number}: ${project.sdg.title}</h4>
-                            <p>${project.sdg.description}</p>
-                        </div>
+        const sdgHtml = (p.sdg && p.sdg.number > 0 && p.sdg.number <= 17) ? `
+            <div class="pane-section">
+                <div class="pane-section-title">SDG Alignment</div>
+                <div class="pane-sdg-box">
+                    <img src="${p.sdg.imgSrc}" alt="SDG ${p.sdg.number}" class="pane-sdg-logo${p.sdg.imgSrc ? '' : ' img-empty'}">
+                    <div class="pane-sdg-info">
+                        <h5>SDG ${p.sdg.number}: ${p.sdg.title}</h5>
+                        <p>${p.sdg.description}</p>
                     </div>
-                </div>`;
+                </div>
+            </div>` : '';
+
+        const html = `
+            <div class="pane-header">
+                <div class="pane-course">${p.course}</div>
+                <h3 class="pane-title">${p.title}</h3>
+            </div>
+
+            <div class="pane-section">
+                <div class="pane-section-title">Overview</div>
+                <p class="pane-text">${p.description}</p>
+            </div>
+
+            ${p.contributions ? `
+            <div class="pane-section">
+                <div class="pane-section-title">Significance & Contributions</div>
+                <p class="pane-text">${p.contributions}</p>
+            </div>` : ''}
+
+            ${sectionsHtml}
+
+            <div class="pane-section">
+                <div class="pane-section-title">Technologies Used</div>
+                <div class="pane-tech-tags">${techTags}</div>
+            </div>
+
+            ${sdgHtml}
+        `;
+
+        setContent('projects-pane-content', html);
+        bindPaneGalleryLightbox('projects-pane-content');
+    }
+
+    // ── Experience Pane ───────────────────────────
+    function renderExperiencePane(expId) {
+        const e = experienceDetails[expId];
+        if (!e) return;
+
+        const hasImage = e.images && e.images[0] && e.images[0].src;
+        const imgHtml = hasImage
+            ? `<img src="${e.images[0].src}" alt="${e.images[0].alt || e.title}" class="pane-gallery-img" style="height:200px;width:100%;object-fit:cover;border-radius:8px;margin-bottom:1.25rem;">`
+            : '';
+
+        const bulletsHtml = e.bullets ? `
+            <div class="pane-section">
+                <div class="pane-section-title">Key Responsibilities</div>
+                <ul class="pane-bullets">
+                    ${e.bullets.map(b => `<li>${b}</li>`).join('')}
+                </ul>
+            </div>` : '';
+
+        const html = `
+            <div class="pane-header">
+                <div class="pane-course">${e.org || ''}</div>
+                <h3 class="pane-title">${e.title}</h3>
+                ${e.period ? `<div class="pane-course" style="margin-top:0.35rem;opacity:0.75;">${e.period}</div>` : ''}
+            </div>
+
+            ${imgHtml}
+
+            <div class="pane-section">
+                <div class="pane-section-title">Overview</div>
+                <p class="pane-text">${e.description}</p>
+            </div>
+
+            ${bulletsHtml}
+        `;
+
+        setContent('experience-pane-content', html);
+    }
+
+    // ── Certification Pane ────────────────────────
+    function renderCertificationPane(certId) {
+        const c = certificationDetails[certId];
+        if (!c) return;
+
+        const imgHtml = c.image && c.image.src
+            ? `<div class="pane-cert-preview">
+                <img src="${c.image.src}" alt="${c.title}" class="pane-cert-img" data-lightbox-src="${c.image.src}">
+               </div>`
+            : `<div class="pane-cert-preview" style="min-height:120px;opacity:0.4;font-size:0.85rem;color:var(--text-secondary);display:flex;align-items:center;justify-content:center;">
+                Certificate image not yet available
+               </div>`;
+
+        const bulletsHtml = c.bullets ? `
+            <div class="pane-section">
+                <div class="pane-section-title">Key Topics Covered</div>
+                <ul class="pane-bullets">
+                    ${c.bullets.map(b => `<li>${b}</li>`).join('')}
+                </ul>
+            </div>` : '';
+
+        const html = `
+            <div class="pane-header">
+                <div class="pane-course">${c.issuer}</div>
+                <h3 class="pane-title">${c.title}</h3>
+                <div class="pane-course" style="margin-top:0.35rem;opacity:0.75;">Earned: ${c.date}</div>
+            </div>
+
+            ${imgHtml}
+
+            <div class="pane-section">
+                <div class="pane-section-title">About This Credential</div>
+                <p class="pane-text">${c.description}</p>
+            </div>
+
+            ${bulletsHtml}
+        `;
+
+        setContent('cert-pane-content', html);
+        bindPaneGalleryLightbox('cert-pane-content');
+    }
+
+    // ── Gallery / cert image → badge lightbox ─────
+    function bindPaneGalleryLightbox(wrapperId) {
+        const wrapper = document.getElementById(wrapperId);
+        if (!wrapper) return;
+        wrapper.querySelectorAll('[data-lightbox-src]').forEach(el => {
+            el.addEventListener('click', () => openBadgeLightbox(el.getAttribute('data-lightbox-src'), el.alt || ''));
+        });
+    }
+
+    // ── Showcase initializer ──────────────────────
+    function initShowcase(showcaseId, renderFn, defaultId) {
+        const showcase = document.getElementById(showcaseId);
+        if (!showcase) return;
+
+        const cards = showcase.querySelectorAll('.showcase-card');
+
+        function activateCard(card) {
+            cards.forEach(c => c.classList.remove('active'));
+            card.classList.add('active');
+            renderFn(card.getAttribute('data-id'));
         }
 
-        html += `</div>`;
+        cards.forEach(card => {
+            card.addEventListener('click', () => activateCard(card));
+            card.addEventListener('keydown', e => {
+                if (e.key === 'Enter' || e.key === ' ') {
+                    e.preventDefault();
+                    activateCard(card);
+                }
+            });
+        });
 
-        document.getElementById("modal-body").innerHTML = html;
+        // Activate default
+        const defaultCard = showcase.querySelector(`.showcase-card[data-id="${defaultId}"]`)
+                         || cards[0];
+        if (defaultCard) activateCard(defaultCard);
     }
+
+    // ── Boot all three showcases ──────────────────
+    initShowcase('projects-showcase',   renderProjectPane,       'field-service-nlp');
+    initShowcase('experience-showcase', renderExperiencePane,    'icpep');
+    initShowcase('cert-showcase',       renderCertificationPane, 'aws-cloud-practitioner');
+
+    // ─────────────────────────────────────────────
+    // Legacy modal close / keyboard (kept for safety)
+    // ─────────────────────────────────────────────
 
     // Event delegation for modal opening
     document.addEventListener('click', function(event) {
@@ -627,6 +791,17 @@ document.addEventListener("DOMContentLoaded", function() {
         }
     });
 
+    // Keyboard support: Enter / Space to open focused cards or tabular rows
+    document.addEventListener('keydown', function(event) {
+        if ((event.key === 'Enter' || event.key === ' ') && !modal.contains(event.target)) {
+            const target = event.target.closest('.project-card');
+            if (target) {
+                event.preventDefault();
+                target.click();
+            }
+        }
+    });
+
     // Close Modal
     if (closeBtn) {
         closeBtn.addEventListener("click", closeModal);
@@ -648,46 +823,15 @@ document.addEventListener("DOMContentLoaded", function() {
         });
     }
 
-    // 6. Badge Lightbox
-    const badgeLightbox    = document.getElementById('badge-lightbox');
-    const badgeLightboxImg = document.getElementById('badge-lightbox-img');
-    const badgeLightboxClose = document.querySelector('.badge-lightbox-close');
-
-    function openBadgeLightbox(src, alt) {
-        if (!badgeLightbox || !badgeLightboxImg) return;
-        badgeLightboxImg.src = src;
-        badgeLightboxImg.alt = alt;
-        badgeLightbox.classList.add('open');
-        document.body.style.overflow = 'hidden';
-    }
-
-    function closeBadgeLightbox() {
-        if (!badgeLightbox) return;
-        badgeLightbox.classList.remove('open');
-        document.body.style.overflow = 'auto';
-    }
-
-    // Click any badge image to open lightbox
-    document.querySelectorAll('.badge-img').forEach(img => {
-        img.addEventListener('click', () => openBadgeLightbox(img.src, img.alt));
-    });
-
-    // Close on backdrop click
-    if (badgeLightbox) {
-        badgeLightbox.addEventListener('click', (e) => {
-            if (e.target === badgeLightbox) closeBadgeLightbox();
-        });
-    }
-
-    // Close on X button
-    if (badgeLightboxClose) {
-        badgeLightboxClose.addEventListener('click', closeBadgeLightbox);
-    }
-
-    // Close on Escape key
+    // Close on Escape key (handles both Badge Lightbox and Project Modal)
     document.addEventListener('keydown', (e) => {
-        if (e.key === 'Escape' && badgeLightbox && badgeLightbox.classList.contains('open')) {
-            closeBadgeLightbox();
+        if (e.key === 'Escape') {
+            if (badgeLightbox && badgeLightbox.classList.contains('open')) {
+                closeBadgeLightbox();
+            }
+            if (modal && modal.style.display === "block") {
+                closeModal();
+            }
         }
     });
 
