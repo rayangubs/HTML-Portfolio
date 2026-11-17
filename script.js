@@ -303,6 +303,7 @@ document.addEventListener("DOMContentLoaded", function() {
             title: "AWS Certified Cloud Practitioner",
             description: "Validates foundational, high-level understanding of AWS Cloud services, architectural best practices, security, compliance, billing, and core cloud infrastructure operations. This industry certification demonstrates validated proficiency in cloud economics, security models, and core service categories including compute, storage, networking, and databases on AWS.",
             image: { src: "images/aws-cloud-practitioner-badge.png" },
+            certImage: { src: "images/aws_cloud practitioner.png" },
             verifyUrl: "https://aws.amazon.com/verification",
             date: "November 2026",
             issuer: "Amazon Web Services (AWS)",
@@ -317,6 +318,7 @@ document.addEventListener("DOMContentLoaded", function() {
             title: "AWS Academy Graduate — Machine Learning for NLP",
             description: "Specialized accreditation in Natural Language Processing on AWS, mastering transformer architectures (BERT, RoBERTa), text tokenization, sentiment analysis, entity extraction, and deploying scalable NLP models using Amazon SageMaker and AWS AI services.",
             image: { src: "images/aws-ml-nlp-badge.png" },
+            certImage: { src: "images/aws_ml for nlp.png" },
             date: "2026",
             issuer: "AWS Academy (Amazon Web Services)",
             bullets: [
@@ -330,6 +332,7 @@ document.addEventListener("DOMContentLoaded", function() {
             title: "AWS Academy Graduate — Cloud Foundations",
             description: "Academic graduate badge validating comprehensive understanding of AWS cloud infrastructure, security, identity management, and core computing services. Provides foundational knowledge aligned with AWS Certified Cloud Practitioner objectives.",
             image: { src: "images/aws-cloud-foundations-badge.png" },
+            certImage: { src: "images/aws_cloud foundations.png" },
             date: "2026",
             issuer: "AWS Academy (Amazon Web Services)",
             bullets: [
@@ -665,13 +668,37 @@ document.addEventListener("DOMContentLoaded", function() {
         const c = certificationDetails[certId];
         if (!c) return;
 
-        const imgHtml = c.image && c.image.src
-            ? `<div class="pane-cert-preview">
-                <img src="${c.image.src}" alt="${c.title}" class="pane-cert-img" data-lightbox-src="${c.image.src}">
-               </div>`
-            : `<div class="pane-cert-preview" style="min-height:120px;opacity:0.4;font-size:0.85rem;color:var(--text-secondary);display:flex;align-items:center;justify-content:center;">
-                Certificate image not yet available
-               </div>`;
+        const imgHtml = (() => {
+            const hasCert  = c.certImage && c.certImage.src;
+            const hasBadge = c.image && c.image.src;
+
+            if (hasCert && hasBadge) {
+                // Show certificate full-width, then badge below it
+                return `
+                    <div class="pane-cert-preview" style="flex-direction:column;gap:1.25rem;align-items:center;">
+                        <div style="width:100%;">
+                            <div class="pane-section-title" style="margin-bottom:0.6rem;">Certificate</div>
+                            <img src="${c.certImage.src}" alt="${c.title} Certificate" class="pane-cert-img" style="width:100%;max-height:none;" data-lightbox-src="${c.certImage.src}">
+                        </div>
+                        <div style="display:flex;flex-direction:column;align-items:center;gap:0.5rem;">
+                            <div class="pane-section-title" style="margin-bottom:0.3rem;text-align:center;">Badge</div>
+                            <img src="${c.image.src}" alt="${c.title} Badge" class="pane-cert-img" style="max-height:160px;width:auto;" data-lightbox-src="${c.image.src}">
+                        </div>
+                    </div>`;
+            } else if (hasCert) {
+                return `<div class="pane-cert-preview">
+                    <img src="${c.certImage.src}" alt="${c.title}" class="pane-cert-img" data-lightbox-src="${c.certImage.src}">
+                   </div>`;
+            } else if (hasBadge) {
+                return `<div class="pane-cert-preview">
+                    <img src="${c.image.src}" alt="${c.title}" class="pane-cert-img" data-lightbox-src="${c.image.src}">
+                   </div>`;
+            } else {
+                return `<div class="pane-cert-preview" style="min-height:120px;opacity:0.4;font-size:0.85rem;color:var(--text-secondary);display:flex;align-items:center;justify-content:center;">
+                    Certificate image not yet available
+                   </div>`;
+            }
+        })();
 
         const bulletsHtml = c.bullets ? `
             <div class="pane-section">
@@ -787,21 +814,29 @@ document.addEventListener("DOMContentLoaded", function() {
                         "[Learning outcome 3]"
                     ],
                     reflection: "[Reflection — What did you learn? What challenges did you encounter, and how did you overcome them? How does this artifact demonstrate your growth as a CpE student?]",
-                    buttons: []
+                    buttons: [
+                        { label: "View Notebooks on GitHub", url: "https://github.com/rayangubat/cpe-c405-emerging-technologies", isExternal: true }
+                    ]
                 },
                 {
                     id: "c405-artifact2",
                     label: "Artifact 2",
-                    title: "Certificate of Completion & AWS Cloud Practitioner Certificate",
-                    description: "[Description — describe what this certificate represents, the scope of knowledge it validates, and how earning it relates to your coursework and professional goals.]",
+                    title: "Certificates of Completion — AWS Cloud Practitioner & Cloud Foundations",
+                    description: "This artifact comprises two credentials earned as direct outcomes of CPE C405: the AWS Certified Cloud Practitioner industry certification and the AWS Academy Cloud Foundations completion certificate. Together they validate end-to-end understanding of cloud computing concepts — from core AWS services and global infrastructure to security, billing, and architecture best practices — at both an academic training level and an industry-recognized standard.",
                     outcomes: [
-                        "[Learning outcome 1 — e.g., Validated foundational knowledge of AWS cloud infrastructure, security, and billing models]",
-                        "[Learning outcome 2 — e.g., Demonstrated understanding of cloud economics and core service categories at an industry-recognized standard]",
-                        "[Learning outcome 3]"
+                        "CLO1 — Demonstrated significant knowledge of core cloud computing concepts, AWS platform architecture, services, pricing, and the shared responsibility security model",
+                        "CLO2 — Applied cloud concepts through hands-on AWS lab exercises and simulated use cases covering compute, storage, networking, and database services",
+                        "CLO3 — Developed a cloud computing architecture aligned to a specific project or business case, integrating appropriate AWS service selections"
                     ],
-                    reflection: "[Reflection — What was the certification process like? What areas required the most study? How will this credential support your career in Computer Engineering?]",
+                    reflection: "Preparing for the Cloud Practitioner exam pushed me to consolidate everything covered in the labs into a coherent mental model of how AWS services fit together. The hardest part was memorizing the pricing and support tiers, but working through practice scenarios made it click. Having both the Academy completion certificate and the industry certification side by side feels like a solid proof point that the coursework translated into real, verifiable skill.",
+                    gallery: [
+                        { src: "images/aws_cloud practitioner.png",   alt: "AWS Certified Cloud Practitioner Certificate",         caption: "AWS Certified Cloud Practitioner — Certificate" },
+                        { src: "images/aws-cloud-practitioner-badge.png", alt: "AWS Certified Cloud Practitioner Badge",           caption: "AWS Certified Cloud Practitioner — Badge" },
+                        { src: "images/aws_cloud foundations.png",    alt: "AWS Academy Cloud Foundations Completion Certificate", caption: "AWS Academy Cloud Foundations — Certificate" },
+                        { src: "images/aws-cloud-foundations-badge.png",  alt: "AWS Academy Cloud Foundations Badge",             caption: "AWS Academy Cloud Foundations — Badge" }
+                    ],
                     buttons: [
-                        { label: "View Certificate", url: "images/aws cert.png", isExternal: false }
+                        { label: "Verify Cloud Practitioner", url: "https://aws.amazon.com/verification", isExternal: true }
                     ]
                 }
             ]
@@ -822,38 +857,39 @@ document.addEventListener("DOMContentLoaded", function() {
                     ],
                     reflection: "[Reflection — Which lab exercise challenged you the most and why? How did hands-on experimentation deepen your understanding of AI theory?]",
                     buttons: [
-                        { label: "Working Notebook", url: "#", isExternal: true }
+                        { label: "View Notebooks on GitHub", url: "https://github.com/rayangubat/cpe-c314-artificial-intelligence-2", isExternal: true }
                     ]
                 },
                 {
                     id: "c314-artifact2",
                     label: "Artifact 2",
                     title: "IEEE Journal Project Documentation",
-                    description: "[Description — summarize your IEEE-format research paper. What problem did you investigate, what methodology did you follow, and what were your key findings?]",
+                    description: "An IEEE-format research paper documenting the design of an NLP pipeline that converts handwritten field service reports into structured CRM records for Scientific Biotech Specialties, Inc. (SBSI). The system addresses the \"double handling\" bottleneck where Field Service Engineers write reports by hand then manually re-enter them into Bitrix — introducing transcription errors and delays. The proposed pipeline chains a TrOCR front-end for handwriting recognition with CRF-based and fine-tuned RoBERTa models for information extraction and text classification, outputting structured, human-reviewable Bitrix-ready records. A prototype was built using PaddleOCR and pilot-tested on 20 service reports, achieving a mean review time of ~7 minutes per record.",
                     outcomes: [
-                        "[Learning outcome 1 — e.g., Formulated a research question aligned with current AI literature and industry needs]",
-                        "[Learning outcome 2 — e.g., Applied IEEE documentation standards and academic writing conventions]",
-                        "[Learning outcome 3]"
+                        "CLO1 — Demonstrated significant understanding of NLP, neural networks, and transformer architectures (BERT, RoBERTa, TrOCR) through literature review and methodology design for a real-world IE task",
+                        "CLO2 — Applied appropriate AI tools and algorithms — CRF sequence labeling, TF-IDF + Logistic Regression baseline, Hugging Face Transformers, PaddleOCR — to solve a real industrial record-entry problem",
+                        "CLO3 — Developed a research project applying NLP to a real-world case: automating field service report structuring for a diagnostics equipment company, with pilot evaluation on 20 collected reports"
                     ],
-                    reflection: "[Reflection — What was the most difficult part of writing in IEEE format? How did the research process change how you approach problem-solving?]",
+                    reflection: "Writing in IEEE format forced a level of precision I wasn't used to — every claim had to be traceable to a source or a measured result. The hardest part was honestly scoping the evaluation: the full CRF vs. transformer model comparison was designed but not completed within the semester, so we had to frame the pilot OCR results carefully. That tension between what was planned and what was implemented taught me more about research integrity than any lecture did.",
                     buttons: [
-                        { label: "View Documentation", url: "#", isExternal: true }
+                        { label: "View Documentation (PDF)", url: "learning artifacts/CPE C314/NLP_Final Project_Documentation_GUBAT, MANALO, VILLARDE.pdf", isExternal: true }
                     ]
                 },
                 {
                     id: "c314-artifact3",
                     label: "Artifact 3",
                     title: "Demo Video — Working Project",
-                    description: "[Description — describe your AI project and what it demonstrates. What problem does it solve, how does it work, and what results did it achieve?]",
+                    description: "A demonstration of the prototype NLP pipeline built for CPE C314. The system accepts a photo of a handwritten field service report, runs it through PaddleOCR to generate a draft, then presents a structured review interface where a human operator can correct and confirm each extracted field before the record is saved. A rule-based chatbot allows querying and summarizing saved records, mirroring a Bitrix record-creation workflow locally. Pilot evaluation across 20 reports showed the OCR draft provided a usable starting point, with checkbox-derived fields (job type, status after service) achieving up to 65% exact agreement and narrative fields requiring more manual correction.",
                     outcomes: [
-                        "[Learning outcome 1 — e.g., Designed and implemented an end-to-end AI solution from dataset preparation to model deployment]",
-                        "[Learning outcome 2 — e.g., Demonstrated working system performance through measurable evaluation metrics]",
-                        "[Learning outcome 3]"
+                        "CLO1 — Demonstrated understanding of computer vision and NLP integration by combining OCR (PaddleOCR/TrOCR), field extraction, and text classification in a single end-to-end pipeline",
+                        "CLO2 — Applied AI tools to a real-world scenario: OCR noise measurement (59.1% macro-average CER), human-in-the-loop review interface, and rule-based chatbot for record querying",
+                        "CLO3 — Developed and pilot-tested a working AI system applied to an industrial use case, with quantitative evaluation on 20 field service reports collected from SBSI"
                     ],
-                    reflection: "[Reflection — What would you do differently if you rebuilt this project? How does completing this project prepare you for professional AI engineering work?]",
+                    reflection: "Seeing the pipeline run on actual handwritten reports made every abstract NLP concept tangible. The OCR results were humbling — 89.5% word error rate on raw output — but that's exactly what made the human-in-the-loop design make sense. Building the review interface shifted my thinking from 'can the model get it right?' to 'how do we make correction fast and trustworthy?' That's a more useful question for real deployments.",
                     buttons: [
-                        { label: "Watch Demo", url: "#", isExternal: true }
-                    ]
+                        { label: "Watch Demo", url: "videos/nlp_video.mp4", isExternal: false }
+                    ],
+                    video: "videos/nlp_video.mp4"
                 }
             ]
         }
@@ -871,6 +907,28 @@ document.addEventListener("DOMContentLoaded", function() {
                     ${artifact.buttons.map(b =>
                         `<a href="${b.url}" ${b.isExternal ? 'target="_blank" rel="noopener noreferrer"' : ''} class="pane-btn">↗ ${b.label}</a>`
                     ).join('')}
+                   </div>`
+                : '';
+
+            const galleryHtml = artifact.gallery && artifact.gallery.length
+                ? `<div class="pane-section-title" style="margin-top:1rem;">Certificates &amp; Badges</div>
+                   <div class="artifact-cert-gallery">
+                     ${artifact.gallery.map(item =>
+                         `<figure class="artifact-cert-figure">
+                            <img src="${item.src}" alt="${item.alt}" class="artifact-cert-img" data-lightbox-src="${item.src}" loading="lazy">
+                            <figcaption class="artifact-cert-caption">${item.caption}</figcaption>
+                          </figure>`
+                     ).join('')}
+                   </div>`
+                : '';
+
+            const videoHtml = artifact.video
+                ? `<div class="pane-section-title" style="margin-top:1rem;">Demo Video</div>
+                   <div class="pane-media-video" style="margin-top:0.6rem;">
+                       <video class="pane-video" controls preload="metadata">
+                           <source src="${artifact.video}" type="video/mp4">
+                           Your browser does not support the video tag.
+                       </video>
                    </div>`
                 : '';
 
@@ -892,6 +950,8 @@ document.addEventListener("DOMContentLoaded", function() {
                         <div class="pane-section-title" style="margin-top:1rem;">Reflections</div>
                         <p class="pane-text" style="margin-top:0.5rem; margin-bottom:0.5rem;">${artifact.reflection}</p>
 
+                        ${videoHtml}
+                        ${galleryHtml}
                         ${buttonsHtml}
                     </div>
                 </div>`;
@@ -907,6 +967,7 @@ document.addEventListener("DOMContentLoaded", function() {
             </div>`;
 
         setContent('academic-pane-content', html);
+        bindPaneGalleryLightbox('academic-pane-content');
 
         // Wire up accordion toggles
         const pane = document.getElementById('academic-pane-content');
