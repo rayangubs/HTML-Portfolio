@@ -737,10 +737,6 @@ document.addEventListener("DOMContentLoaded", function() {
             card.setAttribute('aria-pressed', 'true');
             renderFn(card.getAttribute('data-id'));
 
-            // Scroll the activated card into view within its own container
-            // (handles the cert grid scrollable list)
-            card.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
-
             // On mobile (pane is below the grid), scroll the pane into view too
             if (paneRight && window.innerWidth <= 992) {
                 setTimeout(() => {

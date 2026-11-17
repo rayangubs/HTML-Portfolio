@@ -339,7 +339,7 @@ p { margin-bottom: 1.5rem; max-width: 800px; color: var(--text-secondary); font-
     box-shadow: 0 12px 36px rgba(0, 0, 0, 0.35);
     position: sticky;
     top: 90px;
-    min-height: 480px;
+    min-height: 534px;
     max-height: calc(100vh - 120px);
     overflow-y: auto;
     scrollbar-width: thin;
@@ -2076,37 +2076,10 @@ img.img-empty::before {
     }
 }
 
-/* =============================================
-   Certifications grid: cap at 6 visible cards,
-   scroll to reveal the rest
-   ============================================= */
-.cert-grid-left {
-    /* 3 rows × ~145px min-height + 2 × 1.15rem gap ≈ 472px.
-       Using a slightly generous value so cards aren't clipped. */
-    max-height: 480px;
-    overflow-y: auto;
-    scrollbar-width: thin;
-    scrollbar-color: rgba(212, 196, 168, 0.4) transparent;
-    /* small padding so the focus ring on the last visible card isn't clipped */
-    padding-right: 4px;
-}
-
-.cert-grid-left::-webkit-scrollbar {
-    width: 5px;
-}
-.cert-grid-left::-webkit-scrollbar-track {
-    background: transparent;
-}
-.cert-grid-left::-webkit-scrollbar-thumb {
-    background-color: rgba(212, 196, 168, 0.35);
-    border-radius: 4px;
-}
-
-/* scroll-margin-top so a focused/activated card inside the
-   scrollable list scrolls itself into view cleanly */
-.cert-grid-left .showcase-card {
-    scroll-margin-top: 8px;
-}
+/* Certifications grid: all 10 cards render inline in the 2-column
+   layout, matching the other showcase sections (no internal scroll,
+   no fixed max-height) so the left grid stays aligned with the right
+   detail pane. */
 
 
 section[id],
