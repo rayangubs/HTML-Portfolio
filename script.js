@@ -345,12 +345,25 @@ document.addEventListener("DOMContentLoaded", function() {
                 "Cloud economics: pricing, billing, cost optimization"
             ]
         },
+        "wadhwani-employability": {
+            title: "Wadhwani Employability Skills — Job Ready",
+            description: "Completion credential from the Wadhwani Foundation's Job Ready employability skills program. The program develops core professional competencies required for workplace readiness, including communication, problem-solving, teamwork, and career navigation — bridging the gap between academic preparation and industry expectations.",
+            image: { src: "images/wadhwani completion_employability.png" },
+            date: "November 2026",
+            issuer: "Wadhwani Foundation",
+            bullets: [
+                "Professional communication and workplace etiquette",
+                "Problem-solving, critical thinking, and adaptability",
+                "Teamwork, collaboration, and interpersonal effectiveness",
+                "Career planning, resume building, and interview readiness"
+            ]
+        },
         "aws-ml-nlp": {
             title: "AWS Academy Graduate — Machine Learning for NLP",
             description: "Specialized accreditation in Natural Language Processing on AWS, mastering transformer architectures (BERT, RoBERTa), text tokenization, sentiment analysis, entity extraction, and deploying scalable NLP models using Amazon SageMaker and AWS AI services.",
             image: { src: "images/aws-ml-nlp-badge.png" },
             certImage: { src: "images/aws_ml for nlp.png" },
-            date: "2026",
+            date: "October 2026",
             issuer: "AWS Academy (Amazon Web Services)",
             bullets: [
                 "Transformer NLP architectures: BERT, RoBERTa, tokenization",
@@ -364,7 +377,7 @@ document.addEventListener("DOMContentLoaded", function() {
             description: "Academic graduate badge validating comprehensive understanding of AWS cloud infrastructure, security, identity management, and core computing services. Provides foundational knowledge aligned with AWS Certified Cloud Practitioner objectives.",
             image: { src: "images/aws-cloud-foundations-badge.png" },
             certImage: { src: "images/aws_cloud foundations.png" },
-            date: "2026",
+            date: "October 2026",
             issuer: "AWS Academy (Amazon Web Services)",
             bullets: [
                 "Cloud computing concepts and AWS global infrastructure",
@@ -378,26 +391,13 @@ document.addEventListener("DOMContentLoaded", function() {
             description: "Machine learning pipelines, predictive modeling, data preprocessing, and algorithm selection on AWS SageMaker. Covers supervised and unsupervised learning workflows, model training, evaluation, and deployment.",
             image: { src: "images/aws ml-badge.png" },
             certImage: { src: "images/aws_ml.png" },
-            date: "2026",
+            date: "April 2026",
             issuer: "AWS Academy (Amazon Web Services)",
             bullets: [
                 "Machine learning pipeline design and feature engineering",
                 "Supervised and unsupervised learning on AWS SageMaker",
                 "Model training, evaluation, and deployment workflows",
                 "Data preprocessing, bias detection, and model explainability"
-            ]
-        },
-        "huawei-ai": {
-            title: "Huawei ICT Academy — Overview of AI",
-            description: "Certificate of Completion for the Overview of Artificial Intelligence course from Huawei ICT Academy. This certification covers fundamental AI concepts, machine learning principles, neural networks, and Huawei's AI technologies and solutions.",
-            image: { src: "images/huawei cert.png" },
-            date: "2026",
-            issuer: "Huawei ICT Academy",
-            bullets: [
-                "Foundational AI theory: machine learning, deep learning, neural networks",
-                "Computer vision and natural language processing fundamentals",
-                "Huawei AI platforms and cloud-based AI tools",
-                "Applied AI use cases across industry verticals"
             ]
         },
         "wadhwani": {
@@ -411,6 +411,19 @@ document.addEventListener("DOMContentLoaded", function() {
                 "Business model canvas and lean startup methodology",
                 "Financial projections, unit economics, and go-to-market strategy",
                 "Live pitch assessment by Wadhwani Foundation evaluators"
+            ]
+        },
+        "huawei-ai": {
+            title: "Huawei ICT Academy — Overview of AI",
+            description: "Certificate of Completion for the Overview of Artificial Intelligence course from Huawei ICT Academy. This certification covers fundamental AI concepts, machine learning principles, neural networks, and Huawei's AI technologies and solutions.",
+            image: { src: "images/huawei cert.png" },
+            date: "February 2026",
+            issuer: "Huawei ICT Academy",
+            bullets: [
+                "Foundational AI theory: machine learning, deep learning, neural networks",
+                "Computer vision and natural language processing fundamentals",
+                "Huawei AI platforms and cloud-based AI tools",
+                "Applied AI use cases across industry verticals"
             ]
         },
         "comptia": {
@@ -455,7 +468,7 @@ document.addEventListener("DOMContentLoaded", function() {
         "toeic": {
             title: "TOEIC Perfect Score",
             description: "Achieved a perfect score of 990/990 on the Test of English for International Communication (TOEIC) examination administered by ETS. This certification demonstrates exceptional proficiency in English language skills for international business and academic communication.",
-            image: { src: "" },
+            image: { src: "images/Toeic.jpg" },
             date: "November 2023",
             issuer: "ETS (Educational Testing Service)",
             bullets: [
@@ -887,14 +900,25 @@ document.addEventListener("DOMContentLoaded", function() {
                 {
                     id: "c314-artifact1",
                     label: "Artifact 1",
-                    title: "Compilation of Lab Activities",
-                    description: "[Description — describe the AI lab activities covered. What models, datasets, and frameworks were explored? Include a link to your working notebook if available.]",
+                    title: "Compilation of AI 2 Lab Activities & Prelim Project",
+                    description: `This compilation covers the lab activities and performance tasks I completed in CPE C314 – Artificial Intelligence 2. It starts with classical machine learning and moves through the NLP pipeline to a retrieval-based chatbot.
+<ul class="pane-bullets" style="margin-top:0.75rem;">
+  <li><strong>Lab 1.1 – Linear Regression:</strong> Predicted California median house value using the housing dataset. Steps: correlation analysis, imputation, MinMax scaling, 70/30 split, and evaluation. The model reached R² ≈ 0.63 and MAE ≈ $51K.</li>
+  <li><strong>PTS2 – Linear Regression with Feature Selection:</strong> Rebuilt the housing model and compared it against Recursive Feature Elimination (R² 0.505, 4 features) and PCA (R² 0.531, 4 components). Both reduced models performed slightly worse than the full model.</li>
+  <li><strong>Lab 1 – NLP Regex:</strong> Used regular expressions for text preprocessing: lowercasing, removing punctuation/numbers/emojis, extracting URLs/emails/hashtags, and stopword removal. Challenge tasks included a paragraph-cleaning exercise and a spam/ham email preprocessing pipeline.</li>
+  <li><strong>Lab 2.1 – AWS NLP (SageMaker):</strong> Trained a SageMaker LinearLearner to detect negative reviews on a 70,000-review dataset. Covered stopword removal, stemming, a pipeline with ColumnTransformer, endpoint deployment, and prediction testing.</li>
+  <li><strong>Lab 5 – Bag of Words and TF-IDF</strong> (with Villarde): Applied TF-IDF to a 30-sentence Taglish dataset using custom Tagalog and English stopwords. Includes a weight table, heatmap, and word cloud.</li>
+  <li><strong>Lab 6 – Sentiment Analysis:</strong> Compared VADER's rule-based analyzer with TF-IDF classifiers (Naive Bayes, Logistic Regression, Linear SVM) on customer reviews. Includes a user-input classifier, sentiment counts, and visualizations.</li>
+  <li><strong>Lab 8 – Chatbots:</strong> Built rule-based (NLTK), retrieval-based (TF-IDF with cosine similarity), and ML-based (intent classifier and MLP) chatbots. Then built a context-based document-requests chatbot with an ipywidgets UI.</li>
+  <li><strong>PT3 – NLP Pipeline</strong> (with Villarde): Built a full Taglish pipeline with language identification, tokenization, stemming, lemmatization, a custom stopword corpus (218 words), and hybrid POS tagging. Includes a pipeline diagram. The 30 sentences had 226 English, 216 Tagalog, and 8 Taglish words.</li>
+  <li><strong>Lab 9 – RAG Chatbot and NER:</strong> Built a scam-aware RAG chatbot over Philippine anti-scam and cyber-law documents using MiniLM embeddings, flan-t5, page-level citations, and out-of-scope refusal. Scored 100% top-1 and top-3 retrieval on 12 in-scope questions and correctly refused 5/5 out-of-scope ones. Mean end-to-end latency ≈ 4.5 seconds. Includes a chunk-size ablation and links to a custom NER model.</li>
+</ul>`,
                     outcomes: [
-                        "[Learning outcome 1 — e.g., Implemented and evaluated supervised learning algorithms including CNNs and regression models]",
-                        "[Learning outcome 2 — e.g., Applied data preprocessing, feature engineering, and cross-validation techniques on real datasets]",
-                        "[Learning outcome 3]"
+                        "<strong>CLO1 – Significant understanding of ML, neural networks, computer vision, and NLP concepts:</strong> Lab 1.1 and PTS2 (regression, feature selection, PCA); Lab 1 and PT3 (NLP preprocessing, stemming, lemmatization, POS tagging); Lab 5 (BoW and TF-IDF); Lab 6 (lexicon-based vs. ML sentiment); Lab 8 (cosine similarity, MLP neural network)",
+                        "<strong>CLO2 – Applied appropriate AI tools and algorithms to solve real-world cases:</strong> Lab 2.1 (SageMaker LinearLearner for review classification); Lab 6 (customer review sentiment); Lab 8 (customer-service and document-request chatbots); Lab 1.1 and PTS2 (house price prediction)",
+                        "<strong>CLO3 – Developed a research project applying an AI domain to real-world cases:</strong> Lab 9 (scam-aware RAG chatbot and NER for Philippine anti-scam laws, with evaluation, ablation, and failure analysis); PT3 and Lab 5 (original Taglish dataset and pipeline built for code-switched Filipino text)"
                     ],
-                    reflection: "[Reflection — Which lab exercise challenged you the most and why? How did hands-on experimentation deepen your understanding of AI theory?]",
+                    reflection: "This course took me from \"AI as a black box\" to understanding how the pieces work and when to use each one. The regression labs showed me that a model is only as good as its features. Dropping features with RFE and PCA made performance worse, not better, which taught me that simplification has a cost and that I should check results instead of assuming.\n\nThe NLP labs were where I learned the most. Preprocessing decisions — like keeping negations such as \"not\" as stopwords — directly changed whether a sentiment model could work. Working on Taglish in Lab 5 and PT3 showed me that off-the-shelf tools such as NLTK and VADER are built for English. I had to write custom stopwords and rule-based Tagalog tagging, which also showed me how many gaps Filipino NLP still has.\n\nLab 9 combined everything. Building a RAG chatbot taught me that good retrieval does not guarantee good answers: my retrieval accuracy was 100%, but the small flan-t5 generator still gave thin answers. I also learned to design for failure by making the bot refuse out-of-scope questions, and to evaluate properly with metrics, latency, ablation, and manual grading. Next time I would use a stronger generator, a reranker, and section-aware chunking, and I would test more Taglish queries.",
                     buttons: [
                         { label: "View Notebooks on GitHub", url: "https://github.com/rayangubat/cpe-c314-artificial-intelligence-2", isExternal: true }
                     ]
