@@ -836,15 +836,25 @@ document.addEventListener("DOMContentLoaded", function() {
                     id: "c405-artifact1",
                     label: "Artifact 1",
                     title: "Compilation of AWS Lab Activities & Prelim Project",
-                    description: "[Description — summarize the AWS lab activities and preliminary project covered in this course. What tools, services, and AWS environments were used?]",
+                    description: `This compilation brings together the performance tasks, lab activities, and prelim class project I completed in CPE C405 – Emerging Technologies. Together they cover the AWS Cloud from core concepts to a real-world business case.
+<ul class="pane-bullets" style="margin-top:0.75rem;">
+  <li><strong>PTF1 – Pay-As-You-Go Pricing:</strong> Explained the pay-as-you-go model using an e-commerce sale spike. AWS Auto Scaling handles the 72-hour surge for about ₱15,345 in OpEx, compared with about ₱1.42M for traditional hardware (CapEx plus first-month OpEx).</li>
+  <li><strong>PTF2 – AWS Pricing Calculator:</strong> Estimated costs for two service groups (EC2 and S3) to see how reservation terms, payment options, and regions affect price. Ohio was cheaper than London, and All Upfront was cheaper than Partial Upfront. Also estimated VPC, SQS, Athena, and Lambda for a Scenario 3 workload in Europe (Ireland).</li>
+  <li><strong>Support Plan Scavenger Hunt:</strong> Recommended the Business Support Plan for a software development company across Europe and the US, based on its 24/7 support, response-time SLAs, and Trusted Advisor access.</li>
+  <li><strong>Lab 1 – IAM Synthesis:</strong> Tested the permissions of three users (S3-Support, EC2-Support, EC2-Admin) and compared attaching policies to users, groups, and resources.</li>
+  <li><strong>Lab 4 – Working with EBS:</strong> Created an EBS volume, attached it to an EC2 instance, and took a snapshot (graded 100/100).</li>
+  <li><strong>Lab 5 – Debrief (RDS):</strong> Covered DB subnet groups across Availability Zones, database setup steps, EC2-hosted versus RDS databases, and on-premises versus cloud deployment. The group also produced a VPC architecture diagram with public and private subnets, NAT gateways, and RDS.</li>
+  <li><strong>Prelim Project – Rethink Safety:</strong> A case study of a Filipino EHS software company already running on AWS. Includes a company profile, needs assessment, pricing estimate of the current architecture, a proposed deployment (public cloud, EC2 Auto Scaling across AZs, AWS Organizations with OUs and SCPs, and the Business Support Plan), and a 3-year TCO model.</li>
+</ul>`,
                     outcomes: [
-                        "[Learning outcome 1 — e.g., Demonstrated proficiency in core AWS services including EC2, S3, and IAM]",
-                        "[Learning outcome 2 — e.g., Applied cloud computing concepts to design and deploy a scalable architecture]",
-                        "[Learning outcome 3]"
+                        "<strong>CLO1 – Significant knowledge of cloud concepts, AWS platform, pricing, security, and shared responsibility model:</strong> PTF1 and PTF2 (pricing models, reservations, regions); Support Plan Hunt (support tiers); Lab 1 (IAM and access control); Lab 5 (RDS vs. EC2 shared responsibility, on-premises vs. cloud comparison)",
+                        "<strong>CLO2 – Applied cloud concepts and technologies through simulated exercises, use cases, and lab work:</strong> Lab 1 (IAM), Lab 4 (EBS), Lab 5 (RDS, VPC, subnets); pricing calculator estimates for EC2, S3, VPC, SQS, Athena, and Lambda; support plan scenario",
+                        "<strong>CLO3 – Developed a cloud computing architecture for a real business case:</strong> Prelim Project (Rethink Safety) — Auto Scaling across AZs, AWS Organizations with OUs and SCPs, support plan recommendation, pricing calculator estimate, 3-year TCO model, and VPC architecture diagram"
                     ],
-                    reflection: "[Reflection — What did you learn? What challenges did you encounter, and how did you overcome them? How does this artifact demonstrate your growth as a CpE student?]",
+                    reflection: "Before this course, I thought of \"the cloud\" as just renting someone else's server. Working through these activities showed me it is a different way of paying for and managing IT. In PTF1 the cost gap between idle hardware and pay-per-use made the benefit concrete, and the pricing calculator showed that small choices — such as region, reservation length, and payment option — noticeably change the bill.\n\nThe labs taught me that security and architecture decisions matter as much as cost. IAM showed me that a user can only do what a policy explicitly allows, and that groups make permissions much easier to manage than per-user policies. Lab 5 showed me why RDS needs subnets in at least two AZs, and why a managed database trades some control for far less operational work than running a database on EC2.\n\nThe Rethink Safety project tied everything together. It was my first time analyzing a real company's setup, including its governance gap of running Dev, Test, and Prod in one account. Proposing AWS Organizations, Auto Scaling, and a fitting support plan showed me that good cloud design means balancing cost, reliability, and security against the client's needs. Working in a group also taught me to split the research, pricing, and documentation. Next time I would validate cost assumptions earlier and explore more automation, such as infrastructure as code.",
                     buttons: [
-                        { label: "View Notebooks on GitHub", url: "https://github.com/rayangubat/cpe-c405-emerging-technologies", isExternal: true }
+                        { label: "Compiled Activities (PDF)", url: "learning artifacts/CPE C405/compilations.pdf", isExternal: true },
+                        { label: "Prelim Project — Rethink Safety (PDF)", url: "learning artifacts/CPE C405/Emergingers_RethinkSafety.pdf", isExternal: true }
                     ]
                 },
                 {
@@ -976,7 +986,7 @@ document.addEventListener("DOMContentLoaded", function() {
                         <span class="artifact-chevron" aria-hidden="true">›</span>
                     </button>
                     <div class="academic-artifact-body" id="${artifact.id}-body"${index === 0 ? '' : ' hidden'}>
-                        <p class="pane-text">${artifact.description}</p>
+                        <div class="pane-text">${artifact.description}</div>
 
                         <div class="pane-section-title" style="margin-top:1rem;">Learning Outcomes Demonstrated</div>
                         <ul class="pane-bullets" style="margin-top:0.5rem;">
