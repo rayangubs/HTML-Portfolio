@@ -75,56 +75,72 @@ document.addEventListener("DOMContentLoaded", function() {
     // 3. Project Details Database
     const projectDetails = {
         "field-service-nlp": {
-            course: "BS Computer Engineering | Natural Language Processing & OCR",
+            course: "CPE C314 | Artificial Intelligence 2",
             title: "Automated Structuring of Field Service Reports",
             subtitle: "AUTOMATED STRUCTURING OF FIELD SERVICE REPORTS FOR RECORD ENTRY USING INFORMATION EXTRACTION AND TEXT CLASSIFICATION",
-            description: "An end-to-end NLP and document processing pipeline designed to digitize and extract critical structured records from handwritten and scanned field service reports for CRM and ERP entry. Utilizing TrOCR for optical character recognition, Conditional Random Fields (CRF) for named entity recognition, and fine-tuned Transformer models (RoBERTa / BERT) for document classification, the system transforms noisy handwritten physical forms into human-in-the-loop review-and-confirm CRM records, robustly mitigating OCR degradation.",
-            contributions: "This pipeline addresses a real enterprise bottleneck — handwritten paperwork digitization — by combining OCR, sequence labeling, and transformer classification in a single architecture. Evaluating model degradation across varying OCR noise levels directly bridges computer vision with state-of-the-art NLP, producing results applicable to field service industries across logistics and utilities.",
-            status: { current: "Pipeline architecture finalized; TrOCR fine-tuning in progress on synthetic handwritten dataset.", nextMilestone: "CRF entity extraction evaluation and end-to-end F1 benchmarking." },
+            description: "An end-to-end NLP and document processing pipeline designed to digitize and extract critical structured records from handwritten and scanned field service reports for Scientific Biotech Specialties, Inc. (SBSI). The system addresses the \"double handling\" bottleneck where Field Service Engineers write reports by hand then manually re-enter them into Bitrix — introducing transcription errors and delays. The proposed pipeline chains a TrOCR front-end for handwriting recognition with CRF-based and fine-tuned RoBERTa models for information extraction and text classification, outputting structured, human-reviewable Bitrix-ready records. A prototype was built using PaddleOCR and pilot-tested on 20 service reports, achieving a mean review time of ~7 minutes per record.",
+            contributions: "Writing in IEEE format forced a level of precision I wasn't used to — every claim had to be traceable to a source or a measured result. The hardest part was honestly scoping the evaluation: the full CRF vs. transformer model comparison was designed but not completed within the semester, so we had to frame the pilot OCR results carefully. That tension between what was planned and what was implemented taught me more about research integrity than any lecture did. Seeing the pipeline run on actual handwritten reports made every abstract NLP concept tangible — the OCR results were humbling (89.5% word error rate on raw output), but that's exactly what made the human-in-the-loop design make sense.",
+            status: { current: "Completed — prototype pilot-tested on 20 collected SBSI reports; OCR draft provides a usable starting point with checkbox-derived fields achieving up to 65% exact agreement.", nextMilestone: "Submitted and completed, SY 2026-2027." },
             sections: [
                 {
                     title: "Architecture & Methodology",
                     type: "description",
-                    text: "The pipeline consists of a TrOCR vision-encoder-decoder for optical character recognition on handwritten forms, a Conditional Random Field (CRF) layer for token-level sequence labeling, and a fine-tuned RoBERTa classification backbone for intent and document categorization. Evaluated using entity F1 and macro-F1 metrics."
+                    text: "The pipeline chains a TrOCR vision-encoder-decoder for optical character recognition on handwritten forms, a Conditional Random Field (CRF) layer for token-level named entity recognition, and a fine-tuned RoBERTa classification backbone for document categorization. A human-in-the-loop review interface allows operators to correct and confirm each extracted field before the record is saved. A rule-based chatbot enables querying and summarizing saved records, mirroring a Bitrix record-creation workflow locally. Evaluated using OCR noise metrics (CER: 59.1% macro-average) and field extraction agreement rates."
                 },
                 {
-                    title: "Key Deliverables",
-                    type: "description",
-                    text: "Research paper and source code will be linked here upon completion. Currently in progress."
+                    title: "Demo Video",
+                    type: "embed",
+                    description: "Demonstration of the prototype NLP pipeline: photo of a handwritten field service report → PaddleOCR draft → structured human-in-the-loop review interface → confirmed Bitrix-ready record.",
+                    embedUrl: "https://drive.google.com/file/d/19lZACVgllcSplsltyS9aP0iq_dRRMmOw/preview"
+                },
+                {
+                    title: "Documentation",
+                    type: "buttons",
+                    items: [
+                        { label: "IEEE Journal Documentation (PDF)", url: "learning artifacts/CPE C314/NLP_Final Project_Documentation_GUBAT, MANALO, VILLARDE.pdf" },
+                        { label: "Demo Video (Google Drive)", url: "https://drive.google.com/file/d/19lZACVgllcSplsltyS9aP0iq_dRRMmOw/view?usp=sharing" }
+                    ]
                 }
             ],
-            technologies: ["Python", "RoBERTa / BERT", "TrOCR", "CRF", "spaCy", "Transformers", "NLP"],
+            technologies: ["Python", "PaddleOCR", "TrOCR", "RoBERTa / BERT", "CRF", "Hugging Face Transformers", "NLP", "spaCy"],
             sdg: {
                 number: 9,
                 title: "Industry, Innovation and Infrastructure",
-                description: "Modernizes enterprise data processing by replacing manual paper workflows with automated intelligent document extraction.",
+                description: "Modernizes enterprise data processing by replacing manual paper workflows with automated intelligent document extraction, reducing transcription errors and delays for field service industries.",
                 imgSrc: "images/sdg/9.jpg"
             }
         },
         "student-stress-ml": {
-            course: "BS Computer Engineering | Machine Learning & Statistical Modeling",
+            course: "CPE C407/401G | Cognate 3 — Data Science",
             title: "Predicting Student Stress from Sleep, Study, and Caffeine Habits",
             subtitle: "PREDICTING STUDENT STRESS FROM SLEEP, STUDY, AND CAFFEINE HABITS: A COMPARATIVE STUDY OF LINEAR, LOGISTIC, AND K-NEAREST NEIGHBORS CLASSIFIERS",
-            description: "A comparative machine learning research study investigating the predictive relationship between student lifestyle habits (sleep hours, study workload, caffeine intake, screen time) and physiological stress levels. Implemented, benchmarked, and cross-validated Linear Regression, Logistic Regression, and K-Nearest Neighbors (K-NN) classifiers evaluated with accuracy, precision, recall, and macro-F1.",
-            contributions: "Analyzed multi-dimensional student lifestyle data, executed exploratory data analysis (EDA), and conducted rigorous model evaluation to understand feature importance and predict high vs. low stress patterns. The study contributes a reproducible baseline for student wellness prediction that institutions can adapt.",
-            status: { current: "EDA complete; cross-validation and confusion matrix analysis underway.", nextMilestone: "Final model comparison report and macro-F1 results across all three classifiers." },
+            description: "A quantitative, cross-sectional supervised ML study evaluating whether three basic lifestyle indicators — nightly sleep, weekly study time, and daily caffeine intake — can classify student-reported stress as high or low. An original dataset was curated via a digital survey titled \"Student Lifestyle and Academic Well-being,\" yielding 138 clean responses (n=138, 64.5% High Stress). Three classifiers were trained on a stratified 80/20 split: a Ridge linear classifier, Logistic Regression, and K-Nearest Neighbors (K=21, tuned by 5-fold cross-validation). All predictors were z-score standardized on training data only to prevent leakage.",
+            contributions: "Curated an original primary dataset from scratch and ran the full ML pipeline — cleaning, scaling, training, and evaluation — with no data leakage. Sleep emerged as the dominant predictor (r = −0.293 with stress), while study time had almost no association. Under repeated 5-fold stratified cross-validation (50 evaluations per model), Logistic Regression achieved the best balance: accuracy 0.666, precision 0.693, F1-score 0.770. The key finding — that these three variables alone fall short of reliable standalone stress classification — directly supports the research literature arguing that stress is multi-causal. The study contributes a reproducible, openly documented baseline that future researchers can extend with richer predictors or validated stress scales.",
+            status: { current: "Full analysis complete: 138-respondent dataset, three classifiers trained and cross-validated, results documented in final project report.", nextMilestone: "Completed — submitted November 2026, SY 2026-2027." },
             sections: [
                 {
-                    title: "Experimental Methodology",
+                    title: "Key Results",
                     type: "description",
-                    text: "Evaluated supervised learning classifiers (Linear Regression, Logistic Regression, K-NN) with 10-fold cross validation. Analyzed confusion matrices, ROC-AUC, and feature coefficients to determine the strongest behavioral predictors of academic stress."
+                    text: "Under repeated stratified cross-validation: Logistic Regression led in accuracy (0.666) and F1-score (0.770); Ridge classifier led in recall (0.874); K-NN ranked lowest overall. On the held-out test set (n=28), K-NN achieved accuracy 0.679 and F1 0.780. All models reached recall ≈ 0.889 for High Stress. Critically, no classifier clearly outperformed the majority-class baseline (accuracy 0.645), since differences between models were smaller than fold-to-fold standard deviations — indicating the three lifestyle variables carry limited but real predictive signal."
                 },
                 {
-                    title: "Study Documentation",
+                    title: "Methodology",
                     type: "description",
-                    text: "Comparative report and dataset analysis will be linked here upon completion. Currently in progress."
+                    text: "Dataset: 146 raw survey responses → 138 after removing 8 duplicate submissions. Predictors: sleep (mean 6.17h, SD 1.32), weekly study time (mean 15.09h, SD 19.56 — strongly right-skewed), caffeine intake (mean 1.84 cups/day). Target: binary self-reported stress (High=1, Low=0). Preprocessing: z-score standardization, stratified 80/20 split with fixed seed. Models: Ridge classifier, Logistic Regression (L2), K-NN with K selected from odd values 1–31 by 5-fold CV maximizing High Stress F1 (best K=21). Evaluation: accuracy, precision, recall, F1-score; repeated 10×5-fold stratified cross-validation."
+                },
+                {
+                    title: "Documentation",
+                    type: "buttons",
+                    items: [
+                        { label: "Final Project Report (PDF)", url: "learning artifacts/Gubat_FinalProjectGrp1.pdf" }
+                    ]
                 }
             ],
-            technologies: ["Python", "scikit-learn", "Logistic Regression", "K-NN", "pandas", "NumPy", "Matplotlib", "Seaborn"],
+            technologies: ["Python", "scikit-learn", "Logistic Regression", "K-NN", "Ridge Classifier", "pandas", "NumPy", "Matplotlib", "Seaborn"],
             sdg: {
                 number: 3,
                 title: "Good Health and Well-Being",
-                description: "Utilizes predictive behavioral data modeling to identify lifestyle risk factors and promote preventative student mental wellness.",
+                description: "Uses data-driven classification to identify lifestyle risk factors for student stress, contributing a reproducible framework for preventative mental wellness screening in academic institutions.",
                 imgSrc: "images/sdg/3.jpg"
             }
         },
@@ -299,6 +315,21 @@ document.addEventListener("DOMContentLoaded", function() {
 
     // Certification Details Database
     const certificationDetails = {
+        "aws-ai-practitioner": {
+            title: "AWS Certified AI Practitioner",
+            description: "Foundational certification validating broad knowledge of AI, machine learning, and generative AI concepts on AWS. Demonstrates understanding of AI/ML service capabilities, responsible AI practices, and how to apply AWS AI tools to real-world use cases. Issued November 17, 2026 — valid through November 17, 2029.",
+            image: { src: "images/aws-certified-ai-practitioner.png" },
+            certImage: { src: "images/aws_ai prac.png" },
+            verifyUrl: "https://aws.amazon.com/verification",
+            date: "November 2026",
+            issuer: "Amazon Web Services (AWS)",
+            bullets: [
+                "Fundamentals of AI, ML, and generative AI concepts and terminology",
+                "AWS AI/ML services: SageMaker, Rekognition, Comprehend, Bedrock",
+                "Responsible AI: bias, fairness, explainability, and governance",
+                "Practical use cases for applying AI tools in business and engineering contexts"
+            ]
+        },
         "aws-cloud-practitioner": {
             title: "AWS Certified Cloud Practitioner",
             description: "Validates foundational, high-level understanding of AWS Cloud services, architectural best practices, security, compliance, billing, and core cloud infrastructure operations. This industry certification demonstrates validated proficiency in cloud economics, security models, and core service categories including compute, storage, networking, and databases on AWS.",
@@ -346,6 +377,7 @@ document.addEventListener("DOMContentLoaded", function() {
             title: "AWS Academy Graduate — ML Foundations",
             description: "Machine learning pipelines, predictive modeling, data preprocessing, and algorithm selection on AWS SageMaker. Covers supervised and unsupervised learning workflows, model training, evaluation, and deployment.",
             image: { src: "images/aws ml-badge.png" },
+            certImage: { src: "images/aws_ml.png" },
             date: "2026",
             issuer: "AWS Academy (Amazon Web Services)",
             bullets: [
@@ -439,9 +471,9 @@ document.addEventListener("DOMContentLoaded", function() {
     const experienceDetails = {
         "icpep": {
             title: "President | ICpEP.SE - JRU Chapter",
-            period: "2025 – Present",
+            period: "2025 – 2026",
             org: "Institute of Computer Engineers of the Philippines, Student Edition — JRU",
-            description: "Elected chapter president after serving as Secretary. Directing organizational strategy, managing 8+ technical events and workshops, and representing the chapter in national ICpEP conventions and inter-chapter initiatives.",
+            description: "Served as chapter president after serving as Secretary. Led organizational strategy, managed 8+ technical events and workshops, and represented the chapter in national ICpEP conventions and inter-chapter initiatives.",
             images: [
                 { src: "images/President.jpg", alt: "ICpEP Presidency Photo" }
             ],
@@ -467,22 +499,6 @@ document.addEventListener("DOMContentLoaded", function() {
                 "Coordinated with AWS Education sponsors for event funding allocations",
                 "Prepared financial reports for chapter audits and university submission",
                 "Supported cloud learning event logistics and member registration tracking"
-            ]
-        },
-        "solar-energy": {
-            title: "Solar Energy Outreach Leader",
-            period: "November 2025",
-            org: "ICpEP.SE JRU Chapter — Community Outreach Program",
-            description: "Spearheaded a community outreach program focused on educating local residents on solar energy principles and implementing off-grid clean energy solutions for underserved households.",
-            images: [
-                { src: "", alt: "Solar Energy Outreach" }
-            ],
-            bullets: [
-                "Planned and executed a solar energy education seminar for community residents",
-                "Conducted basic technical audits on household electricity consumption and needs",
-                "Demonstrated solar panel assembly, charge controller wiring, and load calculations",
-                "Coordinated volunteer team logistics, materials procurement, and site setup",
-                "Produced post-event documentation and impact report for university submission"
             ]
         },
         "up-eeei": {
@@ -556,6 +572,19 @@ document.addEventListener("DOMContentLoaded", function() {
                                 <source src="${sec.videoUrl}" type="video/mp4">
                                 Your browser does not support the video tag.
                             </video>
+                        </div>`;
+                }
+            }
+            else if (sec.type === 'embed') {
+                if (sec.description) {
+                    sectionsHtml += `<p class="pane-text">${sec.description}</p>`;
+                }
+                if (sec.embedUrl) {
+                    sectionsHtml += `
+                        <div class="pane-media-video">
+                            <div class="pane-video-embed">
+                                <iframe src="${sec.embedUrl}" allow="autoplay; encrypted-media; picture-in-picture" allowfullscreen loading="lazy"></iframe>
+                            </div>
                         </div>`;
                 }
             }
@@ -792,7 +821,7 @@ document.addEventListener("DOMContentLoaded", function() {
     // ── Boot all showcases ──────────────────
     initShowcase('projects-showcase',   renderProjectPane,       'field-service-nlp');
     initShowcase('experience-showcase', renderExperiencePane,    'icpep');
-    initShowcase('cert-showcase',       renderCertificationPane, 'aws-cloud-practitioner');
+    initShowcase('cert-showcase',       renderCertificationPane, 'aws-ai-practitioner');
 
     // ─────────────────────────────────────────────
     // Academic Works Data & Renderer
