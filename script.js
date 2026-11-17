@@ -302,7 +302,7 @@ document.addEventListener("DOMContentLoaded", function() {
         "aws-cloud-practitioner": {
             title: "AWS Certified Cloud Practitioner",
             description: "Validates foundational, high-level understanding of AWS Cloud services, architectural best practices, security, compliance, billing, and core cloud infrastructure operations. This industry certification demonstrates validated proficiency in cloud economics, security models, and core service categories including compute, storage, networking, and databases on AWS.",
-            image: { src: "images/aws cert.png" },
+            image: { src: "images/aws-cloud-practitioner-badge.png" },
             verifyUrl: "https://aws.amazon.com/verification",
             date: "November 2026",
             issuer: "Amazon Web Services (AWS)",
@@ -316,7 +316,7 @@ document.addEventListener("DOMContentLoaded", function() {
         "aws-ml-nlp": {
             title: "AWS Academy Graduate — Machine Learning for NLP",
             description: "Specialized accreditation in Natural Language Processing on AWS, mastering transformer architectures (BERT, RoBERTa), text tokenization, sentiment analysis, entity extraction, and deploying scalable NLP models using Amazon SageMaker and AWS AI services.",
-            image: { src: "images/aws ml-badge.png" },
+            image: { src: "images/aws-ml-nlp-badge.png" },
             date: "2026",
             issuer: "AWS Academy (Amazon Web Services)",
             bullets: [
@@ -329,7 +329,7 @@ document.addEventListener("DOMContentLoaded", function() {
         "aws-cloud-foundations": {
             title: "AWS Academy Graduate — Cloud Foundations",
             description: "Academic graduate badge validating comprehensive understanding of AWS cloud infrastructure, security, identity management, and core computing services. Provides foundational knowledge aligned with AWS Certified Cloud Practitioner objectives.",
-            image: { src: "images/aws ml-badge.png" },
+            image: { src: "images/aws-cloud-foundations-badge.png" },
             date: "2026",
             issuer: "AWS Academy (Amazon Web Services)",
             bullets: [

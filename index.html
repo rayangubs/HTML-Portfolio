@@ -3,40 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Rayan Gubat | CpE Student — AI &amp; Embedded Systems</title>
-    <meta name="description" content="Portfolio of Mohammad Rayan B. Gubat, Computer Engineering student at José Rizal University specializing in AI, embedded systems, IoT, and software development. Open to internships 2027.">
+    <title>Rayan Gubat | Computer Engineering Portfolio</title>
+    <meta name="description" content="Portfolio of Mohammad Rayan B. Gubat, Computer Engineering student at José Rizal University specializing in AI, microcontrollers, IoT, and software development.">
     <meta name="author" content="Mohammad Rayan B. Gubat">
     <meta name="theme-color" content="#121212">
-
-    <!-- Open Graph / Social Sharing -->
-    <meta property="og:title" content="Rayan Gubat | CpE Student — AI &amp; Embedded Systems">
-    <meta property="og:description" content="CpE student building AI and embedded systems. AWS Certified Cloud Practitioner, TOEIC 990, 6+ certifications. Open to internships 2027.">
+    <meta property="og:title" content="Rayan Gubat | Computer Engineering Portfolio">
+    <meta property="og:description" content="Computer Engineering student at José Rizal University specializing in hardware-software integration, AI, and leadership.">
     <meta property="og:type" content="website">
-    <meta property="og:url" content="https://rayangubat.dev/">
-    <meta property="og:image" content="images/formal(attempt).png">
-
-    <!-- Twitter Card -->
-    <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="Rayan Gubat | CpE Student — AI &amp; Embedded Systems">
-    <meta name="twitter:description" content="CpE student building AI and embedded systems. AWS Certified Cloud Practitioner, TOEIC 990, 6+ certifications.">
-    <meta name="twitter:image" content="images/formal(attempt).png">
-
-    <!-- JSON-LD Person Schema -->
-    <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "Person",
-      "name": "Mohammad Rayan B. Gubat",
-      "url": "https://rayangubat.dev/",
-      "jobTitle": "Computer Engineering Student",
-      "alumniOf": "José Rizal University",
-      "sameAs": [
-        "https://www.linkedin.com/in/mohammad-rayan-b-gubat/",
-        "https://github.com/rayangubat"
-      ]
-    }
-    </script>
-
     <link rel="stylesheet" href="style.css">
     <!-- Remove no-js class immediately so JS-dependent fade-in works -->
     <script>document.documentElement.classList.remove('no-js');</script>
@@ -99,8 +72,10 @@
                     <div class="certification-badges">
                         <h3>Badges</h3>
                         <div class="badges-container">
-                            <img src="images/aws cert.png" alt="AWS Certified Cloud Practitioner" class="badge-img fade-in" title="AWS Certified Cloud Practitioner" loading="lazy">
-                            <img src="images/aws ml-badge.png" alt="AWS Academy Graduate: ML Foundations" class="badge-img fade-in" title="AWS Academy Graduate: ML Foundations" loading="lazy">
+                            <img src="images/aws-cloud-practitioner-badge.png" alt="AWS Certified Cloud Practitioner" class="badge-img fade-in" title="AWS Certified Cloud Practitioner" loading="lazy">
+                            <img src="images/aws-ml-nlp-badge.png" alt="AWS Academy Graduate: ML for NLP" class="badge-img fade-in" title="AWS Academy Graduate: ML for NLP" loading="lazy">
+                            <img src="images/aws-cloud-foundations-badge.png" alt="AWS Academy Graduate: Cloud Foundations" class="badge-img fade-in" title="AWS Academy Graduate: Cloud Foundations" loading="lazy">
+                            <img src="images/aws ml-badge.png" alt="AWS Academy ML Foundations" class="badge-img fade-in" title="AWS Academy ML Foundations" loading="lazy">
                             <img src="images/comptia icon.png" alt="CompTIA Tech+ Certificate" class="badge-img fade-in" title="CompTIA Tech+" loading="lazy">
                             <img src="images/it java.png" alt="IT Specialist - Java Certificate" class="badge-img fade-in" title="IT Specialist - Java" loading="lazy">
                         </div>
@@ -165,141 +140,65 @@
     </section>
 
     <section id="projects">
-        <h2 class="fade-in">Featured Projects</h2>
-        <p class="section-intro fade-in">Select any project on the left to explore its architecture, video demonstrations, source resources, and UN SDG alignment on the right.</p>
+        <h2 class="fade-in">My Projects</h2>
         
-        <div class="showcase-layout fade-in" id="projects-showcase">
-            <!-- Left Side: 2-column grid of pressable cards -->
-            <div class="showcase-grid-left">
-
-                <div class="showcase-card active" data-id="field-service-nlp" tabindex="0" role="button">
-                    <div class="showcase-card-header">
-                        <span class="showcase-card-num">01</span>
-                        <span class="status-pill status-ongoing">Ongoing</span>
-                    </div>
-                    <h3 class="showcase-card-title">Automated Structuring of Field Service Reports</h3>
-                    <p class="showcase-card-desc">NLP &amp; OCR pipeline converting handwritten service forms into structured CRM records.</p>
-                    <div class="showcase-card-footer">
-                        <span class="showcase-card-tag">RoBERTa</span>
-                        <span class="showcase-card-tag">TrOCR</span>
-                        <span class="showcase-card-arrow">→</span>
-                    </div>
+        <!-- Project Carousel -->
+        <div class="projects-carousel fade-in">
+            <div class="carousel-track">
+                <button class="carousel-control left" aria-label="Scroll left">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="15 18 9 12 15 6"></polyline></svg>
+                </button>
+                <div class="carousel-container">
+                    <div class="project-card" data-project="pose-estimation">
+                    <img src="images/ai cover.png" alt="CPE C313 Project Cover" class="project-img">
+                    <p class="project-course">CPE C313 | Artificial Intelligence</p>
+                    <h3 class="project-title">Web-Based Human Pose Estimation</h3>
+                    <p>Real-Time Squat Form Correction using Teachable Machine</p>
+                    <div class="tech-stack">Python | Teachable Machine | Web</div>
                 </div>
-
-                <div class="showcase-card" data-id="student-stress-ml" tabindex="0" role="button">
-                    <div class="showcase-card-header">
-                        <span class="showcase-card-num">02</span>
-                        <span class="status-pill status-ongoing">Ongoing</span>
-                    </div>
-                    <h3 class="showcase-card-title">Predicting Student Stress from Lifestyle Habits</h3>
-                    <p class="showcase-card-desc">Comparative ML study benchmarking Linear, Logistic, and K-NN classifiers on student biometric data.</p>
-                    <div class="showcase-card-footer">
-                        <span class="showcase-card-tag">scikit-learn</span>
-                        <span class="showcase-card-tag">K-NN</span>
-                        <span class="showcase-card-arrow">→</span>
-                    </div>
+                <div class="project-card" data-project="save-share">
+                    <img src="images/sns cover.png" alt="EGR C204 Project Cover" class="project-img">
+                    <p class="project-course">EGR C204 | Technopreneurship</p>
+                    <h3 class="project-title">Save&Share (FarVent)</h3>
+                    <p>Full-Stack Tech Startup Platform</p>
+                    <div class="tech-stack">Flutter | Dart | Firebase</div>
                 </div>
-
-                <div class="showcase-card" data-id="pose-estimation" tabindex="0" role="button">
-                    <div class="showcase-card-header">
-                        <span class="showcase-card-num">03</span>
-                        <span class="status-pill status-completed">Completed</span>
-                    </div>
-                    <h3 class="showcase-card-title">Web-Based Human Pose Estimation</h3>
-                    <p class="showcase-card-desc">Real-time biomechanical feedback loop for squat form correction via 33 keypoints.</p>
-                    <div class="showcase-card-footer">
-                        <span class="showcase-card-tag">MediaPipe</span>
-                        <span class="showcase-card-tag">OpenCV</span>
-                        <span class="showcase-card-arrow">→</span>
-                    </div>
+                <div class="project-card" data-project="face-recognition">
+                    <img src="images/rpi cover.png" alt="CPE C305/C306 Project Cover" class="project-img">
+                    <p class="project-course">CPE C305, CPE C306 | Digital Signal Processing & Microcontroller</p>
+                    <h3 class="project-title">Raspberry Pi Face Recognition</h3>
+                    <p>Classroom Attendance System</p>
+                    <div class="tech-stack">Raspberry Pi | Python | OpenCV</div>
                 </div>
-
-                <div class="showcase-card" data-id="face-recognition" tabindex="0" role="button">
-                    <div class="showcase-card-header">
-                        <span class="showcase-card-num">04</span>
-                        <span class="status-pill status-completed">Completed</span>
-                    </div>
-                    <h3 class="showcase-card-title">Raspberry Pi Face Recognition</h3>
-                    <p class="showcase-card-desc">Biometric classroom attendance verification via Raspberry Pi 4B, OpenCV LBPH, and Firebase.</p>
-                    <div class="showcase-card-footer">
-                        <span class="showcase-card-tag">Raspberry Pi</span>
-                        <span class="showcase-card-tag">Firebase</span>
-                        <span class="showcase-card-arrow">→</span>
-                    </div>
+                <div class="project-card" data-project="smart-house">
+                    <img src="images/smart house cover.png" alt="CPE C306 Project Cover" class="project-img">
+                    <p class="project-course">CPE C306 | Microcontroller</p>
+                    <h3 class="project-title">Miniature Smart House</h3>
+                    <p>IoT-Enabled Home Automation</p>
+                    <div class="tech-stack">Arduino | ESP32 | IoT</div>
                 </div>
-
-                <div class="showcase-card" data-id="save-share" tabindex="0" role="button">
-                    <div class="showcase-card-header">
-                        <span class="showcase-card-num">05</span>
-                        <span class="status-pill status-completed">Completed</span>
-                    </div>
-                    <h3 class="showcase-card-title">Save&amp;Share (FarVent Startup)</h3>
-                    <p class="showcase-card-desc">Hyper-localized mobile surplus food liquidation platform connecting eateries to consumers.</p>
-                    <div class="showcase-card-footer">
-                        <span class="showcase-card-tag">Flutter</span>
-                        <span class="showcase-card-tag">Firebase</span>
-                        <span class="showcase-card-arrow">→</span>
-                    </div>
+                <div class="project-card" data-project="project-5">
+                    <!-- Replace src with your image path, e.g. src="images/project5-cover.jpg" -->
+                    <img src="" alt="Project 5 Cover" class="project-img img-empty">
+                    <p class="project-course">Filler Course</p>
+                    <h3 class="project-title">Project 5</h3>
+                    <p>Filler project description</p>
+                    <div class="tech-stack">Tech | Stack | Here</div>
                 </div>
-
-            </div>
-
-            <!-- Right Side: Live Detail Viewer Pane -->
-            <div class="showcase-pane-right">
-                <div class="pane-content-wrapper" id="projects-pane-content">
-                    <!-- Populated dynamically via JavaScript -->
+                <div class="project-card" data-project="project-6">
+                    <!-- Replace src with your image path, e.g. src="images/project6-cover.jpg" -->
+                    <img src="" alt="Project 6 Cover" class="project-img img-empty">
+                    <p class="project-course">Filler Course</p>
+                    <h3 class="project-title">Project 6</h3>
+                    <p>Filler project description</p>
+                    <div class="tech-stack">Tech | Stack | Here</div>
                 </div>
-            </div>
-        </div>
-    </section>
-
-    <section id="academic">
-        <h2 class="fade-in">Academic Works</h2>
-        <p class="section-intro fade-in">Course portfolios demonstrating applied learning outcomes across emerging technologies and advanced artificial intelligence.</p>
-
-        <div class="showcase-layout fade-in" id="academic-showcase">
-
-            <!-- Left: Course selector cards -->
-            <div class="showcase-grid-left academic-grid-left">
-
-                <div class="showcase-card active" data-id="cpe-c405" tabindex="0" role="button" aria-pressed="false">
-                    <div class="showcase-card-header">
-                        <span class="showcase-card-num">CPE C405</span>
-                        <span class="status-pill status-ongoing">Ongoing</span>
-                    </div>
-                    <h3 class="showcase-card-title">Emerging Technologies</h3>
-                    <p class="showcase-card-desc">AWS cloud labs, cloud practitioner certification, and emerging tech applications.</p>
-                    <div class="showcase-card-footer">
-                        <span class="showcase-card-tag">AWS</span>
-                        <span class="showcase-card-tag">Cloud</span>
-                        <span class="showcase-card-arrow">→</span>
-                    </div>
-                </div>
-
-                <div class="showcase-card" data-id="cpe-c314" tabindex="0" role="button" aria-pressed="false">
-                    <div class="showcase-card-header">
-                        <span class="showcase-card-num">CPE C314</span>
-                        <span class="status-pill status-ongoing">Ongoing</span>
-                    </div>
-                    <h3 class="showcase-card-title">Artificial Intelligence 2</h3>
-                    <p class="showcase-card-desc">Advanced AI lab work, IEEE journal documentation, and working project demonstrations.</p>
-                    <div class="showcase-card-footer">
-                        <span class="showcase-card-tag">AI / ML</span>
-                        <span class="showcase-card-tag">IEEE</span>
-                        <span class="showcase-card-arrow">→</span>
-                    </div>
-                </div>
-
-            </div>
-
-            <!-- Right: Artifact detail pane -->
-            <div class="showcase-pane-right">
-                <div class="pane-content-wrapper" id="academic-pane-content">
-                    <!-- Populated dynamically via JavaScript -->
-                </div>
-            </div>
-
-        </div>
+                </div><!-- end .carousel-container -->
+                <button class="carousel-control right" aria-label="Scroll right">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="9 18 15 12 9 6"></polyline></svg>
+                </button>
+            </div><!-- end .carousel-track -->
+        </div><!-- end .projects-carousel -->
     </section>
 
     <section id="skills">
@@ -336,8 +235,8 @@
                         <span class="skill-name">Computer Vision (OpenCV, MediaPipe)</span>
                     </div>
                     <div class="skill-item">
-                        <div class="skill-icon-wrap"><span class="skill-icon-placeholder">NLP</span></div>
-                        <span class="skill-name">NLP (spaCy, NLTK, Hugging Face)</span>
+                        <div class="skill-icon-wrap"><span class="skill-icon-placeholder"><img src="icons/html.png"/></span></div>
+                        <span class="skill-name">HTML</span>
                     </div>
                     <div class="skill-item">
                         <div class="skill-icon-wrap"><span class="skill-icon-placeholder">CNN</span></div>
@@ -412,16 +311,16 @@
                         <span class="skill-name">Embedded IoT (ESP32, Arduino, FreeRTOS)</span>
                     </div>
                     <div class="skill-item">
-                        <div class="skill-icon-wrap"><span class="skill-icon-placeholder">API</span></div>
-                        <span class="skill-name">Flask &amp; RESTful APIs</span>
+                        <div class="skill-icon-wrap"><span class="skill-icon-placeholder"><img src="icons/dv.png"/></span></div>
+                        <span class="skill-name">DaVinci Resolve</span>
                     </div>
                     <div class="skill-item">
                         <div class="skill-icon-wrap"><img src="icons/flutter.png" alt="Flutter Icon"/></div>
                         <span class="skill-name">Flutter &amp; Dart</span>
                     </div>
                     <div class="skill-item">
-                        <div class="skill-icon-wrap"><span class="skill-icon-placeholder">DOCS</span></div>
-                        <span class="skill-name">Technical Documentation &amp; Reporting</span>
+                        <div class="skill-icon-wrap"><span class="skill-icon-placeholder"><img src="icons/oai.png"/></span></div>
+                        <span class="skill-name">OpenAI</span>
                     </div>
                 </div>
             </div>
@@ -670,7 +569,7 @@
             </div>
             <div class="contact-item">
                 <strong>Resume:</strong> <br>
-                <a href="https://drive.google.com/file/d/1Uaw2FII08Z_PJ1tykyrdUth6LuTcXI0w/view?usp=sharing" target="_blank" rel="noopener noreferrer" class="resume-link">Download PDF</a>
+                <a href="https://drive.google.com/file/d/1Uaw2FII08Z_PJ1tykyrdUth6LuTcXI0w/view?usp=sharing" target="_blank" class="resume-link">Download PDF</a>
             </div>
         </div>
         <div style="text-align:center;margin-bottom:2rem;">
