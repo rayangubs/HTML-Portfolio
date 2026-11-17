@@ -1289,6 +1289,50 @@ footer h2 { color: var(--text-primary); }
     letter-spacing: 1px;
 }
 
+/* Flip CTA label on the front face */
+@keyframes flipCtaPulse {
+    0%   { opacity: 0; transform: translateY(4px); }
+    15%  { opacity: 1; transform: translateY(0); }
+    75%  { opacity: 1; }
+    85%  { opacity: 0.55; }
+    92%  { opacity: 1; }
+    100% { opacity: 0.55; }
+}
+
+.flip-card-cta {
+    position: absolute;
+    bottom: 0.9rem;
+    right: 0.9rem;
+    display: flex;
+    align-items: center;
+    gap: 0.35rem;
+    padding: 0.3rem 0.65rem;
+    background: rgba(10, 10, 10, 0.72);
+    border: 1px solid rgba(212, 196, 168, 0.35);
+    border-radius: 20px;
+    color: var(--accent);
+    font-size: 0.72rem;
+    font-weight: 600;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    pointer-events: none;
+    backdrop-filter: blur(6px);
+    -webkit-backdrop-filter: blur(6px);
+    animation: flipCtaPulse 3s ease-out 1s both;
+    opacity: 0.55;
+}
+
+.flip-card-cta svg {
+    flex-shrink: 0;
+    opacity: 0.85;
+}
+
+/* Hide the CTA once the card is flipped */
+.flip-card.flipped .flip-card-cta {
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
 /* Bottom row: badges + education side by side */
 .hero-bottom-row {
     display: flex;
@@ -1315,10 +1359,9 @@ footer h2 { color: var(--text-primary); }
 }
 
 .badges-container {
-    display: flex;
-    flex-wrap: wrap;
+    display: grid;
+    grid-template-columns: repeat(4, 86px);
     gap: 0.75rem;
-    max-width: 300px;
 }
 
 .badge-img {
@@ -1497,7 +1540,8 @@ footer h2 { color: var(--text-primary); }
 
     .badges-container {
         justify-content: center;
-        max-width: 300px;
+        grid-template-columns: repeat(2, 86px);
+        max-width: unset;
     }
 
     .certification-badges {
@@ -1942,7 +1986,8 @@ img.img-empty::before {
     .badges-container {
         justify-content: center;
         gap: 0.6rem;
-        max-width: 280px;
+        grid-template-columns: repeat(2, 78px);
+        max-width: unset;
     }
 
     .badge-img {
