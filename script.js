@@ -403,7 +403,7 @@ document.addEventListener("DOMContentLoaded", function() {
         "wadhwani": {
             title: "Wadhwani Foundation — Ignite Entrepreneurship",
             description: "Comprehensive startup incubation program validating venture creation, product-market fit, customer discovery, financial viability, and pitch execution for tech startups.",
-            image: { src: "images/sns cover.png" },
+            image: { src: "images/wadhwani completion_ignite.png" },
             date: "April 2026",
             issuer: "Wadhwani Entrepreneurship",
             bullets: [
