@@ -887,9 +887,9 @@ document.addEventListener("DOMContentLoaded", function() {
                     ],
                     reflection: "Seeing the pipeline run on actual handwritten reports made every abstract NLP concept tangible. The OCR results were humbling — 89.5% word error rate on raw output — but that's exactly what made the human-in-the-loop design make sense. Building the review interface shifted my thinking from 'can the model get it right?' to 'how do we make correction fast and trustworthy?' That's a more useful question for real deployments.",
                     buttons: [
-                        { label: "Watch Demo", url: "videos/nlp_video.mp4", isExternal: false }
+                        { label: "Open in Google Drive", url: "https://drive.google.com/file/d/19lZACVgllcSplsltyS9aP0iq_dRRMmOw/view?usp=sharing", isExternal: true }
                     ],
-                    video: "videos/nlp_video.mp4"
+                    videoEmbed: "https://drive.google.com/file/d/19lZACVgllcSplsltyS9aP0iq_dRRMmOw/preview"
                 }
             ]
         }
@@ -922,7 +922,14 @@ document.addEventListener("DOMContentLoaded", function() {
                    </div>`
                 : '';
 
-            const videoHtml = artifact.video
+            const videoHtml = artifact.videoEmbed
+                ? `<div class="pane-section-title" style="margin-top:1rem;">Demo Video</div>
+                   <div class="pane-media-video" style="margin-top:0.6rem;">
+                       <div class="pane-video-embed">
+                           <iframe src="${artifact.videoEmbed}" allow="autoplay; encrypted-media; picture-in-picture" allowfullscreen loading="lazy"></iframe>
+                       </div>
+                   </div>`
+                : artifact.video
                 ? `<div class="pane-section-title" style="margin-top:1rem;">Demo Video</div>
                    <div class="pane-media-video" style="margin-top:0.6rem;">
                        <video class="pane-video" controls preload="metadata">

@@ -1,0 +1,8 @@
+# Large demo videos are hosted externally (Google Drive) — kept out of git.
+# If you need them locally, keep them on disk; they will not be tracked.
+videos/nlp_video.mp4
+learning artifacts/CPE C314/nlp_video.mp4
+
+# OS / editor cruft
+.DS_Store
+Thumbs.db
